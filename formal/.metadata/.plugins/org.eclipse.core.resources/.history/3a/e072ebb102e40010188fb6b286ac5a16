@@ -1,0 +1,239 @@
+package org.epmr.controls
+{
+	import org.epmr.commonSkins.MinimizableTitleWindowSkin;
+	import org.epmr.events.MinimizeEvent;
+	import org.epmr.events.RecoverEvent;
+	import flash.events.MouseEvent;
+	import flash.geom.Point;
+	import flash.utils.getQualifiedClassName;
+	import mx.core.FlexGlobals;
+	import mx.core.FlexVersion;
+	import mx.core.mx_internal;
+	import mx.events.CloseEvent;
+	import mx.managers.PopUpManager;
+	import mx.styles.CSSStyleDeclaration;
+	import spark.components.Button;
+	import spark.components.TitleWindow;
+
+    use namespace mx_internal;
+    /**
+ *  当用户点击最小化按钮时分发.
+ *  @eventType org.epmr.events.MinimizeEvent
+ *  @tiptext minimize event
+ */
+    [Event(name="minimize", type="org.epmr.events.MinimizeEvent")]
+	public class MinizableTitleWindow extends TitleWindow implements  IPopUpWindow
+	{
+	  
+		
+		/**
+		 * 用来表示是否现实最小化按钮的内部变量。
+		 */
+		private var _showMinimizeButton:Boolean=true;
+		private var _showMinimizeButtonChanged:Boolean=false;
+		/**
+		 * 用来表示窗口是否可以关闭。
+		 */
+		private var _canClose:Boolean=true;
+		/**
+		 * 用来表示窗口是否可以最小化。
+		 */
+		private var _canMinimize:Boolean=true;
+		private static var classConstructed:Boolean = classConstruct();
+		private static function classConstruct():Boolean 
+		{
+			if (!FlexGlobals.topLevelApplication.styleManager.getStyleDeclaration("MinizableTitleWindow"))
+			{
+				var minimizeTwStyles:CSSStyleDeclaration = new CSSStyleDeclaration();
+				minimizeTwStyles.defaultFactory = function():void
+				{
+					this.cornerRadius=15;
+					this.skinClass=MinimizableTitleWindowSkin;
+				}
+			}
+			FlexGlobals.topLevelApplication.styleManager.setStyleDeclaration("MinizableTitleWindow", minimizeTwStyles, true);
+		    return true;
+		}
+
+        /**
+        * 构造函数，设置缺省布局方式为绝对布局，并且显示关闭按钮。
+        */
+		public function MinizableTitleWindow()
+		{
+			super();
+			this.setStyle("skinClass",MinimizableTitleWindowSkin);
+			
+		}
+
+		/**
+		 *最小化按钮。
+		 */
+		[SkinPart(required="false")]
+		public var minimizeButton:Button;
+		
+        /**
+        * 获取是否显示最小化按钮。
+        */
+		
+        public function get showMinimizeButton():Boolean
+        {
+          return this._showMinimizeButton;
+        }
+        /**
+        *设置是否显示最小化按钮。
+        */
+		[Inspectable(category="General")]
+		[Bindable]
+        public function set showMinimizeButton(value:Boolean):void
+        {
+           this._showMinimizeButton=value;
+		   _showMinimizeButtonChanged=true;
+		   this.invalidateProperties();
+		   this.invalidateDisplayList();
+        }
+		override protected function commitProperties():void 
+		{
+			super.commitProperties();
+			if(this._showMinimizeButtonChanged)
+			{
+			  this._showMinimizeButtonChanged=false;
+			  this.minimizeButton.visible=this.showMinimizeButton;
+			}
+		}
+        override protected function partAdded(partName:String, instance:Object):void
+		{
+		    super.partAdded(partName,instance);
+			if (instance==this.minimizeButton)
+			{
+			   this.minimizeButton.addEventListener("click",this.minimizeButton_clickHandler);
+			}
+			
+		}
+		override protected function partRemoved(partName:String, instance:Object):void
+		{
+		  super.partRemoved(partName,instance);
+		  if (instance==this.minimizeButton)
+		  {
+			  this.minimizeButton.removeEventListener("click",this.minimizeButton_clickHandler);
+		  }
+		 
+		}
+	   public  function set canClose(close:Boolean):void
+	   {
+	       this._canClose=close;
+	   }
+	 
+	   public function set canMinimize(minimize:Boolean):void
+	   {
+	      this._canMinimize=minimize;
+	   }
+	     /**
+	      * 最小化按钮控件的鼠标点击事件处理函数.
+          */
+        private function minimizeButton_clickHandler(event:MouseEvent):void
+        {
+          
+           if (this.isPopUp)
+           {
+              this._canMinimize=true;
+              for(var i:int=0;i<this.numChildren;i++)
+              {
+                 var child:IPopUpable=this.getChildAt(i) as IPopUpable ;
+                 if (child)
+                 {
+                    child.doOnMinimize();
+                 } 
+              }
+              if (this._canMinimize)
+              {
+                  this.minimize();
+              }
+           }
+           else
+           {
+                this.minimize();
+           }
+        }
+		override  protected function closeButton_clickHandler(event:MouseEvent):void
+		{
+			if (this.isPopUp)
+			{
+				this._canClose=true;
+				for(var i:int=0;i<this.numChildren;i++)
+				{
+					var child:IPopUpable=this.getChildAt(i) as IPopUpable;
+					if (child!=null) 
+					{
+						child.doOnClose();
+					}
+				}
+				if (this._canClose)
+				{
+					this.close();
+				}
+				
+			}
+			else
+			{
+			  this.close();
+			}
+		
+		}
+        private function default_closeButton_clickHandler(event:CloseEvent):void
+        {
+		  
+        }
+      protected override function measure():void
+      {
+         super.measure();
+        // this.measuredHeight=150;
+        // this.measuredWidth=200;
+      }
+          /**
+        * 
+        */
+       public  function minimize():void
+       { 
+           this.dispatchEvent(new MinimizeEvent(MinimizeEvent.MINIMIZE,this,true));     
+       }
+       public function recover():void
+       {
+         if(!this.windowMinimized) return;
+         this.dispatchEvent(new RecoverEvent(RecoverEvent.RECOVER,this,true));
+       }
+       /**
+       *
+       */
+	   public function close():void
+	   {
+	     
+		  if (this.isPopUp)
+	      {
+	         PopUpManager.removePopUp(this);
+	      }
+		  this.dispatchEvent(new CloseEvent(CloseEvent.CLOSE));
+	   }
+
+       /**
+       *重载父类的enabled属性的设置方法，当控件enabled属性值改变时，
+       * 其上的最小化按钮的 enabled属性值也随之改变。
+       */
+       override public function set enabled(value:Boolean):void
+       {
+          super.enabled=value;
+          if (this.minimizeButton)
+          {
+             this.minimizeButton.enabled=value;
+          }
+       }
+       private var  _minimized:Boolean=false;
+       public function get windowMinimized():Boolean
+       {
+          return _minimized;
+       }
+      public function set windowMinimized(minimized:Boolean):void
+       {
+          this._minimized=minimized;
+       }
+  }
+}

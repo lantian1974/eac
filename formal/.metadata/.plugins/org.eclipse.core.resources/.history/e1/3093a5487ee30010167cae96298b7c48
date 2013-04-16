@@ -1,0 +1,142 @@
+package org.epmr.collection
+{
+	public class ArrayList extends AbstractList implements IList
+	{
+		private var _array:Array;
+		
+		public function ArrayList(data:Array=null){
+			_array=data || new Array();
+		}
+		
+		override public function iterator():Iterator
+		{
+			return new ArrayIterator(_array);
+		}
+		
+		override public function addItem(index:int, item:*):void
+		{
+			if(index>_array.length)
+				index=_array.length;
+			_array.splice(index,0,item);
+		}
+		
+		override public function add(item:*):Boolean
+		{
+				_array.push(item); 
+				return true;
+		}
+		
+		override public function addItems(index:int, items:ICollection):void
+		{
+			for(var i:Iterator=items.iterator();i.hasNext();){
+				addItem(index++,i.next());
+			}
+		}
+		private function check(index:int):void{
+			if(index<0 || index>=_array.length)
+				throw new Error("index out of bound :"+index);
+		}
+		override public function addAll(items:ICollection):void
+		{
+			for(var i:Iterator=items.iterator();i.hasNext();){
+				add(i.next());
+			}
+		}
+		
+		override public function remove(item:*):Boolean
+		{
+			var index:int;
+			var start:uint=0;
+			while(true){
+				index=_array.indexOf(item,start);
+				if(index!=-1){
+					_array.splice(index,1);
+					start=index;
+				}
+				else
+					return false;
+			}
+			return true;
+		}
+		
+		override public function indexOf(item:*):int
+		{
+			return _array.indexOf(item);
+		}
+		
+		override public function contains(item:*):Boolean
+		{
+			return _array.indexOf(item)!=-1;
+		}
+		
+		override public function lastIndexOf(item:*):int
+		{
+			return _array.lastIndexOf(item);
+		}
+		
+		override public function clear():void
+		{
+			_array.splice(0);
+		}
+		
+		override public function setItem(index:int, item:*):*
+		{
+			check(index);
+			var old:*=_array[index];
+			_array[index]=item;
+			return old;
+		}
+		
+		override public function get size():uint
+		{
+			return _array.length;
+		}
+		
+		override public function getItem(index:int):*
+		{
+			check(index);
+			return _array[index];
+		}
+		
+		override public function toArray():Array
+		{
+			return _array.concat();
+		}
+		
+		override public function removeItem(index:int):*
+		{
+			check(index);
+			var old:*=_array[index];
+			_array.splice(index,1);
+			return old;
+		}
+		
+		
+		override public function write(target:Array):Array{
+			for each(var item:* in _array)
+				target.push(item);
+			return target;
+		}
+		
+		
+		override public function subList(fromIndex:int, toIndex:int):IList
+		{
+			//check(fromIndex);
+			//check(toIndex);
+			var subArray:Array= _array.slice(fromIndex,toIndex);
+			var result:ArrayList=new ArrayList(subArray);
+			return result;
+		}
+		override public function enumerate(callback:Function,thisObject:*=null):void{
+			for(var i:int=0;i<_array.length;i++){
+				if(callback.call(thisObject,_array[i],i)==false)
+					break;
+			}
+		}
+		override public function toString():String{
+			return Arrays.arrayToString(_array); 
+		}
+		
+	
+	}
+}

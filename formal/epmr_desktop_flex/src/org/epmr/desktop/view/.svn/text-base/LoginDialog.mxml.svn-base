@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" 
+				layout="absolute" 
+				width="380" height="120" title="重新登录" fontSize="12" alpha="1">
+    <mx:Script>
+    	<![CDATA[
+    		import mx.rpc.events.FaultEvent;
+    		import mx.rpc.events.ResultEvent;
+    	    import org.epmr.framework.model.FrameWorkModel;
+    	    import org.epmr.right.service.IRightService;
+    	    import org.epmr.right.service.RightServiceFactory;
+    	    import org.epmr.right.service.IRightService;
+			import org.epmr.right.service.RightServiceFactory;
+			import org.epmr.remoting.IInvokeResponder;
+			import org.epmr.framework.model.LoginResultVo;
+			import mx.controls.Alert;
+			import mx.managers.PopUpManager;
+			import org.epmr.desktop.controls.MessageBox;
+    	    private var mainModel:FrameWorkModel=FrameWorkModel.getInstance();
+    	    private var logining:Boolean=false;
+    		private function doReLogin():void
+    		{
+    		   if (this.logining) return;
+    		   this.logining=true;
+    		   var rs:IRightService=RightServiceFactory.getInstance().getRightService();;
+    		   var ir:IInvokeResponder= rs.userLogin(this.mainModel.loginAccountCode,this.ti_password.text);
+    		   ir.setResultCallback(onResult);
+    		   ir.setFaultCallback(onFault);
+    		}
+    		private function onResult(event:ResultEvent):void
+    		{
+    			this.logining=false;
+    			var loginResult:LoginResultVo =event.result as LoginResultVo;
+		        if (!loginResult.loginSucceed)
+		        {
+		           MessageBox.warning(loginResult.info,"注意");
+		           return;
+		        }
+		        this.mainModel.unitName=loginResult.unitName;
+		        this.mainModel.sessionId=loginResult.sessionId;
+		        PopUpManager.removePopUp(this);
+    		}
+    		private function onFault(event:FaultEvent):void
+    		{
+    			this.logining=false;
+    			 MessageBox.error("访问权限服务失败，请联系系统管理人员！详细信息如下：\\n"+event.fault.message,"错误");
+    		}
+    	]]>
+    </mx:Script>
+	<mx:Text  x="19" y="50" text="密码" width="38"/>
+	<mx:TextInput id="ti_password" x="65" y="47" width="167" displayAsPassword="true"/>
+	<mx:Button  x="247" y="50" label="确定" click="this.doReLogin();"/>
+	<mx:Text x="5" y="0" width="353" text="{this.mainModel.loginAccount.name+'('+this.mainModel.loginAccount.accountCode+'):您已经与服务器失去联系，请输入密码后重新登录！'}" height="37"/>
+</mx:TitleWindow>

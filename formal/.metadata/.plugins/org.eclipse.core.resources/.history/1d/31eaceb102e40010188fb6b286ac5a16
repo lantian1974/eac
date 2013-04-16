@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SparkSkin xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" 
+		xmlns:mx="library://ns.adobe.com/flex/mx"
+		xmlns:fb="http://ns.adobe.com/flashbuilder/2009"
+		minHeight="50"
+		minWidth="300"
+		>
+	<!-- host component -->
+	<fx:Metadata>
+		[HostComponent("org.epmr.controls.MinimizeControler")]
+	</fx:Metadata>
+   
+    
+	<s:states>
+		<!-- 没有溢出的状态-->
+		<s:State name="noOverFlow" /> 
+		<!-- 全部在左边溢出的状态（右边未溢出），此时左边导航按钮变灰不可用，右边导航按钮变亮，可用-->
+		<s:State name="leftMostOverFlow" />
+		<!-- 全部在右边溢出的状态（左边未溢出），此时优边导航按钮变灰不可用，左边导航按钮变亮，可用-->
+		<s:State name="rightMostOverFlow" />	
+		<!--两边均有溢出，左右导航按钮均变亮，均可用-->
+		<s:State name="bothOverFlow" />	
+	</s:states>
+	<!-- visible="{mx.core.UIComponentGlobals.designMode}"-->
+	<s:Rect  id="border" left="0" top="0" right="0" bottom="0" visible="{mx.core.UIComponentGlobals.designMode}" >
+		<s:stroke>
+			<s:SolidColorStroke color="black"  weight="1">
+			</s:SolidColorStroke>
+		</s:stroke>
+		<s:fill>
+			<s:LinearGradient  >
+				<s:GradientEntry color="blue" alpha="0.2" />
+				<s:GradientEntry color="blue" alpha="0.4" />
+			</s:LinearGradient>
+		</s:fill>
+	</s:Rect>
+	<s:Button id="leftIndicator"   left="2"   visible="true"
+			  enabled.leftMostOverFlow="false" visible.noOverFlow="false"
+			  skinClass="org.epmr.commonSkins.MinimizeControlerLeftButtonSkin" />
+	
+	<s:Button id="rightIndicator"   right="2"  visible="true" visible.noOverFlow="false"
+			  enabled.rightMostOverFlow="false"
+			  skinClass="org.epmr.commonSkins.MinimizeControlerRightButtonSkin"/> 
+	
+	
+</s:SparkSkin>

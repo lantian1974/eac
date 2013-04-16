@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;epmr_flex_support_java/src/org.epmr.flexsupport.channelsconfig&apos;&#x0D;&#x0A;- Original project: &apos;JaxbLeran&apos;&#x0D;&#x0A;- Destination element: &apos;epmr_flex_support_java/src/org.epmr.flexsupport.channelsconfig&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Channel.java&#x0D;&#x0A;     Endpoint.java&#x0D;&#x0A;     Service.java" description="Copy compilation units" destination="=epmr_flex_support_java/src&lt;org.epmr.flexsupport.channelsconfig" element1="/src&lt;{Channel.java" element2="/src&lt;{Endpoint.java" element3="/src&lt;{Service.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1317541522859" units="3" version="1.0"/>
+</session>

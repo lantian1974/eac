@@ -1,0 +1,169 @@
+package org.epmr.widget.calendar
+{
+	import flash.display.Graphics;
+	import flash.events.MouseEvent;
+	
+	import mx.containers.HBox;
+	import mx.containers.Tile;
+	import mx.containers.TileDirection;
+	import mx.containers.VBox;
+	import mx.controls.Button;
+	import mx.controls.Label;
+	import mx.core.UIComponent;
+	import mx.events.FlexEvent;
+	[ResourceBundle("controls")]
+	[ResourceBundle("SharedResources")]
+	public class MonthChooser extends VBox
+	{
+		private var _minDate:Date;
+		private var _maxDate:Date;
+		private var _rangeChanged:Boolean;
+		
+		private var uiYear:Label;
+		private var uiYearUp:Button;
+		private var uiYearDown:Button;
+		private var _selectedYear:uint;
+		private var _selectedMonth:uint;
+		private var _displayedYear:uint;
+		private var _displayedYearChanged:Boolean;
+		private var _yearSymbol:String;
+		[Embed(source='Assets.swf',symbol='fwdMonthUp')]
+		private var uiYearUpIcon:Class;
+		[Embed(source='Assets.swf',symbol='backMonthUp')]
+		private var uiYearDownIcon:Class;
+		public function MonthChooser()
+		{
+			super();
+			setStyle("paddingTop",4);
+			setStyle("paddingLeft",4);
+			setStyle("paddingBottom",4);
+			setStyle("paddingRight",4);
+			setStyle("backgroundColor",0xE1E5EB);
+			setStyle("backgroundAlpha",1);
+			setStyle("borderStyle","solid");
+			displayedYear=new Date().fullYear;
+			_yearSymbol=resourceManager.getString(
+                           "controls", "yearSymbol");   
+		}
+		
+		override protected function createChildren():void{
+			super.createChildren();
+			var uiYearBar:HBox=new HBox();
+			uiYearBar.percentWidth=100;
+			uiYearBar.setStyle("horizontalAlign","center");
+			uiYearBar.setStyle("verticalAlign","middle");		
+			uiYearBar.setStyle("fontSize",14);
+			uiYearBar.setStyle("fontWeight","bold");
+			
+			uiYearDown=new Button();
+			uiYearDown.focusEnabled=false;
+			uiYearDown.autoRepeat=true;
+//			uiYearDown.setStyle("icon",uiYearDownIcon);
+			uiYearDown.addEventListener(FlexEvent.BUTTON_DOWN,onYearDown);
+			uiYearBar.addChild(uiYearDown);
+			
+			uiYear=new Label();
+			uiYearBar.addChild(uiYear);
+			
+			uiYearUp=new Button();
+			uiYearUp.focusEnabled=false;
+			uiYearUp.autoRepeat=true;
+//			uiYearUp.setStyle("icon",uiYearUpIcon);
+			uiYearUp.addEventListener(FlexEvent.BUTTON_DOWN,onYearUp);
+			uiYearBar.addChild(uiYearUp);
+			
+			var uiMonths:Tile=new Tile();			
+			uiMonths.setStyle("horizontalAlign","center");
+			uiMonths.setStyle("verticalAlign","middle");
+			uiMonths.direction=TileDirection.HORIZONTAL;
+			for(var i:int=0;i<12;i++){
+				var uiMonth:Button=new Button();
+				uiMonth.addEventListener(MouseEvent.CLICK,onMonthSelected);
+				uiMonth.focusEnabled=false;
+				uiMonth.data=i;
+				uiMonth.label=String(i+1);
+				uiMonths.addChild(uiMonth);
+			}
+//			uiMonths.tileWidth=uiMonths.width/4;
+			addChild(uiYearBar);
+			addChild(uiMonths);
+		}
+		private function drawArrow(comp:UIComponent,dir:String):void{
+//			comp.validateNow();
+			var g:Graphics=comp.graphics;
+			g.clear();
+			g.beginFill(0x0,1);
+			var w:Number=comp.getExplicitOrMeasuredWidth();
+			var h:Number=comp.getExplicitOrMeasuredHeight();
+			if (dir == "down")
+			{
+				g.moveTo(w - 8, h - 14);
+				g.lineTo(w - 13, h / 2 + 0.5);
+				g.lineTo(w - 8, h - 5);
+				g.moveTo(w - 8, h - 14);
+			}
+			else
+			{
+				g.moveTo(w - 11, h - 14);
+				g.lineTo(w - 6, h / 2 + 0.5);
+				g.lineTo(w - 11, h - 5);
+				g.moveTo(w - 11, h - 14);
+			}
+			g.endFill();
+		}
+		public function get minDate():Date{
+			return _minDate;
+		}
+		public function set minDate(value:Date):void{
+			if(_minDate!=value){
+				_minDate=value;
+				_rangeChanged=true;
+				invalidateDisplayList();
+			}
+		}
+		public function get maxDate():Date{
+			return _maxDate;
+		}
+		public function set maxDate(value:Date):void{
+			if(_maxDate!=value){
+				_maxDate=value;
+				_rangeChanged=true;
+				invalidateDisplayList();
+			}
+		}
+		private function onMonthSelected(event:MouseEvent):void{
+			var button:Button=event.target as Button;
+			var selectedMonth:uint=button.data as uint;
+			var e:MonthChangeEvent=new MonthChangeEvent(MonthChangeEvent.CHANGE,_displayedYear,selectedMonth);
+			dispatchEvent(e);
+		}
+		override protected function commitProperties():void{
+			super.commitProperties();
+			if(_displayedYearChanged){
+				_displayedYearChanged=false;
+				uiYear.text=String(displayedYear)+_yearSymbol;
+			}
+		}
+		override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void{
+			super.updateDisplayList(unscaledWidth, unscaledHeight);
+			drawArrow(uiYearUp,'up');	
+			drawArrow(uiYearDown,'down');	
+		}
+		public function get displayedYear():uint{
+			return _displayedYear;
+		}
+		public function set displayedYear(value:uint):void{
+			if(_displayedYear!=value){
+				_displayedYear=value;
+				_displayedYearChanged=true;
+				invalidateProperties();
+			}
+		}
+		private function onYearUp(event:FlexEvent):void{
+			displayedYear++;
+		}
+		private function onYearDown(event:FlexEvent):void{
+			displayedYear--;
+		}
+	}
+}	

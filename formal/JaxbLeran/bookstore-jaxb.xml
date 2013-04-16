@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:bookstore xmlns:ns2="de.vogella.xml.jaxb.model">
+    <bookList>
+        <book>
+            <author>Neil Strauss</author>
+            <isbn>978-0060554736</isbn>
+            <bookName>The Game</bookName>
+            <publisher>Harpercollins</publisher>
+        </book>
+        <book>
+            <author>Charlotte Roche</author>
+            <isbn>978-3832180577</isbn>
+            <bookName>Feuchtgebiete</bookName>
+            <publisher>Dumont Buchverlag</publisher>
+        </book>
+    </bookList>
+    <location>Frankfurt Airport</location>
+    <name>Fraport Bookstore</name>
+</ns2:bookstore>

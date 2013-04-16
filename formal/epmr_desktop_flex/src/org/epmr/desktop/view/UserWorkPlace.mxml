@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:s="library://ns.adobe.com/flex/spark" 
+		   xmlns:mx="library://ns.adobe.com/flex/mx" 
+		   xmlns:epmr="http://epmr.org" 
+		   width="100%" height="100%"
+	       alpha="1"
+	       mouseChildren="true"
+		   addedToStage="this.doAfterAddToStage();"
+	       click="doOnClickWorkplace(event)"
+	       dragEnter="this.onDragEnter(event)"
+	       dragDrop="this.onDragDrop(event)"
+	       keyDown="doKeyDownOnShortCutControl(event)"
+		   keyUp="this.doOnKeyUp(event)" xmlns:controls="org.epmr.desktop.controls.*">
+
+      <fx:Script>
+		<![CDATA[
+			import org.epmr.collection.ArrayList;
+			import org.epmr.collection.HashMap;
+			import org.epmr.collection.IList;
+			import org.epmr.desktop.controls.MinizableTitleWindow;
+			import org.epmr.desktop.events.MinimizeEvent;
+			import org.epmr.desktop.events.WindowPopupEvent;
+			import org.epmr.desktop.controls.ShortCutControl;
+			import org.epmr.desktop.events.OpenWindowEvent;
+			import org.epmr.desktop.managers.OpenedWindowManager;
+			import org.epmr.desktop.model.FrameWorkModel;
+			import org.epmr.desktop.model.ShortCutVo;
+			import org.epmr.desktop.model.ViewVo;
+			import org.epmr.desktop.model.WebUIResourceVo;
+			import org.epmr.desktop.service.FrameWorkServiceFactory;
+			import org.epmr.desktop.service.IFrameWorkService;
+			import org.epmr.managers.ControlResizor;
+			
+			import flash.events.MouseEvent;
+			
+			import mx.collections.ArrayCollection;
+			import mx.controls.Alert;
+			import mx.controls.Image;
+			import mx.core.DragSource;
+			import mx.core.UIComponent;
+			import mx.effects.easing.Bounce;
+			import mx.events.CloseEvent;
+			import mx.events.DragEvent;
+			import mx.events.ListEvent;
+			import mx.managers.CursorManager;
+			import mx.managers.DragManager;
+			import mx.managers.FocusManager;
+			import mx.managers.PopUpManager;
+			import mx.modules.IModuleInfo;
+			import mx.modules.Module;
+    	    private var resizing:Boolean;
+    	    private var drawer:UIComponent;
+    	    private var moving:Boolean=false;
+			private var xdfWindow:MinizableTitleWindow;
+		    private var mainModel:FrameWorkModel=null;
+		    private var shortCutControlList:IList=new ArrayList();
+			private var ctrlKeyDown:Boolean=false;
+			
+			private function doAfterAddToStage():void
+			{
+			   this.navBar.addEventListener(CloseEvent.CLOSE, windowCloseEventListener);
+			   var _refuseResizePistions:Array=new Array();
+			   _refuseResizePistions.push(ControlResizor.POSTION_LEFT);
+			   _refuseResizePistions.push(ControlResizor.POSTION_TOPLEFT);
+			   _refuseResizePistions.push(ControlResizor.POSTION_BOTTOMLEFT);
+			   var vavBarResizor:ControlResizor=new ControlResizor(this.bgCanvas,3,_refuseResizePistions);
+			   vavBarResizor.makeControlResizable();
+			}
+			public function doIni():void
+    		{
+    		  this.mainModel=FrameWorkModel.getInstance();
+    		  this.mainModel.topApplication.addEventListener(WindowPopupEvent.WINDOW_POPUP_EVENT,doOnWindowPopup,false,0,true);
+    		  this.mainModel.topApplication.addEventListener(OpenWindowEvent.OPENT_WINDOW_EVENT,doOnOpenWindow,false,0,true);
+    		  this.navBar.title='欢迎:'+this.mainModel.loginAccount.accountCode+'('+this.mainModel.loginAccount.name+')';
+    		  this.navTree.dataProvider=this.mainModel.currentUserPerspective;  		
+    		  this.navTree.dataDescriptor=new PerspectiveTreeDescriptor();
+    		  this.initializeShortCutToWorkPlace();
+    		}
+    		private function initializeShortCutToWorkPlace():void
+    		{  
+    		   var shortCuts:ArrayCollection=this.mainModel.currentUserPerspective.shortCuts;
+    		   if (shortCuts==null) return;
+    		   for(var i:int=0;i<shortCuts.length;i++)
+    		   {
+    		       var sc:ShortCutVo=  shortCuts.getItemAt(i) as ShortCutVo ; 
+    		       this.createNewShortCutControl(sc); 		       
+    		   }
+    		}
+		   //处理Application分发的OpenWindowEvent事件，
+		   //这个事件在双击快捷方式时由Application分发。
+		   private function doOnOpenWindow(event:OpenWindowEvent):void
+		   {
+		      var webUIRes:WebUIResourceVo=event.webUIResource;
+		      this.openWebUI(webUIRes,event.allowReOpen);
+		   }
+		   //处理窗口被弹出的事件。窗口的弹出是由mainModel中的方法发起的。
+           private function doOnWindowPopup(event:WindowPopupEvent):void
+           {
+              var window:MinizableTitleWindow=event.window;
+             // window.setStyle("removedEffect",irisOut);
+           }
+           private function bringWindowToFront(window:UIComponent):void
+           {
+             PopUpManager.bringToFront(window);
+           }
+           
+            private var showDesktop:Boolean=false;
+            
+            private function showOrHideDesktop():void
+            {
+               this.showDesktop=!this.showDesktop;
+               if (this.showDesktop)
+               {
+                 this.minimizeAll();
+               }
+               else
+               {
+                  this.recoverAll();
+               }
+            }
+			private function minimizeAll():void
+			{
+			   var windowList:IList=OpenedWindowManager.getInstance().getAllOpendWindows();
+			   this.miniControler.minimizeAll(windowList);
+			}
+		    private function recoverAll():void
+		    {
+		       this.miniControler.recoverAll();
+		    }
+        
+            private function doOnMouseOver(event:MouseEvent):void
+    		{
+    		    if (this.currentState=='hide')
+    		    {
+    		       this.showBarBtn.visible=true;
+    		    } 
+    		}
+    		//
+    		private function doOnMouseOut(event:MouseEvent):void
+    		{
+    		     this.showBarBtn.visible=false;
+    		}
+    		
+    		private function windowCloseEventListener(event:Event):void
+    		{
+    		    event.stopImmediatePropagation();
+    		}	
+    		private function navTreeLabelFunction(item:Object):String
+    		{
+    		    if (item is ViewVo)
+    		    {
+    		      return (item as ViewVo).name;
+    		    }
+    		    else if (item is WebUIResourceVo)
+    		    {
+    		       return (item as WebUIResourceVo).label;
+    		    }
+    		    else
+    		    {
+    		      return "";
+    		    }
+    		}
+    		private function openWebUI(webUI:WebUIResourceVo,allowReOpen:Boolean):void
+    		{
+    		   CursorManager.setBusyCursor();
+    		    var windowManager:OpenedWindowManager=OpenedWindowManager.getInstance();
+    		   try
+    		   {
+    		     var mw:MinizableTitleWindow=windowManager.find(webUI.url) as MinizableTitleWindow;
+    		     if(mw)
+    		     {
+    		       if (!allowReOpen)
+				   
+				   {
+					   this.miniControler.recover(mw);
+					   this.bringWindowToFront(mw);
+					   return;  
+				   }
+    		     }
+    		     this.mainModel.openWebUIResource(webUI);
+    		   }
+    		   finally
+    		   {
+    		     CursorManager.removeBusyCursor();
+    		   }
+    		}
+    		//处理功能导航树中的功能节点双击事件
+    		private function onDbClick(event:ListEvent):void
+    		{
+    		   var item:Object=event.itemRenderer.data;
+    		   if (!(item is WebUIResourceVo)) return;
+    		   var webUIRes:WebUIResourceVo=item as WebUIResourceVo;
+			   var allowReOpen:Boolean=this.ctrlKeyDown;
+    		   this.openWebUI(webUIRes,allowReOpen);
+    		}
+    		
+    		private function onDragEnter(event:DragEvent):void
+    		{
+    		   if (event.dragInitiator==this.navTree)
+    		   {
+    		      var items:Array=event.dragSource.dataForFormat("treeItems") as Array;
+    		      if (items[0] is WebUIResourceVo)
+    		      {
+    		          var webUI:WebUIResourceVo=items[0] as WebUIResourceVo;
+    		          if (this.haveCreateShortCut(webUI)) return;
+    		          var dropTarget:UIComponent=event.currentTarget  as UIComponent;
+    		          DragManager.acceptDragDrop(dropTarget);
+    		      }
+    		   }
+    		   else if (event.dragInitiator is ShortCutControl)
+    		   {
+    		       DragManager.acceptDragDrop(event.currentTarget  as UIComponent);
+    		   }
+    		}
+    		private function onDragDrop(event:DragEvent):void
+    		{
+    		   if (event.dragInitiator==this.navTree)
+    		   {
+    		      this.createNewShortCut(event);
+    		   }
+    		   else 
+    		   {
+    		      this.updateShortcutPostion(event);
+    		   }
+    		}
+			private function doOnKeyUp(event:KeyboardEvent):void
+			{
+				if (event.ctrlKey)
+				{
+					this.ctrlKeyDown=true;
+				}
+				else
+				{
+					this.ctrlKeyDown=false;
+				}
+			}
+    		private function doKeyDownOnShortCutControl(event:KeyboardEvent):void
+    		{
+    		   if (event.ctrlKey)
+			   {
+			      this.ctrlKeyDown=true;
+			   }
+				if (!(event.keyCode==Keyboard.DELETE)) return;
+    		   var sccListToDelete:IList=new ArrayList();
+    		   for(var i:int=0;i<this.shortCutControlList.size;i++)
+    		   {
+    		       var iScc:ShortCutControl=shortCutControlList.getItem(i) as ShortCutControl;
+    		       if (iScc.selected)
+    		       {
+    		       	  sccListToDelete.add(iScc);
+    		       }
+    		   }
+               this.deleteShortCut(sccListToDelete);
+    		   
+    		}
+    		private function createNewShortCutControl(sc:ShortCutVo,x:int=0,y:int=0):void
+    		{
+    		    var shortCutControl:ShortCutControl=new ShortCutControl();
+    		    this.addElement(shortCutControl);
+    		    shortCutControl.x=(x==0?sc.x:x-shortCutControl.width/2); 
+    		    shortCutControl.y=(y==0?sc.y:y-shortCutControl.height/2);  
+    		    shortCutControl.shortCut=sc;
+    		    sc.position= shortCutControl.x+","+shortCutControl.y;
+    		    shortCutControl.addEventListener(MouseEvent.MOUSE_MOVE,doOnMouseMoveOnShortCutControl,false,0,true);
+    		    this.shortCutControlList.add(shortCutControl);
+    		}
+    		private function createNewShortCut(event:DragEvent):void
+    		{
+    		    var xPosition:int=event.localX;
+    		    var yPostiion:int=event.localY;
+    		    var shortCut:ShortCutVo=new ShortCutVo();
+    		    shortCut.empId=this.mainModel.loginAccount.id;
+    		    var dragedItems:Object=event.dragSource.dataForFormat("treeItems");
+    		    shortCut.webUiResource=dragedItems[0] as WebUIResourceVo;
+    		    shortCut.position=xPosition+","+yPostiion;
+    		    if (this.mainModel.currentUserPerspective.shortCuts==null)
+    		    {
+    		       this.mainModel.currentUserPerspective.shortCuts=new ArrayCollection();
+    		    }
+                this.mainModel.currentUserPerspective.shortCuts.addItem(shortCut);
+                this.createNewShortCutControl(shortCut,xPosition,yPostiion);
+    		//调用远程方法保存新建快捷方式
+    		  
+    		}
+    		
+    		private function deleteShortCut(shortCutControlList:IList):void
+    		{
+    		   if (shortCutControlList.size==0) return ;
+    		   for(var i:int=0;i<shortCutControlList.size;i++)
+    		   {
+    		      var scc:ShortCutControl=shortCutControlList.getItem(i) as ShortCutControl;
+    		      this.removeElement(scc);
+    		      this.shortCutControlList.remove(scc);
+    		      var index:int=this.mainModel.currentUserPerspective.shortCuts.getItemIndex(scc.shortCut);
+    		      this.mainModel.currentUserPerspective.shortCuts.removeItemAt(index);
+    		      scc=null;
+    		   }
+    		}
+    		private function updateShortcutPostion(event:DragEvent):void
+    		{
+    		   var shortCutControl:ShortCutControl=event.dragInitiator as ShortCutControl;
+    		   var xPosition:int=event.localX-shortCutControl.picture.x;
+    		   var yPostiion:int=event.localY-shortCutControl.picture.y;
+    		   shortCutControl.x=xPosition;
+    		   shortCutControl.y=yPostiion;
+    		   shortCutControl.shortCut.position=xPosition+","+yPostiion;
+    		}
+    		[Embed(source='../controls/Shortcut.png')]
+    		private var shortCutImg:Class;
+    		private function doOnMouseMoveOnShortCutControl(event:MouseEvent):void
+    		{
+    		   var shortCutControl:ShortCutControl	= event.target as ShortCutControl;
+    		   if (shortCutControl==null) return;
+    		   var ds:DragSource=new DragSource();
+    		   ds.addData(shortCutControl.shortCut,"shortCut");
+    		   var dragProxyImg:Image=new Image();
+    		   dragProxyImg.source=shortCutImg;
+    		   DragManager.doDrag(shortCutControl, ds, event,dragProxyImg,-event.localX,-event.localY);
+    		}
+    		//判断一个WebUIResourceVo对象是否已经在桌面上创建了快捷方式。
+    		private function haveCreateShortCut(webUI:WebUIResourceVo):Boolean
+    		{
+    		    for(var i:int=0;i<this.shortCutControlList.size;i++)
+    		    {
+    		       var scc:ShortCutControl=this.shortCutControlList.getItem(i) as ShortCutControl;
+    		       if (scc.shortCut.webUiResource.url==webUI.url) return true;
+    		    }  
+    		    return false;
+    		}
+    		//处理鼠标点击工作桌面的事件。
+    		private function  doOnClickWorkplace(event:MouseEvent):void
+    		{
+    		     if (event.target is ShortCutControl)
+    		     {
+    		         var scc:ShortCutControl=event.target as ShortCutControl;
+    		         if (event.ctrlKey==true)
+    		         {		           
+    		            scc.selected=!scc.selected;
+    		         }
+    		         else
+    		         {
+    		            var sccSelect:Boolean=scc.selected;
+    		            this.unSelectAllShortCut();
+    		            if (!sccSelect) scc.selected=true; 
+    		         }
+    		     }
+    		     else
+    		     {
+    		        this.unSelectAllShortCut();  
+    		     }
+    		}
+    		//取消所有当前被选择的快捷方式
+    		private function unSelectAllShortCut():void
+    		{
+    		    for(var i:int=0;i<this.shortCutControlList.size;i++)
+    		    {
+    		        var scc:ShortCutControl=this.shortCutControlList.getItem(i) as ShortCutControl;
+    		        scc.selected=false;
+    		    }
+    		}
+    		private function safeLogout():void
+    		{
+    		   var fs:IFrameWorkService=FrameWorkServiceFactory.getInstance().getFrameWrokService();
+    		   fs.savePerspective();
+    		   this.closeIE();
+    		   
+    		}
+    		/**
+    		 * 
+    		 */
+    		private function closeIE():void
+    		{
+                var request:URLRequest = new URLRequest("javascript:window.close()");
+                navigateToURL(request,"_self");
+            }
+			private function doOnNavBarClose():void
+			{
+				this.currentState='hide';
+			}
+    		
+		]]>
+	</fx:Script>
+	<s:transitions >
+		<s:Transition toState="hide"   autoReverse="true">
+			<s:Parallel duration="500" targets="{[navBar,bgCanvas]}" >
+				<s:Move   /> 
+				<s:Resize />
+			</s:Parallel>        
+		</s:Transition>
+		<s:Transition toState="default"   autoReverse="true">
+			<s:Parallel duration="500" targets="{[navBar,bgCanvas]}" >
+				<s:Move   /> 
+				<s:Resize />
+			</s:Parallel>        
+		</s:Transition>
+	</s:transitions>
+	
+   <!--
+    <mx:Iris id="irisOut" duration="500" showTarget="true"/>  
+   
+	
+    
+	<mx:states >
+	    <s:State name="Hide" >
+             <mx:SetProperty target="{bgCanvas}" name="width" value="{showBarBtn.width *1.5}" />
+	         <mx:SetProperty target="{mybar}" name="width" value="{showBarBtn.width *1.5}" />
+	    	 <mx:SetProperty target="{showBarBtn}" name="visible" value="{false}" />    
+	    	 <mx:SetProperty target="{showBarBtn}" name="x" 
+	    	 	            value="{(bgCanvas.width-showBarBtn.width)/2}" />
+	    	 	
+             <mx:SetProperty target="{showBarBtn}" name="y" 
+	    	 	            value="{(bgCanvas.height-showBarBtn.height)/2}" />
+	    	
+	    	  <mx:SetProperty  target="{mybar}" name="x" value="{mybar.x-mybar.width+5}" />
+	    	 <mx:SetEventHandler target="{bgCanvas}"
+	    	 	 name="mouseOver"
+	    	 	 handlerFunction="doOnMouseOver" />
+	    	 	 
+	    	 <mx:SetEventHandler target="{bgCanvas}" 
+	    	 	name="mouseOut"
+	    	 	handlerFunction="doOnMouseOut" />	
+	    </s:State>	
+	</mx:states>
+	-->
+
+		<s:states>
+			<s:State name="default" />
+			<s:State name="hide"  />
+		</s:states>
+	<s:HGroup width="100%"  verticalAlign="middle" horizontalAlign="right">
+		 <mx:Image source="@Embed(source='window.png')" click="this.showOrHideDesktop();" /> 
+		 <mx:Image source="@Embed(source='exit.png')" click="this.safeLogout()" />
+	</s:HGroup>
+	<s:BorderContainer id="bgCanvas" x="0" y="67"   
+			 backgroundAlpha="0" borderVisible="false"
+			 width="250"  width.hide="{showBarBtn.width *1.5}" 
+			 height="400"
+		     minHeight="350" minWidth="200" 
+			 maxHeight="600" maxWidth="500"
+		     mouseFocusEnabled="true"  
+			 mouseChildren="true"  
+			 mouseOut.hide="doOnMouseOut(event)"
+			 mouseOver.hide="doOnMouseOver(event)">
+		<mx:Image id="showBarBtn" x="59" x.hide="{(bgCanvas.width-showBarBtn.width)/2}"
+				  y="166" y.hide="{(bgCanvas.height-showBarBtn.height)/2}"
+				  visible="true"  visible.hide="false"
+				  source="@Embed(source='HintBtn.png')" width="83" height="79"
+				  click="this.currentState='default';
+				  showBarBtn.visible=false"/>
+	
+		<controls:MinizableTitleWindow id="navBar"  
+			 width="100%"  width.hide="{showBarBtn.width *1.5}" 
+			 height="100%" x="0" x.hide="{-showBarBtn.width *1.5+5}" y="0" 
+			 backgroundAlpha="1" 
+			 showMinimizeButton="false"  cornerRadius="15"
+			 fontWeight="bold"   
+			 close="this.doOnNavBarClose();"
+			 textDecoration="none"  kerning="off"
+  		     borderAlpha="1" 
+  		     color="#DCC2C2" 
+			 backgroundColor="#EFEBEB" 
+			 controlBarVisible="true" >
+		 <mx:Tree id="navTree"  x="0" y="0"
+			    width="100%" height="100%"  showRoot="false"
+		 	    labelFunction="navTreeLabelFunction"  
+		 	    color="#000000"  
+		 	    doubleClickEnabled="true" 
+		 	    itemDoubleClick="onDbClick(event);" 
+		 	    dragMoveEnabled="false"
+		 	    dragEnabled="true"
+		 	    dropEnabled="false"  />
+		 
+		   <epmr:controlBarContent>
+			   <s:BorderContainer alpha="0" height="10" width="100%">		 
+			   </s:BorderContainer>
+		   </epmr:controlBarContent>
+		</controls:MinizableTitleWindow>
+
+	</s:BorderContainer>
+	
+    <controls:MinimizeControler   id="miniControler" width="100%" height="75" autoVisible="true" bottom="0" alpha="1" />
+  
+        
+</s:Group>

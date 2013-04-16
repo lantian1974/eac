@@ -1,0 +1,28 @@
+package org.epmr.recorder
+{
+	import flash.events.Event;
+	
+	public class RecorderEvent extends Event
+	{
+		public static const RECORD:String="record";
+		public static const REPLAY:String="replay";
+		private var _content:Object;
+		public function RecorderEvent(type:String,content:Object=null,bubbles:Boolean=false, cancelable:Boolean=false)
+		{
+			super(type,bubbles,cancelable);
+			this._content=content;
+		}
+		
+		public function get content():Object{
+			return _content;
+		}
+		
+		public function set content(value:Object):void{
+			_content=value;
+		}
+		override public function clone():Event{
+			return new RecorderEvent(type,content,bubbles,cancelable);
+		}
+
+	}
+}

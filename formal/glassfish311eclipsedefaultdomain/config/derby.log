@@ -1,0 +1,8 @@
+----------------------------------------------------------------
+2011-10-03 04:57:48.312 GMT:
+ 正在使用类加载器 java.net.URLClassLoader@4276fd 引导数据库
+目录 D:\Project\formal\glassfish311eclipsedefaultdomain\lib\databases\ejbtimer  中的 Derby 版本 The Apache Software Foundation - Apache Derby - 10.6.2.1 - (999685) 实例 a816c00e-0132-c825-1d9b-000004b66e60
+
+java.vendor=Sun Microsystems Inc.
+java.runtime.version=1.6.0_27-b07
+数据库类装入器已启动 － derby.database.classpath=“”

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group 
+	xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark" 
+	xmlns:mx="library://ns.adobe.com/flex/mx" 
+	width="142" height="100" >
+	<fx:Script>
+		<![CDATA[
+			import org.epmr.framework.events.OpenWindowEvent;
+			import org.epmr.framework.model.FrameWorkModel;
+			import org.epmr.framework.model.ShortCutVo;
+		    private var _shortCut:ShortCutVo;
+		
+		    public function get shortCut():ShortCutVo
+		    {
+		      return this._shortCut;
+		    }
+		    public function set shortCut(shortCut:ShortCutVo):void
+		    {
+		    	this._shortCut=shortCut;
+		    	this.displayLabel.text=this._shortCut.webUiResource.label;
+		    }
+		    private var _selected:Boolean=false;
+		    public function get selected():Boolean
+		    {
+		    	return this._selected;
+		    }
+		    public function set selected(selected:Boolean):void
+		    {
+		        this._selected=selected;
+		        if (this.selected)
+		        {
+		           this.picture.alpha=0.6;
+		           this.displayLabelBackGroud.setStyle("backgroundColor",0x2E3668);
+		           this.displayLabelBackGroud.setStyle("backgroundAlpha",1);
+		           this.displayLabelBackGroud.setStyle("borderStyle","solid");
+		           this.displayLabelBackGroud.setStyle("borderThickness",1);
+		           this.displayLabelBackGroud.setStyle("borderColor",0x856244);
+		           this.displayLabel.setStyle("color",0xf9f7f9);
+		        }
+		        else
+		        {
+		           this.picture.alpha=1;
+		           this.displayLabelBackGroud.clearStyle("backgroundColor");
+		           this.displayLabelBackGroud.setStyle("backgroundAlpha",0);
+		           this.displayLabelBackGroud.clearStyle("borderStyle");
+		           this.displayLabelBackGroud.setStyle("borderThickness",0);
+		           this.displayLabelBackGroud.clearStyle("borderColor");
+		           this.displayLabel.setStyle("color",0x1C1B1C);
+		        }
+		    }
+		    private function doOnDbClick(event:MouseEvent):void
+		    {
+		        if (this.shortCut==null) return;
+				var allowReopen:Boolean=(event.ctrlKey==true);
+		        var openWindowRequestEvent:OpenWindowEvent=new OpenWindowEvent(OpenWindowEvent.OPENT_WINDOW_EVENT,this.shortCut.webUiResource,false,false,allowReopen);
+		        var mainModel:FrameWorkModel=FrameWorkModel.getInstance();
+		        mainModel.topApplication.dispatchEvent(openWindowRequestEvent);
+		    }  
+		    private function onClick(event:MouseEvent):void
+		    {
+		       this.dispatchEvent(event);
+		       event.stopImmediatePropagation();
+		    }		   
+		]]>
+	</fx:Script>
+
+	<s:BorderContainer id="displayLabelBackGroud" x="3" y="78" width="140"  
+		 height="20" alpha="1"   backgroundColor="#2E3668"   
+		 backgroundAlpha="0"  borderVisible="false"
+		  borderStyle="solid" borderColor="#856244">
+	  <s:Label id="displayLabel" x="0" y="0" text="快捷方式..." 
+		 width="139" height="20" fontSize="14" fontWeight="bold" fontFamily="宋体"
+		 doubleClickEnabled="true"
+		 click="this.onClick(event)"
+		 doubleClick="doOnDbClick(event)"  textAlign="center" color="#1C1B1C"/>
+	</s:BorderContainer>	
+	<mx:Image   id="picture" x="47" y="28" source="@Embed('Shortcut.png')" 
+				doubleClickEnabled="true"
+				click="this.onClick(event);"
+				doubleClick="doOnDbClick(event)"/>
+</s:Group>

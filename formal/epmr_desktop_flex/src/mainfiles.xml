@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<componentPackage>
+     <component id="MinimizeControler" class="org.epmr.desktop.controls.MinimizeControler"/>
+    <component id="UserNameInput" class="org.epmr.desktop.controls.UserNameInput"/>
+    <component id="PasswordInput" class="org.epmr.desktop.controls.PasswordInput"/> 
+    <component id="MinizableTitleWindow" class="org.epmr.desktop.controls.MinizableTitleWindow"/>
+    <component id="ShortCutControl" class="com.xdfsoft.framework.controls.ShortCutControl"/>
+    <component id="UserWorkPlace" class="com.xdfsoft.framework.view.UserWorkPlace"/>
+    <component id="UserLogin" class="com.xdfsoft.framework.view.UserLogin"/> 
+</componentPackage>

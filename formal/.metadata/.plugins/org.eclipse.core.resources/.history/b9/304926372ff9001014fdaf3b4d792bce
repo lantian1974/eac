@@ -1,0 +1,6 @@
+package org.epmr.desktop.respository;
+
+public interface IEpmrUserShortcutDao 
+{
+   List<EprmUserShortcut> getUserShortcuts(String userId);
+}

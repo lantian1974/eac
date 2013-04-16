@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:BorderContainer 
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+	xmlns:mx="library://ns.adobe.com/flex/mx"
+	xmlns:s="library://ns.adobe.com/flex/spark"
+	xmlns:xz="*"
+	backgroundAlpha="0"
+	contentBackgroundAlpha="0"
+	borderVisible="false"
+	width="226" height="52" >
+	<fx:Script>
+		<![CDATA[
+			 [Bindable (event="UserNameTextChange")]
+			 public function get text():String
+			 {
+			    return textInput_userName.text;
+			 } 
+			 public function set text(text:String):void
+			 {
+			 	 textInput_userName.text=text;
+			 	 this.dispatchEvent(new Event("UserNameTextChange"));
+			 }
+			 
+			 public function showRotate():void
+			 {
+			 	  
+				  this.xzControl.visible=true;
+			 	  this.xzControl.x=bg.width-this.xzControl.width;
+			 	  this.xzControl.y=10;
+				  
+			 }
+			 public function hideRotate():void
+			 {
+				
+				 this.xzControl.visible=false;
+				 
+			 }
+			  private function doOnTextChange():void
+			 {
+			   this.dispatchEvent(new Event("UserNameTextChange"));
+			 }
+		]]>
+	</fx:Script>
+	
+	<mx:Image id="bg" x="0" y="0" source="@Embed('bg_edit.png')" width="224" height="51"/>
+	
+	<s:TextInput id="textInput_userName"  width="151"   
+		 height="30"
+		 color="#FFFFFF" 
+		 fontSize="20"  
+		 top="14"
+		 left="18"
+		 contentBackgroundColor="0"
+		 borderVisible="false"
+		 change="doOnTextChange();" />
+	
+   <xz:xz  id="xzControl" x="177" y="9"   visible="false"/>	
+
+</s:BorderContainer>

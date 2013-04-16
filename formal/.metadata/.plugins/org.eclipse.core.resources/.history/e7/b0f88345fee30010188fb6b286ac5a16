@@ -1,0 +1,206 @@
+package com.xdfsoft.remoting
+{
+	import com.xdfsoft.event.RespondEvent;
+	import com.xdfsoft.reflect.Field;
+	import com.xdfsoft.share.IMonitorToken;
+	import com.xdfsoft.share.IProgressMonitor;
+	import com.xdfsoft.utils.PrimitiveUtil;
+	
+	import flash.events.Event;
+	import flash.events.EventDispatcher;
+	import flash.utils.clearTimeout;
+	import flash.utils.setTimeout;
+	
+	public class AbstractInvokeResponder extends EventDispatcher implements IInvokeResponder
+	{	
+		private static const KEY_TIMER:String="timer";
+		private var _callbacks:Object;
+		private var _info:Object;
+		private var _token:IMonitorToken;
+		public function AbstractInvokeResponder(){
+			this._callbacks=new Object();
+			this._info=new Object();	
+		}
+		private function checkType(type:String):void{
+			if(type!=RespondEvent.TYPE_RESULT && type!=RespondEvent.TYPE_FAULT) 
+				throw new Error("unknown callback type!");
+		}
+		private function getCallbacks(type:String):Array{
+			checkType(type);
+			var cons:Array=_callbacks[type] as Array;
+			if(cons==null){
+				cons=new Array();
+				_callbacks[type]=cons;
+			}
+			return cons;
+		}
+		private function addCallback(callback:ICallbackDescriptor,type:String):void{	
+			checkType(type);
+			var array:Array=getCallbacks(type);
+			var pos:uint=array.push(callback);;
+			stopTimer();
+			if(type in _info){
+				execute(pos-1,type);
+			}
+		}
+		
+		protected final function invokeCallbacks(data:Object,type:String):void{			
+			_info[type]=data;
+			var array:Array=getCallbacks(type);
+			stopTimer();
+			if(array.length==0){//如果先调用invoke，那么等待setCallback的调用
+				_info[KEY_TIMER]=setTimeout(invokeTimeout,1000,type);
+			}
+			else
+				execute(0,type);
+		}
+		private function invokeTimeout(type:String):void{
+			execute(0,type);			
+			delete _info[KEY_TIMER];
+		}
+		
+		public function reset():void{
+			stopTimer();
+			stopMonitor();
+			this._callbacks=new Object();
+			this._info=new Object();	
+		}
+//		public function dispose():void{
+//			stopTimer();
+//			stopMonitor();
+//			this._callbacks=null;
+//			this._info=null;	
+//		}
+		private function stopTimer():void{
+			if(KEY_TIMER in _info){
+				clearTimeout(_info[KEY_TIMER]);
+				delete _info[KEY_TIMER];
+			}	
+		}
+		private function stopMonitor():void{
+			if(_token){
+				_token.stop();
+				_token=null;
+			}
+		}
+		public function cancel():Boolean{
+			var result:Boolean=true;
+			if(isCallbackInvoked(RespondEvent.TYPE_RESULT) ||
+				isCallbackInvoked(RespondEvent.TYPE_FAULT))
+				result= false;
+			delete _info[RespondEvent.TYPE_RESULT];
+			delete _info[RespondEvent.TYPE_FAULT];
+			stopTimer();
+			stopMonitor();
+			return result;	
+		}
+		
+		private function isCallbackInvoked(type:String):Boolean{
+			return (type in _info) && getCallbacks(type).length>0;
+		}
+		
+		private function execute(index:int,type:String):void{
+			var _data:Object=_info[type];
+			var _array:Array=getCallbacks(type);
+			var _call:Boolean=true;
+			try{
+				if(!beforeExecute(type,_data,_array)){
+					for(var i:int=index;i<_array.length;i++){
+						var callback:ICallbackDescriptor=_array[i];
+						var func:Function=callback.handler;
+						var params:Array=callback.arguments;
+						params.unshift(_data);
+						func.apply(null,params);
+					}
+				}
+			}
+			finally{
+				afterExecute(type,_data,_array)
+			}
+		}
+		
+		protected function beforeExecute(type:String,data:Object,array:Array):Boolean{
+			if(hasEventListener(type)){
+				var event:RespondEvent=new RespondEvent(type,
+							RespondEvent.PHASE_BEFORE,data,array,false,true);
+				dispatchEvent(event);
+				return event.isDefaultPrevented();
+			}
+			return false;
+		}
+		
+		protected function afterExecute(type:String,data:Object,array:Array):void{
+			try{
+				if(hasEventListener(type)){
+					var event:Event=new RespondEvent(type,RespondEvent.PHASE_AFTER,data,array);
+					dispatchEvent(event);
+				}
+			}
+			finally{
+				stopMonitor();
+			}
+		}
+		public function setCallback(handler:Function,...params):IInvokeResponder{
+			var callback:ICallbackDescriptor=createCallback(handler,params);
+			addCallback(callback,RespondEvent.TYPE_RESULT);
+			addCallback(callback,RespondEvent.TYPE_FAULT);
+			return this;
+		}
+		public function setResultCallback(handler:Function,...params):IInvokeResponder{
+			var callback:ICallbackDescriptor=createCallback(handler,params);
+			addCallback(callback,RespondEvent.TYPE_RESULT);
+			return this;		
+		}
+		
+		public function setFaultCallback(handler:Function,...params):IInvokeResponder{
+			var callback:ICallbackDescriptor=createCallback(handler,params);
+			addCallback(callback,RespondEvent.TYPE_FAULT);
+			return this;	
+		}
+		protected function createCallback(handler:Function,args:Array):ICallbackDescriptor{
+			return new CallbackDescriptor(handler,args);
+		}
+		public function setMonitor(monitor:IProgressMonitor):IInvokeResponder{
+			if(monitor){
+				_token=monitor.begin(true);
+			}
+			return this;
+		}
+		
+		public function bindResult(site:Object,field:String):void{
+			if(site!=null && field!=null && (field in site))
+				this.setResultCallback(bindHandler,site,field);
+			else
+				throw new Error("to bind result " + 
+						"neither the site nor the field can be null," + 
+						"and the field must be a public property in site");	
+		}
+		
+		private function bindHandler(data:Object,site:Object,field:String):void{
+			var tmp:Object=customizeResult(data);
+			Field.setProperty(site,field,tmp);
+		}
+		public function dumpResult(target:Object):void{
+			if(target!=null){
+				this.setResultCallback(dumpHandler,target);
+			}
+			else
+				throw new Error("to dump result " + 
+						"the target must be not null,and must not be a primitive type");
+		}
+		private function dumpHandler(data:Object,target:Object):void{
+			var source:Object=customizeResult(data);
+			PrimitiveUtil.dump(source,target);
+		}
+		
+		protected function customizeResult(value:Object):Object{
+			return value;
+		}
+		protected function normalizeResult(value:Object):Object{
+			return value
+		}
+		protected function normalizeFault(value:Object):Object{
+			return value;
+		}
+	}
+}

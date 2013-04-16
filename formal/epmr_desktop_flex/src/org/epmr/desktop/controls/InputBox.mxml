@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:TitleWindow xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+               width="400"   height="90">
+        <fx:Script>	
+		<![CDATA[
+			import mx.managers.PopUpManager;
+		    private var _acceptHandler:Function;
+		    private var _cancelHandler:Function;
+			public var userObj:Object;
+			
+			[Inspectable]
+			public function get description():String{
+				return desc.text;
+			}
+			
+			public function set description(value:String):void{
+				desc.text=value;
+			}
+			[Inspectable]
+			public function get content():String{
+				return txtInput.text;
+			}
+			
+			public function set content(value:String):void{
+				txtInput.text=value;
+			}
+			
+			public function input(parent:DisplayObject):void{
+				PopUpManager.addPopUp(this,parent,true);
+				PopUpManager.centerPopUp(this);
+			}
+			public function get acceptHandler():Function{
+				return _acceptHandler;
+			}
+			public function set acceptHandler(value:Function):void{
+				_acceptHandler=value;
+			}
+			public function get cancelHandler():Function{
+				return _cancelHandler;
+			}
+			public function set cancelHandler(value:Function):void{
+				_cancelHandler=value;
+			}
+			
+			private function onAccept():void{
+				var result:Boolean=true;
+				if(_acceptHandler!=null) 
+					result=_acceptHandler.call(null,this);
+				if(result)
+					PopUpManager.removePopUp(this);	
+			}
+			private function onCancel():void{
+				var result:Boolean=true;
+				if(_cancelHandler!=null)  
+					result=_cancelHandler.call(null,this);
+				if(result)
+					PopUpManager.removePopUp(this);		
+			}
+		]]>
+	</fx:Script>
+	
+	<s:VGroup width="100%" height="100%">
+		<s:HGroup width="100%">
+			<s:Label id="desc" text="Label" fontSize="12" />
+			<s:TextInput id="txtInput" width="356" fontSize="12"/>
+		</s:HGroup>
+		<s:HGroup   width="99%">
+		    <mx:Spacer width="100%" />
+			<s:Button label="确定" click="onAccept()" fontSize="12"/>
+			<s:Button label="取消" click="onCancel()" fontSize="12" right="5"/>
+		</s:HGroup>
+	</s:VGroup>
+</s:TitleWindow>

@@ -1,0 +1,22 @@
+package org.epmr.remoting
+{
+	public class DependentResponder extends LocalResponder
+	{
+		public function DependentResponder()
+		{
+			super();
+		}
+		
+		public function set source(value:IInvokeResponder):void{
+			value.setResultCallback(transmitResult);
+			value.setFaultCallback(transmitFault);
+		}
+		
+		private function transmitResult(data:Object):void{
+			this.invokeResult(data);
+		}
+		private function transmitFault(info:Object):void{ 
+			this.invokeFault(info);
+		}
+	}
+}

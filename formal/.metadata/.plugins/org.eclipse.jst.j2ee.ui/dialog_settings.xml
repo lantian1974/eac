@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="false" key="J2EE_EXPORT_OVERWRITE"/>
+	<item value="false" key="J2EE_EXPORT_SOURCE"/>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="C:\Documents and Settings\lt\桌面\Flex2.war"/>
+		<item value="C:\Documents and Settings\lt\桌面\Flex.war"/>
+	</list>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="jboss-as-web-7.0.1 Runtime"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_EJB">
+		<item value="D:\Project\formal\FlexTemplatePrj\WebContent\WEB-INF\lib\epmr_authenticate_java.jar"/>
+	</list>
+</section>

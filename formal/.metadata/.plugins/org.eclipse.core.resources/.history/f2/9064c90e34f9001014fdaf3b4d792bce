@@ -1,0 +1,5 @@
+package org.epmr.desktop.respository;
+
+public class EpmrUserShortcutEjb {
+
+}

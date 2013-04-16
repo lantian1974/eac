@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<ListDetails label="SWC Loading Details" projectName="epmr_desktop_flex">
+
+
+<LoadedSetList label="LoadedSet List">
+
+
+<LoadingSet label="LoadingSet1:">
+
+
+<item  label="epmr_utils_flex.swc1105597905" path="D:\Project\formal\.metadata\.plugins\com.adobe.flexbuilder.codemodel\SwcCache\epmr_utils_flex.swc1105597905\library.swf"/>
+
+
+<item  label="epmr_facility_flex.swc-1552236847" path="D:\Project\formal\.metadata\.plugins\com.adobe.flexbuilder.codemodel\SwcCache\epmr_facility_flex.swc-1552236847\library.swf"/>
+
+
+</LoadingSet>
+
+
+</LoadedSetList>
+
+
+<RemovedSetList label="RemovedSet List">
+
+
+<RemovedSet label="RemovedSet1:">
+
+
+<item  label="No Item present in this set"/>
+
+
+</RemovedSet>
+
+
+</RemovedSetList>
+
+
+</ListDetails>
+
+

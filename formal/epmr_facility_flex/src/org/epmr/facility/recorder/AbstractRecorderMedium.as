@@ -1,0 +1,95 @@
+package org.epmr.facility.recorder
+{
+	import mx.utils.StringUtil;
+	
+	public class AbstractRecorderMedium implements IRecorderMedium
+	{
+		private static const DEFAULT:String="__DEFAULT__";
+		private var _name:String;
+		private var _pos:int;
+		public function AbstractRecorderMedium(name:String)
+		{
+			_name=name==null?DEFAULT:name;
+			_pos=-1;
+		}
+		
+		protected function get disk():Object{
+			return null;
+		}
+		
+		protected function get partition():Object{
+			var result:Object=disk[_name];
+			if(result==null){
+				result=new Object();
+				result.label=_name;
+				result.data=new Array();
+				disk[_name]=result;
+			}
+			return result;
+		}
+		
+		protected function get storage():Array{
+			return partition.data as Array;
+		}
+		
+		public function get label():String{
+			return partition.label;
+		}
+		
+		public function set label(value:String):void{
+			if(value!=null && value.length>0){
+				partition.label=value;
+			}
+			else 
+				partition.label=_name;
+		}
+		private function checkRange(pos:int,max:int):void{
+			if(pos<0 || pos>max)
+				throw new Error("position:"+pos+" out of range :[0,"+max+"]");
+		}
+		public function seek(pos:int):Boolean{
+			var len:int=length;
+			checkRange(pos,len);
+			_pos=pos;
+			return _pos<len;	
+		}
+		
+		public function get length():int{
+			return storage.length;	
+		}
+		
+		public function read():Object{
+			checkRange(_pos,length-1);
+			return storage[_pos];
+		}
+		
+		public function write(value:Object):Object{
+			var result:Object=null;
+			var temp:Array=storage;
+			var len:int=temp.length;
+			
+			checkRange(_pos,len);			
+			if(_pos<len){
+				result=temp[_pos];
+				temp[_pos]=value;
+			}
+			else
+				temp.push(value);	
+			return result;
+		}
+		
+		public function clear():void{
+			partition.data=new Array();
+		}
+		
+		
+		public function flush():void{
+			
+		}
+		
+		public function get name():String
+		{
+			return _name;
+		}
+	}
+}

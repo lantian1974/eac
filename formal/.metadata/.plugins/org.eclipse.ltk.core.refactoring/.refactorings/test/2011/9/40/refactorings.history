@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;FlexChannelConfig&apos; to &apos;FlexChannelsConfig&apos;&#x0D;&#x0A;- Original project: &apos;test&apos;&#x0D;&#x0A;- Original element: &apos;FlexChannelConfig&apos;&#x0D;&#x0A;- Renamed element: &apos;FlexChannelsConfig&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;FlexChannelConfig&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/java_src&lt;{FlexChannelConfig.java[FlexChannelConfig" matchStrategy="1" name="FlexChannelsConfig" qualified="false" references="true" similarDeclarations="false" stamp="1317371428390" textual="false" version="1.0"/>
+</session>

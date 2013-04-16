@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;FrameWorkServiceRoImpl.as&apos; to &apos;proxy&apos;&#x0D;&#x0A;- Original project: &apos;epmr_desktop_flex&apos;&#x0D;&#x0A;- Destination element: &apos;proxy&apos;&#x0D;&#x0A;- Original element: &apos;FrameWorkServiceRoImpl.as&apos;" description="Copy file" element1="src/org/epmr/desktop/service/FrameWorkServiceRoImpl.as" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1316800208277" target="/epmr_authenticate_flex/src/org/epmr/authenticate/proxy" units="0" version="1.0"/>
+</session>

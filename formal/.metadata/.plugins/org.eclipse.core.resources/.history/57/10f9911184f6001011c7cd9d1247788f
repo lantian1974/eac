@@ -1,0 +1,98 @@
+package org.epmr.flex.channels;
+
+import java.io.IOException;
+
+
+import java.io.InputStream;
+import java.util.ArrayList;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.ServletContext;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+public class FlexChannelsConfigServlet extends HttpServlet
+{
+	private String configFileUrl=null;
+	private final String SERVICES_CONFIG_FILE_PATH_PARAMETER="services.configuration.file";
+	private byte[] configData;
+	public void init(ServletConfig servletConfig) throws ServletException
+    {
+        super.init(servletConfig);
+        this.readConigData();
+        
+    }
+	private void readConigData()
+	{
+		
+		if (this.configFileUrl==null) 
+        {
+        	throw new RuntimeException("Servlet : "+FlexChannelsConfigServlet.class.getName()+" has no init-param named "+ SERVICES_CONFIG_FILE_PATH_PARAMETER);
+        }
+    	ServletContext cx=this.getServletContext();
+        InputStream is= cx.getResourceAsStream(configFileUrl);
+        
+        if (is==null)
+        {
+        	throw new RuntimeException("the value of servet initialize paramter named  "
+                      +SERVICES_CONFIG_FILE_PATH_PARAMETER+" for Servlet : "+FlexChannelsConfigServlet.class.getName()
+                      +" is not valid!");
+        	
+        }
+	}
+	
+	
+	/**
+	 * 閲囩敤娴佹満鍒�璇诲彇鎸囧畾鐨勯厤缃枃浠舵枃鏈俊鎭紝骞跺皢鍏跺啓鍏ュ搷搴旀祦涓�
+	 *
+    public void service(HttpServletRequest req, HttpServletResponse res)
+    {
+        if (this.configFileUrl==null) 
+        {
+        	throw new RuntimeException("Servlet : "+FlexChannelsConfig.class.getName()+" has no init-param named "+ SERVICES_CONFIG_FILE_PATH_PARAMETER);
+        }
+    	ServletContext cx=req.getServletContext();
+        InputStream is= cx.getResourceAsStream(configFileUrl);
+        
+        if (is==null)
+        {
+        	throw new RuntimeException("the value of servet initialize paramter named  "
+                      +SERVICES_CONFIG_FILE_PATH_PARAMETER+" for Servlet : "+FlexChannelsConfig.class.getName()
+                      +" is not valid!");
+        	
+        }
+        ServletOutputStream sos=null;
+        res.setContentType("text/xml");
+        int readByteCount;
+		try
+		{
+			sos = res.getOutputStream();
+		     byte[] xml=new byte[1024];
+             while((readByteCount=is.read(xml,0,xml.length))>0)
+             {
+                sos.write(xml,0,readByteCount);
+             }
+             res.flushBuffer();
+		}
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+		   try 
+		   {
+			   if (is!=null) is.close();
+			   if(sos!=null) sos.close();
+			} catch (IOException e)
+			{
+					e.printStackTrace();
+			}
+		}
+    }
+   */
+}

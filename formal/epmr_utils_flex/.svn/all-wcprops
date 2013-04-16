@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/epmr/!svn/ver/26/epmr_utils_flex
+END
+.flexLibProperties
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/epmr/!svn/ver/27/epmr_utils_flex/.flexLibProperties
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/epmr/!svn/ver/27/epmr_utils_flex/.project
+END
+build.properties.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/epmr/!svn/ver/27/epmr_utils_flex/build.properties.xml
+END
+.actionScriptProperties
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/epmr/!svn/ver/27/epmr_utils_flex/.actionScriptProperties
+END

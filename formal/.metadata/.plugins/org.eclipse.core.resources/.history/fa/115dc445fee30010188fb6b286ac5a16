@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="100%" height="100%"
+	initialize="init();">
+	<mx:Metadata>
+		[DefaultProperty("content")]
+		[Event(name="item_selected", type="com.xdfsoft.event.ListDataEvent")]
+		[Event(name="item_activated", type="com.xdfsoft.event.ListDataEvent")]
+	</mx:Metadata>
+	<mx:Script>
+		<![CDATA[
+			import com.xdfsoft.revisable.RevisableList;
+			import mx.collections.ListCollectionView;
+			import mx.collections.ICollectionView;
+			import com.xdfsoft.revisable.IRevisableList;
+			import mx.collections.IList;
+			import mx.events.ListEvent;
+			import com.xdfsoft.event.ListDataEvent;
+			import mx.core.UIComponent;
+			import mx.controls.listClasses.ListBase;
+			[InstanceType("mx.controls.listClasses.ListBase")]
+			public var content:IDeferredInstance;
+			private var _list:ListBase;
+			
+			private var _data:IRevisableList;
+			private var _dataChanged:Boolean;
+			
+			[Bindable(event="dataProviderChanged")]
+			[Inspectable]
+			public function get dataProvider():Object{
+				return _data;
+			}
+			
+			public function set dataProvider(value:Object):void{	
+				if(value==null){
+					value=new RevisableList();
+					_data=value as IRevisableList;
+				}	
+				else{
+					if(value is IRevisableList)
+						_data=value as IRevisableList;
+					else{
+						_data=new RevisableList();
+						_data.collection=value;
+					}	
+				}				
+				_dataChanged=true;
+				invalidateProperties();
+				dispatchEvent(new Event("dataProviderChanged"));
+			}
+			[Bindable(event="dataProviderChanged")]
+			public function get list():IRevisableList{
+				return _data;
+			}
+			private function onRevisedChange(event:Event):void{
+				dispatchEvent(event);
+			}
+			
+			[Bindable("item_selected")]
+			public function get selectedIndex():int{
+				return _list.selectedIndex;
+			}
+			[Bindable("item_selected")]
+			public function get selectedIndices():Array{
+				return _list.selectedIndices;
+			}
+			[Bindable("item_selected")]
+			public function get selectedItem():Object{
+				return _list.selectedItem ;
+			}
+			[Bindable("item_selected")]
+			public function get selectedItems():Array{
+				return _list.selectedItems;
+			}
+			
+			public function remove():void{
+				if(_data.length==0) return;
+				var indices:Array=_list.selectedIndices; 
+				if(indices.length==0) return;
+				var next:int=nextIndexAfterRemove(indices);
+				if(_data is ICollectionView)
+					ICollectionView(_data).disableAutoUpdate();
+				for each(var index:int in indices){
+					var item:Object=_data.getItemAt(index);
+					if(item==null) continue;
+					removeItem(item,index);
+				}
+				if(_data is ICollectionView)
+					ICollectionView(_data).enableAutoUpdate();
+				_list.selectedIndex=next;
+				selectItem(next);				
+			}
+			protected function removeItem(item:Object,index:int):void{
+				_data.removeItemAt(index);
+			}
+			//计算删除选定项目后，默认选中的项目
+			private function nextIndexAfterRemove(selectedIndices:Array):int{
+				var length:int=_data.length;
+				var param:Array=[length-1,length-1];
+				param=param.concat(selectedIndices);
+				var result:int=Math.min.apply(null,param);
+				if(length==selectedIndices.length)
+					result=-1;
+				else if(result>=length-selectedIndices.length)
+					result=0;
+				return result;			
+			}
+			public function append(item:Object):int{
+				if(item){
+					_data.addItem(item);
+					activateItem(_data.length-1);
+					return _data.length-1;
+				}
+				return -1;
+			}
+			
+			public function insert(item:Object,index:int):int{
+				if(index<0)
+					index=0;
+				else if(index>_data.length)
+					index=_data.length;	
+				_data.addItemAt(item,index);
+				activateItem(index);
+				return index;
+			}
+			
+			override protected function commitProperties():void{
+				super.commitProperties();
+				if(_dataChanged){
+					_list.dataProvider=_data;
+					if(_data!=null){						
+						if(_data.length>0){
+							_list.selectedIndex=0;
+						}
+						selectItem(_list.selectedIndex);
+					}
+					_dataChanged=false;
+				}
+			}
+
+			private function init():void{
+				_list=content.getInstance() as ListBase;
+				addElement(_list);
+				_list.addEventListener(ListEvent.CHANGE,itemSelected);
+				_list.addEventListener(ListEvent.ITEM_DOUBLE_CLICK,itemActivated);
+				dataProvider=null;				
+			}
+			private function itemSelected(event:ListEvent):void{
+				selectItem(event.rowIndex);
+			}
+			private function itemActivated(event:ListEvent):void{
+				activateItem(event.rowIndex);
+			}
+			public function selectItem(index:int):void{
+				var item:Object=null;
+				if(index>-1 && index<_data.length){
+					if(index!=_list.selectedIndex)
+						_list.selectedIndex=index;
+					item=_data.getItemAt(index);	
+				}	
+				dispatchEvent(new ListDataEvent(ListDataEvent.SELECTED,item));
+			}
+			public function activateItem(index:int):void{
+				var item:Object=null;
+				if(index>-1 && index<_data.length){
+					if(index!=_list.selectedIndex)
+						_list.selectedIndex=index;
+					item=_data.getItemAt(index);
+					if(item)
+						dispatchEvent(new ListDataEvent(ListDataEvent.ACTIVATED,item));
+				}	
+					
+			}
+		]]>
+	</mx:Script>
+</mx:Canvas>

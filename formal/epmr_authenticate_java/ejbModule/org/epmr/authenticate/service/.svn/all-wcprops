@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/epmr/!svn/ver/5/epmr_authenticate_java/ejbModule/org/epmr/authenticate/service
+END
+AuthenticateServiceEjb.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/epmr/!svn/ver/5/epmr_authenticate_java/ejbModule/org/epmr/authenticate/service/AuthenticateServiceEjb.java
+END
+ILocalAuthenticateService.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/epmr/!svn/ver/5/epmr_authenticate_java/ejbModule/org/epmr/authenticate/service/ILocalAuthenticateService.java
+END
+IRemoteAuthenticateService.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/epmr/!svn/ver/5/epmr_authenticate_java/ejbModule/org/epmr/authenticate/service/IRemoteAuthenticateService.java
+END
+IAuthenticateService.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/epmr/!svn/ver/5/epmr_authenticate_java/ejbModule/org/epmr/authenticate/service/IAuthenticateService.java
+END

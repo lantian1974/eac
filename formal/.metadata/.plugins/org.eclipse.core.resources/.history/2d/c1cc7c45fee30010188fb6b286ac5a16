@@ -1,0 +1,23 @@
+package com.xdfsoft.recorder
+{
+	public interface IRecorderMedium
+	{
+		function clear():void;
+		
+		function flush():void;
+		
+		function get length():int;
+		
+		function seek(pos:int):Boolean;
+		
+		function read():Object;
+		
+		function write(value:Object):Object;
+		
+		function get name():String;
+		
+		function get label():String;
+		
+		function set label(value:String):void;
+	}
+}

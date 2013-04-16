@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/flex
+END
+messaging-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/flex/messaging-config.xml
+END
+version.properties
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/flex/version.properties
+END
+proxy-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/flex/proxy-config.xml
+END
+config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/flex/config.xml
+END
+services-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/flex/services-config.xml
+END
+remoting-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/flex/remoting-config.xml
+END

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="false" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="org.epmr.facility.collection.BatchFetchCollection"/>
+    <classEntry path="org.epmr.facility.event.DataRevisionEvent"/>
+    <classEntry path="org.epmr.facility.event.InvokeEvent"/>
+    <classEntry path="org.epmr.facility.event.ListDataEvent"/>
+    <classEntry path="org.epmr.facility.event.RespondEvent"/>
+    <classEntry path="org.epmr.facility.formatters.RMBFormatter"/>
+    <classEntry path="org.epmr.facility.mediate.BindDescriptor"/>
+    <classEntry path="org.epmr.facility.mediate.BindableUIAdapter"/>
+    <classEntry path="org.epmr.facility.mediate.GeneralUIBridge"/>
+    <classEntry path="org.epmr.facility.mediate.IUIBridge"/>
+    <classEntry path="org.epmr.facility.mediate.SimpleUIBridge"/>
+    <classEntry path="org.epmr.facility.mediate.UIAdapter"/>
+    <classEntry path="org.epmr.facility.mediate.UIBridgeFactory"/>
+    <classEntry path="org.epmr.facility.recorder.AbstractRecorderMedium"/>
+    <classEntry path="org.epmr.facility.recorder.FunctionRecorder"/>
+    <classEntry path="org.epmr.facility.recorder.IRecorder"/>
+    <classEntry path="org.epmr.facility.recorder.IRecorderMedium"/>
+    <classEntry path="org.epmr.facility.recorder.LocalMedium"/>
+    <classEntry path="org.epmr.facility.recorder.MemoryMedium"/>
+    <classEntry path="org.epmr.facility.recorder.PropertyRecorder"/>
+    <classEntry path="org.epmr.facility.recorder.Recorder"/>
+    <classEntry path="org.epmr.facility.recorder.RecorderEvent"/>
+    <classEntry path="org.epmr.facility.remoting.AbstractInvokeResponder"/>
+    <classEntry path="org.epmr.facility.remoting.AbstractRemotingProxy"/>
+    <classEntry path="org.epmr.facility.remoting.CallbackDescriptor"/>
+    <classEntry path="org.epmr.facility.remoting.DefaultResponderInterceptor"/>
+    <classEntry path="org.epmr.facility.remoting.DependentResponder"/>
+    <classEntry path="org.epmr.facility.remoting.DummyResponder"/>
+    <classEntry path="org.epmr.facility.remoting.ICallbackDescriptor"/>
+    <classEntry path="org.epmr.facility.remoting.IInvokeInfo"/>
+    <classEntry path="org.epmr.facility.remoting.IInvokeResponder"/>
+    <classEntry path="org.epmr.facility.remoting.IResponderInterceptor"/>
+    <classEntry path="org.epmr.facility.remoting.InvokeResponderAdapter"/>
+    <classEntry path="org.epmr.facility.remoting.LocalResponder"/>
+    <classEntry path="org.epmr.facility.remoting.MediateResponder"/>
+    <classEntry path="org.epmr.facility.remoting.RemoteResponder"/>
+    <classEntry path="org.epmr.facility.revisable.IRevisableList"/>
+    <classEntry path="org.epmr.facility.revisable.IRevision"/>
+    <classEntry path="org.epmr.facility.revisable.RevisableList"/>
+    <classEntry path="org.epmr.facility.revisable.RevisableModel"/>
+    <classEntry path="org.epmr.facility.revisable.Revision"/>
+    <classEntry path="org.epmr.facility.revisable.RevisionCollector"/>
+    <classEntry path="org.epmr.facility.revisable.revise_trace"/>
+    <classEntry path="org.epmr.facility.share.FinalizeMonitor"/>
+    <classEntry path="org.epmr.facility.share.IMonitorToken"/>
+    <classEntry path="org.epmr.facility.share.IProgressMonitor"/>
+    <classEntry path="org.epmr.facility.share.ProgressMonitor"/>
+    <classEntry path="org.epmr.facility.share.SimpleMonitorToken"/>
+    <classEntry path="org.epmr.facility.utils.ControlResizor"/>
+    <classEntry path="org.epmr.facility.utils.DateUtil"/>
+    <classEntry path="org.epmr.facility.utils.PrimitiveUtil"/>
+    <classEntry path="org.epmr.facility.utils.TooltipUtil"/>
+    <classEntry path="org.epmr.facility.view.MessageBox"/>
+    <classEntry path="org.epmr.facility.view.Progress"/>
+    <classEntry path="org.epmr.facility.view.SingleDataItemTemplate"/>
+    <classEntry path="org.epmr.facility.view.SingleDataListTemplate"/>
+    <classEntry path="org.epmr.facility.widget.DropdownField"/>
+    <classEntry path="org.epmr.facility.widget.calendar.MonthChangeEvent"/>
+    <classEntry path="org.epmr.facility.widget.calendar.MonthChooser"/>
+    <classEntry path="org.epmr.facility.widget.calendar.MonthField"/>
+    <classEntry path="org.epmr.facility.preloader.BaseDownloadProgressBar"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>

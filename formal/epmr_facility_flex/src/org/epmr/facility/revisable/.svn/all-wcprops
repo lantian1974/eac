@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/revisable
+END
+RevisableModel.as
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/revisable/RevisableModel.as
+END
+Revision.as
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/revisable/Revision.as
+END
+IRevisableList.as
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/revisable/IRevisableList.as
+END
+RevisionCollector.as
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/revisable/RevisionCollector.as
+END
+IRevision.as
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/revisable/IRevision.as
+END
+RevisableList.as
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/revisable/RevisableList.as
+END
+revise_trace.as
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/revisable/revise_trace.as
+END

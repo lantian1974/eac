@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;epmr_desktop_flex/src/theme/css/xdfglobalStyle.css&apos; to &apos;epmr_globalStyle.css&apos;" description="Rename resource &apos;xdfglobalStyle.css&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/theme/css/xdfglobalStyle.css" name="epmr_globalStyle.css" stamp="1316587626031" updateReferences="true"/>
+</session>

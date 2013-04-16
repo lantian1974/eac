@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/share
+END
+IMonitorToken.as
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/share/IMonitorToken.as
+END
+SimpleMonitorToken.as
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/share/SimpleMonitorToken.as
+END
+IProgressMonitor.as
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/share/IProgressMonitor.as
+END
+FinalizeMonitor.as
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/share/FinalizeMonitor.as
+END
+ProgressMonitor.as
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/share/ProgressMonitor.as
+END

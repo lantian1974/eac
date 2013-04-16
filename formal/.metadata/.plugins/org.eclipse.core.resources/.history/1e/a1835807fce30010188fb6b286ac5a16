@@ -1,0 +1,52 @@
+package org.epmr.mediate
+{
+	import flash.utils.flash_proxy;
+	
+	import mx.events.PropertyChangeEvent;
+	
+	use namespace flash_proxy;
+	
+	public dynamic class BindableUIAdapter extends UIAdapter
+	{
+		
+		private var _autoUpdate:Boolean;
+		private var _autoNotify:Boolean;
+		public function BindableUIAdapter(props:BindDescriptor,
+											context:Object=null,
+											autoUpdateModel:Boolean=true,autoNotifyView:Boolean=true)
+		{
+			super(props,context);
+			_autoUpdate=autoUpdateModel;
+			_autoNotify=autoNotifyView;
+			if(_autoUpdate){
+				var descriptor:BindDescriptor=getDescriptor();
+				var fields:Array=descriptor.names;
+				for each(var name:* in fields){
+					addWatch(name,descriptor.getBridge(name));
+				}
+			}
+		}
+		override public function setData(value:Object):void{
+			super.setData(value);
+		}
+		//支持自动从UI更新到model，由_autoUpdate控制
+		private function addWatch(name:String,bridge:IUIBridge):void{
+			var updateModel:Function = function(event:PropertyChangeEvent):void{
+				var toggle:Boolean=_autoNotify;
+				_autoNotify=toggle && false;//这个事件是由UI发起的，因此在设置model属性后不需要通知UI
+				setProperty(name,event.newValue);
+				_autoNotify=toggle;
+			}
+			bridge.addEventListener(PropertyChangeEvent.PROPERTY_CHANGE,updateModel,false,0,true);
+		}
+		
+		override protected function dispatchUpdateEvent(property:*,origin:*,current:*):void{
+			super.dispatchUpdateEvent(property,origin,current);
+			if(_autoNotify){
+				var bridge:IUIBridge=getDescriptor().getBridge(property);
+				bridge.modelUpdated(getContext(),property,origin,current);
+			}
+		}
+		
+	}
+}

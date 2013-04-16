@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="false" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="org.epmr.commonSkins.MinimizableTitleWindowCloseButtonSkin"/>
+    <classEntry path="org.epmr.commonSkins.MinimizableTitleWindowMinimizeButtonSkin"/>
+    <classEntry path="org.epmr.commonSkins.MinimizableTitleWindowSkin"/>
+    <classEntry path="org.epmr.commonSkins.MinimizeControlerLeftButtonSkin"/>
+    <classEntry path="org.epmr.commonSkins.MinimizeControlerRightButtonSkin"/>
+    <classEntry path="org.epmr.commonSkins.MinimizeControlerSkin"/>
+    <classEntry path="org.epmr.controls.ComponentShapeState"/>
+    <classEntry path="org.epmr.controls.IPopUpWindow"/>
+    <classEntry path="org.epmr.controls.IPopUpable"/>
+    <classEntry path="org.epmr.controls.InputBox"/>
+    <classEntry path="org.epmr.controls.MessageBox"/>
+    <classEntry path="org.epmr.controls.MinimizeControler"/>
+    <classEntry path="org.epmr.controls.MinimizeObjHolder"/>
+    <classEntry path="org.epmr.controls.MinimizeObjHolderManager"/>
+    <classEntry path="org.epmr.controls.MinizableTitleWindow"/>
+    <classEntry path="org.epmr.controls.ModuleContainer"/>
+    <classEntry path="org.epmr.controls.PasswordInput"/>
+    <classEntry path="org.epmr.controls.UserNameInput"/>
+    <classEntry path="org.epmr.events.MinimizeEvent"/>
+    <classEntry path="org.epmr.events.MinimizeRecoverEvent"/>
+    <classEntry path="org.epmr.events.RecoverEvent"/>
+    <classEntry path="org.epmr.events.UserLoginEvent"/>
+    <classEntry path="org.epmr.events.WindowPopupEvent"/>
+    <classEntry path="org.epmr.managers.CachePolicy"/>
+    <classEntry path="org.epmr.managers.ICacheManager"/>
+    <classEntry path="org.epmr.managers.MemoryManager"/>
+    <classEntry path="org.epmr.managers.ModuleCacheManager"/>
+    <classEntry path="org.epmr.managers.ModuleManagerExt"/>
+    <classEntry path="org.epmr.managers.PopupManager"/>
+    <classEntry path="org.epmr.managers.SimpleCacheManager"/>
+    <classEntry path="org.epmr.remoting.RemoteObject"/>
+  </includeClasses>
+  <includeResources>
+    <resourceEntry destPath="org/epmr/controls/bg_edit.png" sourcePath="org/epmr/controls/bg_edit.png"/>
+    <resourceEntry destPath="org/epmr/managers/resizeCursorTLBR.gif" sourcePath="org/epmr/managers/resizeCursorTLBR.gif"/>
+    <resourceEntry destPath="org/epmr/commonSkins/up.png" sourcePath="org/epmr/commonSkins/up.png"/>
+    <resourceEntry destPath="org/epmr/commonSkins/right.png" sourcePath="org/epmr/commonSkins/right.png"/>
+    <resourceEntry destPath="org/epmr/managers/resizeCursorTRBL.gif" sourcePath="org/epmr/managers/resizeCursorTRBL.gif"/>
+    <resourceEntry destPath="org/epmr/controls/tip.gif" sourcePath="org/epmr/controls/tip.gif"/>
+    <resourceEntry destPath="org/epmr/controls/HintBtn.png" sourcePath="org/epmr/controls/HintBtn.png"/>
+    <resourceEntry destPath="org/epmr/controls/error.gif" sourcePath="org/epmr/controls/error.gif"/>
+    <resourceEntry destPath="org/epmr/commonSkins/left_disable.PNG" sourcePath="org/epmr/commonSkins/left_disable.PNG"/>
+    <resourceEntry destPath="org/epmr/commonSkins/up_disable.png" sourcePath="org/epmr/commonSkins/up_disable.png"/>
+    <resourceEntry destPath="org/epmr/controls/confirm.gif" sourcePath="org/epmr/controls/confirm.gif"/>
+    <resourceEntry destPath="org/epmr/commonSkins/right_disable.png" sourcePath="org/epmr/commonSkins/right_disable.png"/>
+    <resourceEntry destPath="org/epmr/controls/note.gif" sourcePath="org/epmr/controls/note.gif"/>
+    <resourceEntry destPath="mainfiles.xml" sourcePath="mainfiles.xml"/>
+    <resourceEntry destPath="org/epmr/commonSkins/left.png" sourcePath="org/epmr/commonSkins/left.png"/>
+    <resourceEntry destPath="org/epmr/managers/resizeCursorVH.gif" sourcePath="org/epmr/managers/resizeCursorVH.gif"/>
+    <resourceEntry destPath="org/epmr/commonSkins/down_disable.png" sourcePath="org/epmr/commonSkins/down_disable.png"/>
+    <resourceEntry destPath="org/epmr/managers/resizeCursorH.gif" sourcePath="org/epmr/managers/resizeCursorH.gif"/>
+    <resourceEntry destPath="org/epmr/commonSkins/down.png" sourcePath="org/epmr/commonSkins/down.png"/>
+    <resourceEntry destPath="org/epmr/controls/login_glow.png" sourcePath="org/epmr/controls/login_glow.png"/>
+    <resourceEntry destPath="org/epmr/controls/warning.gif" sourcePath="org/epmr/controls/warning.gif"/>
+  </includeResources>
+  <namespaceManifests>
+    <namespaceManifestEntry manifest="mainfiles.xml" namespace="http://epmr.org"/>
+  </namespaceManifests>
+</flexLibProperties>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" 
+			   minWidth="955" minHeight="600"
+			   preloader="org.epmr.facility.preloader.BaseDownloadProgressBar"
+			   creationComplete="doInitialize()" >
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import mx.managers.SystemManager;
+			import mx.messaging.Channel;
+			import mx.rpc.AsyncToken;
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+			import mx.rpc.remoting.RemoteObject;
+			
+			import org.epmr.authenticate.proxy.AuthenticateServiceProxy;
+			import org.epmr.authenticate.vo.AuthTokenVo;
+			import org.epmr.facility.remoting.ChannelsConfigManager;
+			import org.epmr.facility.remoting.IInvokeResponder;
+			import org.epmr.facility.view.MessageBox;
+			private function doInitialize():void
+			{
+				ChannelsConfigManager.initializeChannelConfigs();
+
+			}
+			protected function doLogin():void
+			{
+			   var proxy:AuthenticateServiceProxy =new AuthenticateServiceProxy();
+			   var responder :IInvokeResponder=proxy.authenticate(this.ti_userName.text,this.ti_password.text);
+			   responder.setResultCallback(doOnLoginOk);
+			   responder.setFaultCallback(doOnFault);
+			}
+			private function doOnLoginOk(event:ResultEvent):void
+			{
+			    var authToken:AuthTokenVo=event.result as AuthTokenVo;
+				MessageBox.note(authToken.info);
+			}
+			private function doOnHelloWorldOk(event:ResultEvent):void
+			{
+				var msg:String=event.result as String;
+				MessageBox.note(msg);
+			}
+			private function doOnFault(event:FaultEvent):void
+			{
+				 MessageBox.note(event.fault.faultDetail);
+			}
+			
+			protected function doOnHelloWorldClick(event:MouseEvent):void
+			{
+				var proxy:AuthenticateServiceProxy =new AuthenticateServiceProxy();
+				var responder :IInvokeResponder=proxy.helloWorld();
+				responder.setResultCallback(doOnHelloWorldOk);
+				responder.setFaultCallback(doOnFault);
+				
+			}
+			private function hello2():void
+			{
+//				var destination:String="TestFacade";
+//				var ro:RemoteObject=new RemoteObject(destination);
+//				var token:AsyncToken =ro.hello();
+//			    ro.addEventListener(ResultEvent.RESULT,doOnHelloWorldOk);
+//				ro.addEventListener(FaultEvent.FAULT,doOnFault);
+				var destination:String="TestFacade";
+				var ro:RemoteObject=new RemoteObject(destination);
+				var token:AsyncToken =ro.hello();
+				ro.addEventListener(ResultEvent.RESULT,doOnHelloWorldOk);
+				ro.addEventListener(FaultEvent.FAULT,doOnFault); 
+				for each (var c:Channel in ro.channelSet.channels)
+				{
+					MessageBox.note("id : "+c.id+"  endpoint : "+c.endpoint);
+				}
+			}
+		]]>
+	</fx:Script>
+	<s:Label x="165" y="63" width="433" height="67" fontFamily="Times New Roman" fontSize="68"
+			 text="Hello World"/>
+	<s:Label x="128" y="204" fontSize="14" text="用户名"/>
+	<s:TextInput id="ti_userName" x="208" y="197" width="178" fontSize="14"/>
+	<s:Label x="128" y="244" fontSize="14" text="密码"/>
+	<s:TextInput id="ti_password" x="208" y="244" width="178" fontSize="14"/>
+	<s:Button id="bt_login" x="208" y="300" width="80" height="37" label="登录" click="this.doLogin();"/>
+	<s:Button x="341" y="301" height="37" label="Hello World" click="doOnHelloWorldClick(event)"
+			  fontSize="14"/>
+	<s:Button x="341" y="352" width="93" height="35" label="hello2" click="this.hello2();"/>
+</s:Application>

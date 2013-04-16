@@ -1,0 +1,191 @@
+package org.epmr.facility.revisable
+{
+	import flash.events.Event;
+	import flash.events.EventDispatcher;
+	import flash.utils.Dictionary;
+	
+	import mx.collections.IList;
+	import mx.core.EventPriority;
+	import mx.events.CollectionEvent;
+	import mx.events.CollectionEventKind;
+	import mx.events.PropertyChangeEvent;
+	
+	public class RevisionCollector extends EventDispatcher
+	{
+		public static const ITEM_REVISED_EVENT:String="itemRevised";
+		private var _list:IList;
+		private var _revisions:Dictionary;
+		private var _replaceConcern:Boolean;
+		private var _active:Boolean;
+		private var _revised:Boolean;
+		public function RevisionCollector(replaceConcern:Boolean=false)
+		{
+			this._replaceConcern=replaceConcern;
+			reset();
+		}
+		public function reset():void{
+			_revisions=new Dictionary();
+			changeRevised(false);
+			
+		}
+		private function changeRevised(value:Boolean):void{
+			_revised=value;
+			dispatchEvent(new Event(ITEM_REVISED_EVENT));
+		}
+		public function get active():Boolean{
+			return _active;
+		}
+		public function set active(value:Boolean):void{
+			_active=value;
+		}
+		public function get list():IList{
+			return _list;
+		}
+		
+		public function set list(value:IList):void{
+			if(_list==value) return;
+			if(_list)
+				_list.removeEventListener(CollectionEvent.COLLECTION_CHANGE,onCollectionChanged);
+			_list=value;
+			if(_list)
+				_list.addEventListener(CollectionEvent.COLLECTION_CHANGE,onCollectionChanged,false,EventPriority.BINDING,true);
+		}
+		internal function get revisions():Dictionary{
+			return _revisions;
+		} 
+		internal function set revisions(value:Dictionary):void{
+			_revisions=value;
+			if(_revisions){
+				for each(var rev:IRevision in _revisions){
+					if(rev.revised){
+						changeRevised(true);
+						return;
+					}
+				}
+			}
+			else
+				changeRevised(false);
+		}
+		public function get revised():Boolean{
+//			for(var n:* in _revisions)
+//				return true;
+			return _revised;	
+		}
+		public function isItemModified(item:Object):Boolean
+		{
+			if(item){
+				var rev:IRevision=getItemRevision(item);
+				if(rev)
+					return rev.modified;
+			}
+			return false;
+		}
+		
+		public function isItemRemoved(item:Object):Boolean
+		{
+			if(item){
+				var rev:IRevision=getItemRevision(item);
+				if(rev)
+					return rev.removed;
+			}
+			return false;
+		}
+		
+		public function isItemAppended(item:Object):Boolean
+		{
+			if(item){
+				var rev:IRevision=getItemRevision(item);
+				if(rev)
+					return rev.appended;
+			}
+			return false;
+		}
+		
+		public function isItemRevised(item:Object):Boolean
+		{
+			if(item){
+				var rev:IRevision=getItemRevision(item);
+				if(rev)
+					return rev.revised;
+			}
+			return false;
+		}
+		private function getItemRevision(item:Object,create:Boolean=false):IRevision{
+			var result:IRevision=_revisions[item];
+			if(result==null && create){
+				result=new Revision();
+				_revisions[item]=result;
+			}
+			return result;
+		}
+//		private function setItemRevision(item:Object,value:IRevision):void{
+//			_revisions[item]=value;
+//			changeRevised(true);
+//		}
+		public function itemModified(item:Object,property:String,oldValue:*,newValue:*):void{
+			getItemRevision(item,true).modified=true;
+			changeRevised(true);
+		}
+		
+		public function itemAppended(item:Object):void{
+			getItemRevision(item,true).appended=true;
+			changeRevised(true);
+		}
+		
+		public function itemRemoved(item:Object):void{
+			getItemRevision(item,true).removed=true;
+			changeRevised(true);
+		}
+		
+		private function onCollectionChanged(event:CollectionEvent):void{
+			if(!_active) return;
+			var kind:String=event.kind;
+			var items:Array=event.items;
+			var item:Object=null;
+			if(kind==CollectionEventKind.ADD){
+				for each(item in items){
+					if(item){
+						itemAppended(item);
+					}
+				}
+			}
+			else if(kind==CollectionEventKind.REMOVE){
+				for each(item in items){
+					if(item){
+						itemRemoved(item);
+					}
+				}
+			}
+			else if(kind==CollectionEventKind.UPDATE){
+				for each(var updated:PropertyChangeEvent in items){
+					if(updated && updated.source){
+						var field:String=null;
+						if(updated.property){
+							if(updated.property is QName)
+								field=(updated.property as QName).localName;
+							else
+								field=updated.property.toString();	
+						}
+						itemModified(updated.source,field,updated.oldValue,updated.newValue);
+					}
+				}
+			}
+			else if(kind==CollectionEventKind.REPLACE){
+				if(_replaceConcern){
+					for each(var replaced:PropertyChangeEvent in items){
+						if(replaced){
+							if(replaced.oldValue){
+								itemRemoved(replaced.oldValue);
+							}
+							if(replaced.newValue)
+								itemAppended(item);
+						}
+					}
+				}	
+			}
+			else if(kind==CollectionEventKind.RESET){
+				reset();
+			}
+		}
+	}
+}

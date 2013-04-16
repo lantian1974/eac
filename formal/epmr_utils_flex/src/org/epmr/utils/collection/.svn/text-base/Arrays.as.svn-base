@@ -1,0 +1,54 @@
+package org.epmr.utils.collection
+{
+	public class Arrays
+	{
+		public static function removeByElement(target:Array,...elements):uint{
+			if(target==null || target.length==0) return 0;
+			var result:uint=0;
+			var index:int=-1;
+			for each(var element:* in elements){
+				index=target.indexOf(element);
+				if(index!=-1){
+					target.splice(index,1);
+					result++;
+				}
+			}
+			return result;
+		}
+		public static function removeByIndex(target:Array,index:uint,count:uint=1):void{
+			if(target==null || target.length==0) return ;
+			validateIndex(target,index);
+			target.splice(index,count);
+		}
+		
+		public static function clear(target:Array):void{
+			if(target==null || target.length==0) return ;
+			target.splice(0);
+		}
+		private static  function validateIndex(target:Array,index:int):void{
+			if(index>target.length-1 || index<0)
+				throw new RangeError("index out of bounds:"+index);
+		}
+		
+		public static function iterator(target:Array):Iterator{
+			return new ArrayIterator(target);
+		}
+		
+		public static function arrayToString(target:Array):String{
+			var s:String="{";
+			for(var i:int=0;i<target.length;i++){
+				var value:*=target[i];
+				if(typeof(value)==="string")
+					s+="\""+value+"\",";
+				else if(value is Array)
+					s+=arrayToString(value as Array)+",";
+				else	
+					s+=value+",";	
+			}
+			if(s.length>1)
+				s=s.substring(0,s.length-1);
+			s+="}";
+			return s;
+		}
+	}
+}

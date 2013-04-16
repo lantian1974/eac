@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/service
+END
+FrameWorkServiceRoImpl.as
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/service/FrameWorkServiceRoImpl.as
+END
+FrameWorkServiceFactory.as
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/service/FrameWorkServiceFactory.as
+END
+IFrameWorkService.as
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/service/IFrameWorkService.as
+END

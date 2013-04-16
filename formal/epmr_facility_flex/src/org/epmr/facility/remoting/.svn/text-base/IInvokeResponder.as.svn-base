@@ -1,0 +1,57 @@
+package org.epmr.facility.remoting
+{
+	import org.epmr.facility.share.IProgressMonitor;
+	
+	import flash.events.IEventDispatcher;
+	
+	/**
+	 * 远程或本地方法的响应代理，建议所有远程方法均返回此接口的实例
+	 * @author qpd
+	 */
+	public interface IInvokeResponder extends IEventDispatcher
+	{
+		/**
+		 * 设置远程或本地方法调用成功后的回调函数
+		 * @param callback 回调函数，应该至少有一个参数。其中第一个参数表示成功后的响应，其余为附加参数
+		 * @param params 附加的参数
+		 * @return this,以便进行链式调用
+		 */
+		function setResultCallback(callback:Function,...params):IInvokeResponder;
+		/**
+		 * 设置远程或本地方法调用失败后的回调函数
+		 * @param callback 回调函数，应该至少有一个参数。其中第一个参数表示失败后的响应，其余为附加参数
+		 * @param params 附加的参数
+		 * @return this,以便进行链式调用
+		 */
+		function setFaultCallback(callback:Function,...params):IInvokeResponder;
+		/**
+		 * 设置远程或本地方法调用返回后的回调函数，不论失败或成功
+		 * @param callback 回调函数，应该至少有一个参数。其中第一个参数表示函数调用的响应，其余为附加参数
+		 * @param params 附加的参数
+		 * @return this,以便进行链式调用
+		 */
+		function setCallback(callback:Function,...params):IInvokeResponder;
+		/**
+		 * 取消回调,若成功取消则callback将不会被调用		
+		 * @return Boolean,如果成功取消则返回true，如果callback已经调用则返回false
+		 */
+		function cancel():Boolean;
+		
+		function setMonitor(monitor:IProgressMonitor):IInvokeResponder;
+		
+		/**
+		 * 将调用结果绑定到指定的目标 
+		 * @param site 目标对象
+		 * @param field 目标对象的属性，String
+		 * 
+		 */
+		function bindResult(site:Object,field:String):void;
+		
+		/**
+		 * 将调用结果的数据复制到目标对象 
+		 * @param target 目标对象，不能为null或基本类型（uint、int、Boolean、Number、String）
+		 * 
+		 */
+		function dumpResult(target:Object):void;
+	}
+}

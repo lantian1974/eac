@@ -1,0 +1,107 @@
+package org.epmr.mediate
+{
+	import mx.controls.ComboBase;
+	import mx.controls.DateField;
+	import mx.controls.RadioButtonGroup;
+	import mx.controls.TextInput;
+	public class UIBridgeFactory
+	{
+		public static function bindTextInput(ui:TextInput):IUIBridge{
+			return new GeneralUIBridge(ui,"text");
+		}
+		public static function bindComboBox(ui:ComboBase,valueField:String="data"):IUIBridge{
+			return new ComboBoxBridge(ui,valueField);
+		}
+		public static function bindDateField(ui:DateField):IUIBridge{
+			return new DateFieldBridge(ui);
+		}
+		public static function bindRadioButtonGroup(ui:RadioButtonGroup):IUIBridge{
+			return new RadioButtonGroupBridge(ui);
+		}
+	}
+}
+	import org.epmr.mediate.GeneralUIBridge;
+	import mx.controls.ComboBase;
+	import mx.collections.ArrayCollection;
+	import mx.collections.ICollectionView;
+	import mx.collections.IViewCursor;
+	import mx.controls.DateField;
+	import mx.controls.RadioButtonGroup;
+	import mx.collections.ListCollectionView;
+	
+
+class ComboBoxBridge extends GeneralUIBridge{
+	
+	private var _valueField:String;
+	public function ComboBoxBridge(ui:ComboBase,valueField:String){
+		super(ui,"selectedItem");
+		_valueField=valueField;
+	}
+	override public function toUIData(context:Object,property:String, modelValue:*):*
+	{
+		var datas:ICollectionView=ComboBase(target).dataProvider as ICollectionView;
+		if(datas){
+			var cursor:IViewCursor=datas.createCursor();
+			while (!cursor.afterLast)
+		    {
+			    var data:Object=cursor.current;
+			    if(data[_valueField]==modelValue)
+			    	return data;
+			    cursor.moveNext();
+		    }
+		} 
+		return undefined;
+	}
+	
+	override public function fromUIData(context:Object,property:String, viewValue:*):*
+	{
+		var datas:ICollectionView=ComboBase(target).dataProvider as ICollectionView;
+		if(datas){
+			var cursor:IViewCursor=datas.createCursor();
+			while (!cursor.afterLast)
+		    {
+			    var data:Object=cursor.current;
+			    if(data==viewValue)
+			    	return data[_valueField];
+			    cursor.moveNext();
+		    }
+		} 
+		return undefined;
+	}
+}
+
+class DateFieldBridge extends GeneralUIBridge{
+	private var _pattern:String;
+	public function DateFieldBridge(ui:DateField,pattern:String=null){
+		super(ui,"selectedDate");
+		_pattern=pattern;
+	}
+	override public function toUIData(context:Object,property:String, modelValue:*):*
+	{
+		if(modelValue is Date){
+			return modelValue;
+		}
+		else if(modelValue is Number){
+			var result:Date=new Date();
+			result.setTime(Number(modelValue));
+			return result;
+		}
+		else if(modelValue is String){
+			var format:String=_pattern==null?"YYYY-MM-DD":_pattern;
+			return DateField.stringToDate(String(modelValue),format)			
+		}	
+		return undefined;
+	}
+	
+	override public function fromUIData(context:Object,property:String, viewValue:*):*
+	{
+		return _pattern==null?viewValue:DateField.dateToString(viewValue as Date,_pattern);
+	}
+}
+
+class RadioButtonGroupBridge extends GeneralUIBridge{
+	
+	public function RadioButtonGroupBridge(ui:RadioButtonGroup){
+		super(ui,"selectedValue")
+	}
+}

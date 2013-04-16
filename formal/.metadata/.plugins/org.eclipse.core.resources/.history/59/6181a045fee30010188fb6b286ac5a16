@@ -1,0 +1,4 @@
+package com.xdfsoft.revisable
+{
+	public namespace revise_trace="http://com.xdfsoft.model.revise.trace";
+}

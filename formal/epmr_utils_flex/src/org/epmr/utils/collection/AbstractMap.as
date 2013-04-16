@@ -1,0 +1,170 @@
+package org.epmr.utils.collection
+{
+	import flash.utils.Proxy;
+	import flash.utils.flash_proxy;
+	public class AbstractMap extends Proxy implements IMap
+	{
+		public function find(key:*):*
+		{
+			return null;
+		}
+		
+		public function put(key:*, value:*):*
+		{
+			return null;
+		}
+		
+		public function putAll(map:IMap):void
+		{
+		}
+		
+		public function keySet():ISet
+		{
+			return null;
+		}
+		
+		public function entrySet():ISet
+		{
+			return null;
+		}
+		
+		public function iterator():Iterator
+		{
+			return null;
+		}
+		
+		public function values():ICollection
+		{
+			return null;
+		}
+		
+		public function remove(key:*):*
+		{
+			return null;
+		}
+		
+		public function get size():uint
+		{
+			return 0;
+		}
+		
+		public function containsKey(key:*):Boolean
+		{
+			return false;
+		}
+		
+		public function containsValue(value:*):Boolean
+		{
+			return false;
+		}
+		
+		public function clear():void
+		{
+		}
+		
+		public function enumerate(callback:Function, thisObject:*=null):void
+		{
+		}
+		
+		public function toString():String
+		{
+			var s:String="{";
+			this.enumerate(function(key:*,value:*,counter:uint):Boolean{
+				if(typeof(key)==="string")
+					s+="[\""+key+"\":";
+				else if(key is Array)
+					s+=Arrays.arrayToString(key as Array)+":"	
+				else
+					s+="["+key+":";
+					
+				if(typeof(value)==="string")
+					s+="\""+value+"\"];";
+				else if(value is Array)
+					s+=Arrays.arrayToString(value as Array)+"];"		
+				else
+					s+=value+"];";	
+				return false;	
+			});
+			
+			if(s.length>1)
+				s=s.substring(0,s.length-1);
+			s+="}";
+			return s;
+		}
+		
+		//--------------------------------------------------------------------------
+	    //
+	    // Proxy methods
+	    //
+	    //--------------------------------------------------------------------------
+	    /**
+		 *  @private
+		 *  Attempts to call getItemAt(), converting the property name into an int.
+	     */
+	    override flash_proxy function getProperty(name:*):*
+	    {
+	        return this.find(name);
+	    }
+	    
+	    /**
+		 *  @private
+		 *  Attempts to call setItemAt(), converting the property name into an int.
+	     */
+	    override flash_proxy function setProperty(name:*, value:*):void
+	    {
+	        this.put(name,value);
+	    }
+	    
+	    /**
+	     *  @private
+	     *  This is an internal function.
+	     *  The VM will call this method for code like <code>"foo" in bar</code>
+	     *  
+	     *  @param name The property name that should be tested for existence.
+	     */
+	    override flash_proxy function hasProperty(name:*):Boolean
+	    {
+	        return this.containsKey(name);
+	    }
+	
+	    /**
+	     *  @private
+	     */
+	    override flash_proxy function nextNameIndex(index:int):int
+	    {
+	        return index=index < size ? index + 1 : 0;
+	    }
+	    
+	    /**
+	     *  @private
+	     */
+	    override flash_proxy function nextName(index:int):String
+	    {
+	        var keys:Array=this.keySet().toArray();
+	        return keys[index - 1];
+	    }
+	    
+	    /**
+	     *  @private
+	     */
+	    override flash_proxy function nextValue(index:int):*
+	    {
+	        var values:Array=this.values().toArray();
+	        return values[index-1];
+	    }    
+	
+	    /**
+	     *  @private
+		 *  Any methods that can't be found on this class shouldn't be called,
+		 *  so return null
+	     */
+	    override flash_proxy function callProperty(name:*, ... rest):*
+	    {
+	        var r:*=find(name);
+	        if(r is Function){
+	        	return Function(r).apply(null,rest);
+	        }
+	        return null;
+	    }
+	}
+}

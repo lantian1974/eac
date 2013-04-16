@@ -1,0 +1,19 @@
+package org.epmr.facility.revisable
+{
+	public interface IRevision
+	{
+		function get modified():Boolean;
+		
+		function set modified(value:Boolean):void;
+		
+		function get removed():Boolean;
+		
+		function set removed(value:Boolean):void;
+		
+		function get appended():Boolean;
+		
+		function set appended(value:Boolean):void;
+		
+		function get revised():Boolean;
+	}
+}

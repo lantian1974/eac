@@ -1,0 +1,153 @@
+package org.epmr.widget
+{
+	import flash.display.Graphics;
+	import flash.events.Event;
+	import flash.events.FocusEvent;
+	import flash.events.KeyboardEvent;
+	import flash.events.MouseEvent;
+	import flash.geom.Matrix;
+	import flash.geom.Point;
+	import flash.ui.Keyboard;
+	
+	import mx.controls.TextInput;
+	import mx.core.BitmapAsset;
+	import mx.core.EventPriority;
+	import mx.core.IFlexDisplayObject;
+	import mx.core.UIComponent;
+	import mx.events.DropdownEvent;
+	import mx.events.FlexMouseEvent;
+	import mx.managers.PopUpManager;
+
+	public class DropdownField extends TextInput
+	{
+		private var _bgAlpha:Number;
+		private var _opening:Boolean;
+		private var _dropdownWnd:UIComponent;
+		public function DropdownField()
+		{
+			super();
+			_bgAlpha=1;
+			this.addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
+			this.addEventListener(KeyboardEvent.KEY_DOWN,onKeyDown);
+			this.addEventListener(DropdownEvent.OPEN,onOpenDropdown,false,EventPriority.DEFAULT_HANDLER);
+			this.addEventListener(Event.REMOVED_FROM_STAGE,closeDropdown);
+		}
+		
+		private function onMouseDown(event:MouseEvent):void{
+			if(enabled && !_opening && event.target==this){
+				var e:DropdownEvent=new DropdownEvent(DropdownEvent.OPEN,true,true,event);
+				dispatchEvent(e);
+			} 
+		}
+		private function onKeyDown(event:KeyboardEvent):void{
+			if(enabled && !_opening && event.keyCode==Keyboard.DOWN){
+				var e:DropdownEvent=new DropdownEvent(DropdownEvent.OPEN,true,true,event);
+				dispatchEvent(e);
+			}
+			else if (_opening && event.keyCode == Keyboard.ESCAPE){
+				closeDropdown(event);
+			}
+		}
+		private function onOpenDropdown(event:DropdownEvent):void{
+			if(!event.isDefaultPrevented()){
+				_opening=true;
+				openDropdown(event);
+			}
+		}
+		
+		public function closeDropdown(event:Event=null):void{
+			_opening=false;
+			if(_dropdownWnd)
+				PopUpManager.removePopUp(_dropdownWnd);
+		}
+		public function openDropdown(event:Event=null):void{
+			if(!_dropdownWnd){
+				_dropdownWnd=createDropdown();
+				_dropdownWnd.addEventListener(FlexMouseEvent.MOUSE_DOWN_OUTSIDE,onMouseOutside);
+        		_dropdownWnd.addEventListener(FlexMouseEvent.MOUSE_WHEEL_OUTSIDE,onMouseOutside);
+        		 addEventListener(FocusEvent.FOCUS_OUT, onFocusOut);
+//				_dropdownWnd.addEventListener(
+			}
+			if(_dropdownWnd){
+				updateDropdown(_dropdownWnd);
+				PopUpManager.addPopUp(_dropdownWnd,this);
+				var gp:Point=new Point(0,height);
+				gp=localToGlobal(gp);
+				_dropdownWnd.x=gp.x;
+				_dropdownWnd.y=gp.y;
+				if(_dropdownWnd.x+_dropdownWnd.width>stage.width)
+					_dropdownWnd.x=stage.width-_dropdownWnd.width-5;
+				if(_dropdownWnd.y+_dropdownWnd.height>stage.height)
+					_dropdownWnd.y=_dropdownWnd.y-_dropdownWnd.height-height;	
+				PopUpManager.bringToFront(_dropdownWnd);
+//				_dropdownWnd.setFocus();
+			}	
+		}
+		private function onMouseOutside(event:MouseEvent):void
+	    {
+	        if (! hitTestPoint(event.stageX, event.stageY, true))
+	            closeDropdown(event);
+	    }
+		private function onFocusOut(event:FocusEvent):void{
+			if(_opening && event!=null){
+				closeDropdown(event);
+			}
+		}
+		protected function createDropdown():UIComponent{
+			return null;
+		}
+		protected function updateDropdown(wnd:UIComponent):void{
+			
+		}
+		protected function get dropdownIndicator():Class{
+			return null;
+		}
+		
+		override protected function createChildren():void{
+			super.createChildren();
+			_bgAlpha=getStyle("backgroundAlpha");
+			super.setStyle("backgroundAlpha",0);
+		}
+		override public function setStyle(styleProp:String, newValue:*):void{
+			if(styleProp==="backgroundAlpha"){
+				if(_bgAlpha!=newValue){
+					_bgAlpha=newValue;
+					styleChanged(styleProp);
+				}
+			}
+			else
+				super.setStyle(styleProp,newValue);
+		}
+//		override public function getStyle(styleProp:String):*{
+//			if(styleProp==="backgroundAlpha"){
+//				return _bgAlpha;
+//			}
+//			else
+//				return super.getStyle(styleProp);
+//		}
+
+		override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void{
+			super.updateDisplayList(unscaledWidth, unscaledHeight);
+			
+			var g:Graphics=graphics;
+			g.beginFill(this.getStyle("backgroundColor"),_bgAlpha);
+			g.drawRect(0,0,unscaledWidth,unscaledHeight);
+			g.endFill();
+			if(enabled){
+				var Indicator:Class=dropdownIndicator;
+				if(Indicator){
+					var bm:BitmapAsset=BitmapAsset(new Indicator());
+					var matrix:Matrix= new flash.geom.Matrix(); 
+					var scale:Number=textField.height/bm.height;
+					var width:Number=bm.width*scale;
+					textField.width-=width;
+					matrix.scale(scale,scale);
+					matrix.translate(textField.width,textField.y);
+					g.beginBitmapFill(bm.bitmapData,matrix,false);
+					g.drawRect(textField.width,textField.y,width,textField.height);
+					g.endFill();
+				}	
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/model
+END
+FrameWorkModel.as
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/model/FrameWorkModel.as
+END
+PerspectiveVo.as
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/model/PerspectiveVo.as
+END
+ViewVo.as
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/model/ViewVo.as
+END
+ShortCutVo.as
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/model/ShortCutVo.as
+END
+WebUIResourceVo.as
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/model/WebUIResourceVo.as
+END
+LoginResultVo.as
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/model/LoginResultVo.as
+END

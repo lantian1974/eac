@@ -1,0 +1,26 @@
+package org.epmr.utils.collection
+{
+	public class Queue extends BaseSequence
+	{
+		public function Queue(_capacity:int=-1){
+			super(_capacity);
+		}
+		
+		override protected function adjustWhenFull():Boolean{
+			_array.shift();//移除队列的首元素
+			return true;
+		}
+		
+		override public function pop():*{
+			if(isEmpty())
+				return undefined;
+			return _array.shift();
+		}
+		override public function peek():*{
+			if(isEmpty())
+				return undefined;
+			return _array[0];	
+		}
+		
+	}
+}

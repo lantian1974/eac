@@ -1,0 +1,6 @@
+package org.epmr.desktop.respository;
+@local
+public interface ILocalEpmrUserShortCutDao
+{
+
+}

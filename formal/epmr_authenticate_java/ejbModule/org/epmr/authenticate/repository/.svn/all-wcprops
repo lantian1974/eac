@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/epmr/!svn/ver/5/epmr_authenticate_java/ejbModule/org/epmr/authenticate/repository
+END
+UserDaoEjb.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/epmr/!svn/ver/5/epmr_authenticate_java/ejbModule/org/epmr/authenticate/repository/UserDaoEjb.java
+END
+IUserTypeManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/epmr/!svn/ver/5/epmr_authenticate_java/ejbModule/org/epmr/authenticate/repository/IUserTypeManager.java
+END
+IUserDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/epmr/!svn/ver/5/epmr_authenticate_java/ejbModule/org/epmr/authenticate/repository/IUserDao.java
+END
+UserTypeManagerEjb.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/epmr/!svn/ver/5/epmr_authenticate_java/ejbModule/org/epmr/authenticate/repository/UserTypeManagerEjb.java
+END

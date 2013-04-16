@@ -1,0 +1,102 @@
+package org.epmr.collection
+{
+	import org.epmr.utils.PrimitiveUtil;
+	
+	import flash.events.IEventDispatcher;
+	
+	import mx.collections.ArrayCollection;
+	import mx.collections.IList;
+	import mx.events.CollectionEvent;
+	import mx.events.CollectionEventKind;
+	import mx.rpc.events.ResultEvent;
+	
+	public class BatchFetchCollection extends ArrayCollection
+	{
+		private var _index:int;
+		private var _pageSize:int;
+		private var _fetcher:Function;
+		private var _thisObj:*;
+		private var _total:int;
+		private var _stop:Boolean;
+		private var _merging:Boolean;
+		private var _items:Array;
+		public function BatchFetchCollection(total:int,pageSize:int,fetcher:Function,thisObj:*=null)
+		{
+			super();
+			_index=0;
+			_total=total<0?0:total;
+			if(pageSize<=0) throw new Error("pageSize must be greater than 0!");
+			if(fetcher==null) throw new Error("fetcher callback handler must specify");
+			_pageSize=pageSize>0?pageSize:100;
+			_fetcher=fetcher;
+			_thisObj=thisObj;
+			_items=total>0?new Array(total):new Array();
+			super.source=_items;
+		}
+		
+		public function fetch():void{
+			_stop=false;
+			_fetcher.call(_thisObj,_index,_pageSize,_total).setResultCallback(onFetched);
+		}
+		public function stop():void{
+			_stop=true;
+		}
+		public function reset():void{
+			_stop=true;
+			_index=0;
+		}
+		override public function set source(s:Array):void{
+			//do nothing
+		}
+		override public function set list(value:mx.collections.IList):void{
+			if(_fetcher==null) return;
+			var _list:mx.collections.IList=super.list;
+			if(_list && _list is IEventDispatcher)
+				IEventDispatcher(_list).removeEventListener(CollectionEvent.COLLECTION_CHANGE,onListChange);
+			_list=value;
+			if(_list && _list is IEventDispatcher)
+				IEventDispatcher(_list).addEventListener(CollectionEvent.COLLECTION_CHANGE,onListChange);
+			super.list=value;
+		}
+		private function onListChange(event:CollectionEvent):void{
+			if(_merging && event.kind==CollectionEventKind.REPLACE){
+				event.stopImmediatePropagation();
+			}
+		}
+		private function onFetched(result:ResultEvent):void{
+			if(_stop) return;
+			//super.disableAutoUpdate();
+			try{
+				var data:Array=PrimitiveUtil.toArray(result.result);
+				_merging=true;
+				
+				for(var i:int=0;i<data.length;i++){
+					if(_items.length<=_index)
+						_items.push(null); 
+					if(_items.length>_total && _total!=0) //如果给定了总数，并且当前数据数已经大于总数，则返回
+						break;	
+					super.list.setItemAt(data[i],_index);
+					_index++;	
+				}	
+							
+				_merging=false;
+				if(data.length>0 && 
+					(_total==0 || _index<_total)){			
+					if(!_stop)
+						_fetcher.call(_thisObj,_index,_pageSize,_total).setResultCallback(onFetched);
+				}
+				else if(_total!=0 && _index<_total){//删除多余的数据
+					_merging=true;
+					for(var j:int=_index;j<_total;j++)
+						_items.pop();
+					_merging=false;	
+				}				
+			}
+			finally{	
+				//super.enableAutoUpdate();
+				super.refresh();
+			}
+			
+		} 
+	}
+}

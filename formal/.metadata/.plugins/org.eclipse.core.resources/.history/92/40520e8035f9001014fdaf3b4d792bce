@@ -1,0 +1,24 @@
+package org.epmr.desktop.respository;
+
+import java.util.List;
+
+import org.epmr.desktop.po.EpmrUserShortcut;
+
+public class EpmrUserShortcutEjb implements ILocalEpmrUserShortCutDao
+{
+
+	@Override
+	public List<EpmrUserShortcut> getUserShortcuts(String loginCode) 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void saveUserShortcuts(List<EpmrUserShortcut> shortcutList)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/remoting
+END
+RemoteResponder.as
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/remoting/RemoteResponder.as
+END
+DummyResponder.as
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/remoting/DummyResponder.as
+END
+InvokeResponderAdapter.as
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/remoting/InvokeResponderAdapter.as
+END
+IInvokeInfo.as
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/remoting/IInvokeInfo.as
+END
+DefaultResponderInterceptor.as
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/remoting/DefaultResponderInterceptor.as
+END
+IInvokeResponder.as
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/remoting/IInvokeResponder.as
+END
+DependentResponder.as
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/remoting/DependentResponder.as
+END
+IResponderInterceptor.as
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/remoting/IResponderInterceptor.as
+END
+MediateResponder.as
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/remoting/MediateResponder.as
+END
+CallbackDescriptor.as
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/remoting/CallbackDescriptor.as
+END
+AbstractInvokeResponder.as
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/remoting/AbstractInvokeResponder.as
+END
+ICallbackDescriptor.as
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/remoting/ICallbackDescriptor.as
+END
+AbstractRemotingProxy.as
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/remoting/AbstractRemotingProxy.as
+END
+LocalResponder.as
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/remoting/LocalResponder.as
+END
+ChannelsConfigManager.as
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/epmr/!svn/ver/13/epmr_facility_flex/src/org/epmr/facility/remoting/ChannelsConfigManager.as
+END

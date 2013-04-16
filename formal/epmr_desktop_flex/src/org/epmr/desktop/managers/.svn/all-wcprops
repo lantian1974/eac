@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/managers
+END
+OpenedWindowManager.as
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/managers/OpenedWindowManager.as
+END
+PopupManager.as
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/managers/PopupManager.as
+END
+ModuleManagerExt.as
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/managers/ModuleManagerExt.as
+END
+CachePolicy.as
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/managers/CachePolicy.as
+END
+MemoryManager.as
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/managers/MemoryManager.as
+END
+ModuleCacheManager.as
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/managers/ModuleCacheManager.as
+END
+ICacheManager.as
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/managers/ICacheManager.as
+END
+SimpleCacheManager.as
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/managers/SimpleCacheManager.as
+END

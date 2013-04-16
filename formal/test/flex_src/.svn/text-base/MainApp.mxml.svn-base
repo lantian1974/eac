@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   minWidth="955" minHeight="600"
+			   >
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.messaging.channels.AMFChannel;
+			import mx.messaging.ChannelSet;
+			import mx.rpc.events.ResultEvent;
+	
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<mx:RemoteObject id="ro" destination="TestFacade"/>
+	</fx:Declarations>
+	<s:Label x="228" y="61" width="245" height="38" fontSize="29" text="{ro.hello.lastResult}"/>
+	<s:Button x="64" y="97" width="104" height="32" label="Button" click="ro.hello();"/>
+	<mx:PopUpButton x="205" y="107" label="PopUpButton"/>
+</s:Application>

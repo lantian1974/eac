@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<componentPackage>
+    <component id="MinimizeControler" class="org.epmr.controls.MinimizeControler"/>
+    <component id="UserNameInput" class="org.epmr.controls.UserNameInput"/>
+    <component id="PasswordInput" class="org.epmr.controls.PasswordInput"/> 
+    <component id="MinizableTitleWindow" class="org.epmr.controls.MinizableTitleWindow"/>
+    <component id="RemoteObject" class="org.epmr.remoting.RemoteObject"/>
+</componentPackage>
