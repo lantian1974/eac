@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="false" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="org.eprm.controls.ComponentShapeState"/>
+    <classEntry path="org.eprm.controls.IPopUpable"/>
+    <classEntry path="org.eprm.controls.InputBox"/>
+    <classEntry path="org.eprm.events.MinimizeRecoverEvent"/>
+    <classEntry path="org.eprm.events.WindowPopupEvent"/>
+    <classEntry path="org.eprm.managers.ICacheManager"/>
+    <classEntry path="org.eprm.managers.MemoryManager"/>
+    <classEntry path="org.eprm.managers.ModuleManagerExt"/>
+    <classEntry path="org.eprm.managers.PopupManager"/>
+    <classEntry path="org.eprm.managers.SimpleCacheManager"/>
+    <classEntry path="org.eprm.remoting.Host"/>
+    <classEntry path="org.eprm.remoting.RemoteObject"/>
+  </includeClasses>
+  <includeResources>
+    <resourceEntry destPath="org/eprm/managers/resizeCursorVH.gif" sourcePath="org/eprm/managers/resizeCursorVH.gif"/>
+    <resourceEntry destPath="org/eprm/managers/resizeCursorV.gif" sourcePath="org/eprm/managers/resizeCursorV.gif"/>
+    <resourceEntry destPath="mainfiles.xml" sourcePath="mainfiles.xml"/>
+    <resourceEntry destPath="org/eprm/controls/HintBtn.png" sourcePath="org/eprm/controls/HintBtn.png"/>
+    <resourceEntry destPath="org/eprm/controls/confirm.gif" sourcePath="org/eprm/controls/confirm.gif"/>
+    <resourceEntry destPath="org/eprm/controls/tip.gif" sourcePath="org/eprm/controls/tip.gif"/>
+    <resourceEntry destPath="org/eprm/managers/resizeCursorTRBL.gif" sourcePath="org/eprm/managers/resizeCursorTRBL.gif"/>
+    <resourceEntry destPath="org/eprm/managers/resizeCursorTLBR.gif" sourcePath="org/eprm/managers/resizeCursorTLBR.gif"/>
+    <resourceEntry destPath="org/eprm/commonSkins/right.png" sourcePath="org/eprm/commonSkins/right.png"/>
+    <resourceEntry destPath="org/eprm/controls/login_glow.png" sourcePath="org/eprm/controls/login_glow.png"/>
+    <resourceEntry destPath="org/eprm/managers/resizeCursorH.gif" sourcePath="org/eprm/managers/resizeCursorH.gif"/>
+  </includeResources>
+  <namespaceManifests/>
+</flexLibProperties>

@@ -1,0 +1,37 @@
+package org.epmr.utils.collection
+{
+	public class MapEntry implements IMapEntry
+	{
+		private var _key:*;
+		private var _value:*;
+		public function MapEntry(key:*,value:*){
+			this._key=key;
+			this._value=value;
+		}
+		
+		public function get key():*{
+			return _key;
+		}
+		
+		public function get value():*{
+			return _value;
+		}
+		
+		public function toString():String{
+			var s:String="[";
+			var t:String;
+			t=typeof(_key);
+			if(t==="string")
+				s+="\""+_key+"\":";
+			else
+				s+=_key+":";
+			t=typeof(_value);
+			if(t==="string")
+				s+="\""+_value+"\";";
+			else
+				s+=_value+";";	
+			s+="]";
+			return s;
+		}
+	}
+}

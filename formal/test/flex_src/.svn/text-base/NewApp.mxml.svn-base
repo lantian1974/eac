@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   minWidth="955" minHeight="600"
+			   applicationComplete="this.initializeChannelSet()">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.messaging.ChannelSet;
+			import mx.messaging.channels.AMFChannel;
+			import mx.rpc.events.ResultEvent;
+			private var rci:RemotingConfigIni;
+			private function initializeChannelSet():void
+			{
+				//ChannelsConfig.initialize("FlexChannelsConfig");
+				//ChannelsConfig.getInstance().addEventListener(ChannelSetInitializeEvent.CHANNEL_SET_INITIALIZE,onChannelSetInitialize);
+				//this.enabled=false;   
+				trace("app creation compleate ");
+				
+				ro.hello();  
+			}
+			private function onChannelSetInitialize(event:Event):void
+			{
+				this.enabled=true;
+			
+				ro.hello();  
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<mx:RemoteObject id="ro" destination="TestFacade"/>
+	</fx:Declarations>
+	
+	<s:Label x="228" y="61" width="245" height="38" fontSize="29" text="{ro.hello.lastResult}"/>
+	<s:Button x="179" y="157" width="130" height="43" label="Button"/>
+	<s:Button x="40" y="158" width="113" height="42" label="Button"/>
+	<s:Button x="345" y="157" width="128" height="43" label="Button"/>
+</s:Application>

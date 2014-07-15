@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="false" useMultiPlatformConfig="false" version="1">
+  <includeClasses>
+    <classEntry path="com.xdfsoft.collection.BatchFetchCollection"/>
+    <classEntry path="com.xdfsoft.event.DataRevisionEvent"/>
+    <classEntry path="com.xdfsoft.event.InvokeEvent"/>
+    <classEntry path="com.xdfsoft.event.ListDataEvent"/>
+    <classEntry path="com.xdfsoft.event.RespondEvent"/>
+    <classEntry path="com.xdfsoft.formatters.RMBFormatter"/>
+    <classEntry path="com.xdfsoft.mediate.BindDescriptor"/>
+    <classEntry path="com.xdfsoft.mediate.BindableUIAdapter"/>
+    <classEntry path="com.xdfsoft.mediate.GeneralUIBridge"/>
+    <classEntry path="com.xdfsoft.mediate.IUIBridge"/>
+    <classEntry path="com.xdfsoft.mediate.SimpleUIBridge"/>
+    <classEntry path="com.xdfsoft.mediate.UIAdapter"/>
+    <classEntry path="com.xdfsoft.mediate.UIBridgeFactory"/>
+    <classEntry path="com.xdfsoft.recorder.AbstractRecorderMedium"/>
+    <classEntry path="com.xdfsoft.recorder.FunctionRecorder"/>
+    <classEntry path="com.xdfsoft.recorder.IRecorder"/>
+    <classEntry path="com.xdfsoft.recorder.IRecorderMedium"/>
+    <classEntry path="com.xdfsoft.recorder.LocalMedium"/>
+    <classEntry path="com.xdfsoft.recorder.MemoryMedium"/>
+    <classEntry path="com.xdfsoft.recorder.PropertyRecorder"/>
+    <classEntry path="com.xdfsoft.recorder.Recorder"/>
+    <classEntry path="com.xdfsoft.recorder.RecorderEvent"/>
+    <classEntry path="com.xdfsoft.remoting.AbstractInvokeResponder"/>
+    <classEntry path="com.xdfsoft.remoting.AbstractRemotingProxy"/>
+    <classEntry path="com.xdfsoft.remoting.CallbackDescriptor"/>
+    <classEntry path="com.xdfsoft.remoting.DefaultResponderInterceptor"/>
+    <classEntry path="com.xdfsoft.remoting.DependentResponder"/>
+    <classEntry path="com.xdfsoft.remoting.DummyResponder"/>
+    <classEntry path="com.xdfsoft.remoting.ICallbackDescriptor"/>
+    <classEntry path="com.xdfsoft.remoting.IInvokeInfo"/>
+    <classEntry path="com.xdfsoft.remoting.IInvokeResponder"/>
+    <classEntry path="com.xdfsoft.remoting.IResponderInterceptor"/>
+    <classEntry path="com.xdfsoft.remoting.InvokeResponderAdapter"/>
+    <classEntry path="com.xdfsoft.remoting.LocalResponder"/>
+    <classEntry path="com.xdfsoft.remoting.MediateResponder"/>
+    <classEntry path="com.xdfsoft.remoting.RemoteResponder"/>
+    <classEntry path="com.xdfsoft.revisable.IRevisableList"/>
+    <classEntry path="com.xdfsoft.revisable.IRevision"/>
+    <classEntry path="com.xdfsoft.revisable.RevisableList"/>
+    <classEntry path="com.xdfsoft.revisable.RevisableModel"/>
+    <classEntry path="com.xdfsoft.revisable.Revision"/>
+    <classEntry path="com.xdfsoft.revisable.RevisionCollector"/>
+    <classEntry path="com.xdfsoft.revisable.revise_trace"/>
+    <classEntry path="com.xdfsoft.share.FinalizeMonitor"/>
+    <classEntry path="com.xdfsoft.share.IMonitorToken"/>
+    <classEntry path="com.xdfsoft.share.IProgressMonitor"/>
+    <classEntry path="com.xdfsoft.share.ProgressMonitor"/>
+    <classEntry path="com.xdfsoft.share.SimpleMonitorToken"/>
+    <classEntry path="com.xdfsoft.utils.DateUtil"/>
+    <classEntry path="com.xdfsoft.utils.PrimitiveUtil"/>
+    <classEntry path="com.xdfsoft.view.Progress"/>
+    <classEntry path="com.xdfsoft.view.SingleDataItemTemplate"/>
+    <classEntry path="com.xdfsoft.view.SingleDataListTemplate"/>
+    <classEntry path="com.xdfsoft.widget.DropdownField"/>
+    <classEntry path="com.xdfsoft.widget.calendar.MonthChangeEvent"/>
+    <classEntry path="com.xdfsoft.widget.calendar.MonthChooser"/>
+    <classEntry path="com.xdfsoft.widget.calendar.MonthField"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>

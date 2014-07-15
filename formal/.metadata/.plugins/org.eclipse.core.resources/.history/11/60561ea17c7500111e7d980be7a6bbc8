@@ -1,0 +1,11 @@
+package com.neusoft.right.repostiory;
+
+public class DepartmentDTO 
+{
+
+	public  String id;
+    public  name:String;
+    public  code:String;
+    public  upperDepartment:DepartmentVo;
+    public  subDepartmentList:ArrayCollection;
+}

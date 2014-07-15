@@ -1,0 +1,28 @@
+package org.epmr.facility.share
+{
+	public class SimpleMonitorToken implements IMonitorToken
+	{
+		private var _owner:IProgressMonitor;
+		private var _target:Object;
+		public function SimpleMonitorToken(owner:IProgressMonitor,target:Object){
+			this._owner=owner;
+			this._target=target;
+		}
+
+		public function get target():Object
+		{
+			return _target;
+		}
+		
+		public function update(minValue:Number, value:Number, maxValue:Number):Boolean
+		{
+			return _owner.update(this,minValue,value,maxValue);
+		}
+		
+		public function stop():void
+		{
+			return _owner.stop(this);
+		}
+		
+	}
+}

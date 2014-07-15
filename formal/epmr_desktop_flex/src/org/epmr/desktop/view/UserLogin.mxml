@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group   xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:s="library://ns.adobe.com/flex/spark" 
+		   xmlns:mx="library://ns.adobe.com/flex/mx"   
+		   xmlns:epmr="http://epmr.org"  
+	       width="100%" height="100%"
+	       creationComplete="this.doIni();" xmlns:controls="org.epmr.desktop.controls.*">
+	<fx:Script>
+		<![CDATA[
+			import mx.flash.UIMovieClip;
+			import mx.rpc.events.ResultEvent;
+			import mx.rpc.events.FaultEvent;
+			import org.epmr.framework.model.FrameWorkModel;
+			import mx.controls.Alert;
+			import org.epmr.remoting.Host;
+			import org.epmr.remoting.RemoteObject;
+			import org.epmr.framework.model.LoginResultVo;
+			import org.epmr.right.service.IRightService;
+			import org.epmr.right.service.RightServiceFactory;
+			import org.epmr.remoting.IInvokeResponder;
+			/**
+			 * 声明此变量为了将automation_flashworkit.swc 中UIMovieClip merge Into 到本包中。
+			 */
+			private var moveClip:UIMovieClip=null;
+			private var mainModel:FrameWorkModel= FrameWorkModel.getInstance();
+		    private var loginAccountCode:String=null;
+		    private var logining:Boolean=false;
+		    private function doIni():void
+		    {
+		       this.text_userName.getFocus();
+		    }
+		    private function onLoginReturn(event:ResultEvent):void
+	       {
+		        this.logining=false;
+		       	var loginResult:LoginResultVo =event.result as LoginResultVo;
+		        if (!loginResult.loginSucceed)
+		        {
+		           this.text_userName.hideRotate();
+		           Alert.show(loginResult.info);
+		           return;
+		        }
+		        this.mainModel.sessionId=loginResult.sessionId;
+		        this.mainModel.unitName=loginResult.unitName;
+		        this.mainModel.loginAccountCode=this.loginAccountCode;
+		    }
+		  
+		    private function onLoginFault(event:FaultEvent):void
+		    {
+		         this.logining=false;
+		         this.text_userName.hideRotate();
+		         Alert.show("访问权限服务失败，请联系系统管理人员！详细信息如下：\\n"+event.fault.message);
+		    }
+		    private function onKeyDown(event:KeyboardEvent):void
+		    {
+		    	if(event.keyCode == 13)
+		    	{
+		    		this.doOnLoginButtonClick();
+		    	}
+		    }
+		    
+		    private function doFocusIn():void
+		    {
+            	text_userName.text = "";
+            }
+            private function doOnLoginButtonClick():void
+            {
+               if (this.logining) return;
+               text_userName.showRotate();
+		       this.loginAccountCode=text_userName.text;
+		       var rs:IRightService = RightServiceFactory.getInstance().getRightService();
+		       var ir:IInvokeResponder=rs.userLogin(text_userName.text,text_password.text);
+		       ir.setResultCallback(onLoginReturn);
+		       ir.setFaultCallback(onLoginFault);
+            }
+          
+		]]>
+	</fx:Script>
+       <s:VGroup id="content" x="0" y="0" width="100%" height="100%" >
+         <s:HGroup width="100%" height="25%" horizontalAlign="right" >
+            <!--      	                           
+         	<mx:Image x="340" y="176" source="theme/image/xtys.png"  horizontalAlign="right">
+      	   
+           </mx:Image>
+            -->
+         </s:HGroup>
+         <s:HGroup width="100%" height="30%" horizontalAlign="center" verticalAlign="middle">
+         	<mx:Image x="0" y="0" source="theme/image/logo.png"  horizontalAlign="right"  click="doFocusIn()">
+            </mx:Image>
+            <s:VGroup>
+               <controls:UserNameInput id="text_userName" />
+               <controls:PasswordInput id="text_password"   keyDown="this.onKeyDown(event)" loginButtonClick="doOnLoginButtonClick();" />
+            </s:VGroup>
+         </s:HGroup>
+          <s:HGroup width="100%" height="30%" horizontalAlign="center"  verticalAlign="top" >
+      	      <mx:SWFLoader id="info_show"  autoLoad="true" source="theme/swf/sysinfo.swf"   />
+          </s:HGroup>
+          <s:HGroup id="xdf_show" width="100%" height="15%" horizontalAlign="right" verticalAlign="middle"  paddingBottom="20">
+             	  <mx:Image source="theme/image/xdf.png" />
+          </s:HGroup>
+       </s:VGroup>
+</s:Group>

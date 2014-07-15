@@ -1,0 +1,221 @@
+package org.epmr.managers
+{
+	import org.epmr.collection.HashMap;
+	import org.epmr.collection.IMap;
+	import org.epmr.collection.ISet;
+	
+	public class ModuleCacheManager implements ICacheManager
+	{
+		private var _capacity:int;
+		private var _policy:String;
+		private var _order:Array;
+		private var _cache:IMap;
+		private var _refCountMap:IMap;
+		public function ModuleCacheManager(policy:String,capacity:int=10)
+		{
+			_capacity=capacity;
+			_policy=policy;
+			_cache=new HashMap();
+			_order=new Array(_capacity);
+			_refCountMap=new HashMap();
+		}
+
+		public function find(key:Object):Object
+		{
+			if (this.containsKey(key))
+			{
+			  var refCount:int=this._refCountMap.find(key);
+			  refCount++;
+			}
+			return this._cache.find(key);
+		}
+		
+		public function containsKey(key:Object):Boolean
+		{
+			return this._cache.containsKey(key);
+		}
+		
+		public function put(key:Object, value:Object):Object
+		{
+			var refCount:int;
+			if (this.containsKey(key)) //put已经存在的对象，则认为对该对象使用了一次。
+			{ 
+			   refCount=this._refCountMap.find(key);
+			   refCount++;
+			   return value;
+			}
+			var outKey:Object;
+			if (this.size>=this._capacity)//如果缓存以满，根据缓存策略清除一个空间容纳最新的对象。
+			{
+				switch (this._policy)
+				{ 
+				   case CachePolicy.FIFO://先进先出
+				      outKey=this._order.shift(); //应溢出的为第一个缓存。 
+				      break;
+				   case CachePolicy.LIFO: //先进后出
+				      outKey=this._order.pop(); //应溢出的为最后一个缓存。
+				      break;
+				   case CachePolicy.LRU: //使用最小原则，应溢出的为引用计数最少的对象。
+				       var miniUseObjInfo:Object=this.getMinimizeUseObjectKeyAndIndex();
+				       outKey=miniUseObjInfo["key"];
+				       var indexOfOrder:int=miniUseObjInfo["index"];
+				       this._order.splice(indexOfOrder,1);
+				       break;
+				   default :
+				      outKey=this._order.shift();//缺省策略为先进先出。
+				      this._cache.remove(outKey);
+				      break;
+	            }
+	       }	
+	       this._cache.remove(outKey);//从缓存中移出应溢出的对象。 
+	       this._refCountMap.remove(outKey);//从引用技术Map中移出应溢出的对象。
+           this._order.push(key); 
+           refCount=1; //凡是被put进来的对象均按被引用过一次处理。
+		   this._refCountMap.put(key,refCount);
+		   return this._cache.put(key,value);		
+		}
+		/**
+		 * 获取引用最少的对象的key和在_order数组中的位置。
+		 */
+		private function getMinimizeUseObjectKeyAndIndex():Object
+		{
+		   var rst:Object;
+		   var refCount:int=int.MAX_VALUE;
+		   var index:int;
+		   for(var i:int=0;i<this._order.length;i++)
+		   {
+		       var key:Object=this._order[i];
+		       if (this._refCountMap.find(key)<refCount)
+		       {
+		       	  rst=key;
+		       	  index=i;
+		       	  refCount=this._refCountMap.find(key);
+		       }
+		   }
+		   return {"key":key,"index":index};
+		}
+		public function get size():uint
+		{
+			return this._cache.size;
+		}
+		
+		public function remove(key:Object):Object
+		{
+			if (!this.containsKey(key)) return null;
+			this._refCountMap.remove(key);
+			
+			var index:int=this._order.indexOf(key);
+			if (index>=0)
+		    {
+		      this._order.splice(index,1);
+		    }
+		    return this._cache.remove(key);  
+		} 
+		
+		public function clear():void
+		{
+		   this._cache.clear();	
+		   this._order.splice(0);
+		   this._refCountMap.clear();
+		}
+		public function keySet():ISet
+        {
+    	  return this._cache.keySet();
+        }
+	}
+}
+	
+import flash.events.EventDispatcher;
+import flash.system.ApplicationDomain;
+import flash.system.SecurityDomain;
+import flash.utils.ByteArray;
+
+import mx.core.IFlexModuleFactory;
+import mx.modules.IModuleInfo;
+
+
+
+class CachedModuleInfo extends EventDispatcher implements IModuleInfo{
+	
+	private var _info:IModuleInfo;
+	private var _loaded:Boolean;
+	public function CachedModuleInfo(info:IModuleInfo){
+		super();
+		_info=info;
+		_loaded=_info.loaded;
+	}
+	
+    public function get data():Object{
+    	return _info.data;	
+    }
+    
+   
+    public function set data(value:Object):void{
+    	_info.data=value;	
+    }
+
+    
+    public function get error():Boolean{
+    	return _info.error;	
+    }
+    
+    public function get factory():IFlexModuleFactory{
+    	return _info.factory;
+    }	
+    
+    public function get loaded():Boolean{
+    	return _info.loaded;
+    }
+    
+    public function get ready():Boolean{
+    	return _info.ready;	
+    }	
+    
+    public function get setup():Boolean{
+    	return _info.setup;	
+    }
+    
+    public function get url():String{
+    	return _info.url;	
+    }
+	public function load(applicationDomain:ApplicationDomain = null,
+				  securityDomain:SecurityDomain = null,
+				  bytes:ByteArray = null,
+				  moduleFactory:IFlexModuleFactory = null):void{
+	}	
+	
+	
+//	public function load(applicationDomain:ApplicationDomain = null,
+//				  securityDomain:SecurityDomain = null):void{
+//		
+//		
+//	}	
+	
+/*	public function load(applicationDomain:ApplicationDomain = null,
+				  securityDomain:SecurityDomain = null):void{
+		
+	}*/
+	
+	public function doLoad(applicationDomain:ApplicationDomain = null,
+                  securityDomain:SecurityDomain = null):void{
+		return _info.load(applicationDomain,securityDomain);
+	}
+    
+    public function release():void{
+    	//_info.release();	
+    }
+	
+   
+    public function unload():void{
+    	
+    }	
+	
+	public function doUnload():void{
+		_info.unload();	
+	}
+   
+    public function publish(factory:IFlexModuleFactory):void{
+    	_info.publish(factory);	
+    }	
+  
+}

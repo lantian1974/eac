@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/events
+END
+WindowPopupEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/events/WindowPopupEvent.as
+END
+MinimizeEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/events/MinimizeEvent.as
+END
+RecoverEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/events/RecoverEvent.as
+END
+MinimizeRecoverEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/events/MinimizeRecoverEvent.as
+END
+UserLoginEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/events/UserLoginEvent.as
+END
+OpenWindowEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/events/OpenWindowEvent.as
+END

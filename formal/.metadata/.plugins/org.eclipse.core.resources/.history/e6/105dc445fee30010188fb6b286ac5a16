@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:TitleWindow 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	paddingLeft="10" paddingRight="10"
+	width="100%" height="100%" 
+	showCloseButton="true"
+	creationPolicy="none" 
+	visible="false" includeInLayout="false"
+	initialize="init()">
+	<mx:Metadata>
+		[DefaultProperty("templateContent")]
+	</mx:Metadata>
+	<mx:Script>
+		<![CDATA[
+			import com.xdfsoft.events.MinimizeEvent;
+			import com.xdfsoft.mediate.BindDescriptor;
+			import com.xdfsoft.mediate.BindableUIAdapter;
+			import com.xdfsoft.mediate.UIAdapter;
+			
+			import mx.containers.ControlBar;
+			import mx.controls.RadioButtonGroup;
+			import mx.core.Application;
+			import mx.core.UIComponent;
+			import mx.events.CloseEvent;
+			import mx.events.PropertyChangeEvent;
+			import mx.managers.PopUpManager;
+			import mx.managers.PopUpManagerChildList;
+			
+			import spark.components.SkinnableContainer;
+			import spark.components.supportClasses.SkinnableComponent;
+		
+			
+			private var _item:Object;
+			
+			private var _adapter:UIAdapter;
+			private var _parent:DisplayObjectContainer;
+			
+			[InstanceType("mx.core.UIComponent")]
+			public var templateContent:IDeferredInstance;
+			
+			[InstanceType("mx.containers.ControlBar")]
+			public var templateControl:IDeferredInstance;
+			
+			private function init():void{
+				var content:UIComponent=templateContent.getInstance() as UIComponent;
+				addElement(content);
+				if(templateControl){
+					var control:ControlBar=templateControl.getInstance() as ControlBar;
+					addElement(control);
+				}
+				this.addEventListener(KeyboardEvent.KEY_DOWN,onKeyDown);
+				_adapter=createUIAdapter();
+				if(_item)
+					_adapter.setData(_item);
+				dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"adapter",null,_adapter));
+			}
+			
+			private function onKeyDown(event:KeyboardEvent):void{
+				if(event.keyCode==Keyboard.ENTER){
+					acceptChanges();
+					hide();
+				}	
+				else if(event.keyCode==Keyboard.ESCAPE){
+					discardChanges();
+					hide();	
+				}	
+			}
+			[Bindable("propertyChange")]
+			public function get adapter():UIAdapter{
+				return _adapter;
+			}
+			[Bindable]
+			public function get item():Object{
+				return _item;
+			}
+			
+			public function set item(value:Object):void{
+				if(_item==value) return;
+				_item=value;
+				if(_adapter)
+					_adapter.setData(_item);
+			}
+
+			protected function createUIAdapter():UIAdapter{
+				return new BindableUIAdapter(propertyDescriptor,this);
+			}
+			protected function get propertyDescriptor():BindDescriptor{
+				throw new Error("abstract property [propertyDescriptor] not implemented!");
+				return null;
+			}
+			public function show(parent:UIComponent):void{
+				if(processedDescriptors==false){
+					createComponentsFromDescriptors();
+				}	
+				visible=true;
+				includeInLayout=true;	
+				if(isPopUp==false){
+					if(this.parent) SkinnableContainer(this.parent).removeElement(this);
+					PopUpManager.addPopUp(this,parent,false,PopUpManagerChildList.POPUP); 
+					addEventListener(CloseEvent.CLOSE,hide);
+					parent.addEventListener(Event.REMOVED_FROM_STAGE,hide);
+				}
+				PopUpManager.centerPopUp(this);
+				PopUpManager.bringToFront(this);
+			}
+			public function hide(event:Event=null):void{
+				if(isPopUp){
+					discardChanges();
+					isPopUp=false;
+					removeEventListener(CloseEvent.CLOSE,hide);
+					parent.removeEventListener(Event.REMOVED_FROM_STAGE,hide);
+					PopUpManager.removePopUp(this);
+				}
+			}
+			
+			public function acceptChanges():void{
+				_adapter.acceptChanges();
+			}
+			
+			public function discardChanges():void{
+				_adapter.discardChanges();
+			}
+			
+		]]>
+	</mx:Script>
+	
+</mx:TitleWindow>

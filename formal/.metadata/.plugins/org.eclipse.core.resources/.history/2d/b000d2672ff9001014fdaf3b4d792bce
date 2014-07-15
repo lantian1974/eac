@@ -1,0 +1,8 @@
+package org.epmr.desktop.respository;
+
+import java.util.List;
+
+public interface IEpmrUserShortcutDao 
+{
+   List<EprmUserShortcut> getUserShortcuts(String loginCode);
+}

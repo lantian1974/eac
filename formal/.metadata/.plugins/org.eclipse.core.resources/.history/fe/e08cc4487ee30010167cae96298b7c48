@@ -1,0 +1,7 @@
+package org.epmr.collection
+{
+	public interface ISet extends ICollection
+	{
+		
+	}
+}

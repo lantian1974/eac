@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   width="1343" height="740" minWidth="955" minHeight="600">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import flash.net.URLLoader;
+			import flash.net.URLLoaderDataFormat;
+			import mx.controls.Alert;
+			import mx.messaging.config.ServerConfig;
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+			import mx.rpc.remoting.RemoteObject;
+			private function doOnHelloWorldOk(event:ResultEvent):void
+			{
+				var msg:String=event.result as String;
+				Alert.show(msg);
+			}
+			private function doOnFault(event:FaultEvent):void
+			{
+				Alert.show(event.fault.faultDetail);
+			}
+			private function hello2():void
+			{
+				var destination:String="TestFacade";
+				var ro:RemoteObject=new RemoteObject(destination);
+				ro.addEventListener(ResultEvent.RESULT,doOnHelloWorldOk);
+				ro.addEventListener(FaultEvent.FAULT,doOnFault);
+				ro.hello();
+				Alert.show("hi!");
+			}
+			private function showCurrentConfig():void
+			{
+				TextArea_config1.text=ServerConfig.xml.toString();
+			}
+			
+			private function showNewConfig():void
+			{
+			   this.loadConfgi();
+			}
+			private var configUrl:String="FlexChannelsConfig";
+			private var loader:URLLoader=new URLLoader();
+			private function loadConfgi():void
+			{
+			    var request:URLRequest=new URLRequest();
+				request.url=configUrl;
+				this.loader.dataFormat=URLLoaderDataFormat.TEXT;
+				this.loader.load(request);
+				this.loader.addEventListener(Event.COMPLETE,onLoad);
+				this.loader.addEventListener(IOErrorEvent.IO_ERROR,onLoadError);	
+			}
+			private function onLoadError(event:IOErrorEvent):void
+			{
+			    Alert.show(event.errorID+" : "+event.text);
+			}
+			private var serverXml:XML;
+			private function onLoad(even:Event):void
+			{
+				this.serverXml=new XML(this.loader.data);
+				this.TextArea_config2.text=this.serverXml.toString();
+			}
+			private function merge():void
+			{
+				var newXml:XML=serverXml.copy();
+				var curXmlList:XMLList=ServerConfig.xml.children();
+				for(var i:int=curXmlList.length()-1;i--;i>0)
+				{
+				   var xml:XML=curXmlList[i];
+				   if (xml.name!="channels")
+				   {
+					   newXml.insertChildAfter(null,xml);
+				   }
+				}
+				this.TextArea_config3.text=newXml.toString();
+				
+			}
+		]]>
+	</fx:Script>
+	<s:Button x="58" y="31" label="Button" click="hello2();"/>
+	<s:TextArea id="TextArea_config1" x="10" y="96" width="463" height="494"/>
+	<s:TextArea id="TextArea_config2" x="481" y="96" width="463" height="494"/>
+	<s:TextArea id="TextArea_config3" x="953" y="97" width="475" height="494"/>
+	<s:Button x="74" y="67" label="展示当前的配置"  click="showCurrentConfig();"/>
+	<s:Button x="621" y="67" label="展示更改后的配置" click="showNewConfig();"/>
+	<s:Button x="1098" y="67" label="合并" click="merge();"/>
+</s:Application>

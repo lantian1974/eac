@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF
+END
+beans.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/beans.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/web.xml
+END

@@ -1,0 +1,10 @@
+package org.epmr.collection
+{
+	public interface Iterator {
+      
+      function next():*;
+      function hasNext():Boolean;
+      function remove():*;
+   }
+
+}

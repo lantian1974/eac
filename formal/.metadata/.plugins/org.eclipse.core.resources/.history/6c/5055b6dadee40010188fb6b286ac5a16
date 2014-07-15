@@ -1,0 +1,24 @@
+package org.epmr.remoting
+{
+	public class Host
+	{
+	    private static var instance:Host=null;
+		public function Host()
+		{
+			if (instance!=null)
+			{
+			   throw new Error("org.epmr.remoting.Host只能有一个实例");
+			}
+		}
+		public static function getInstance():Host
+		{
+		  if(instance==null)
+		  {
+		     instance=new Host();
+		  }
+		  return instance;
+		}
+		public var  channelUri:String;
+
+	}
+}

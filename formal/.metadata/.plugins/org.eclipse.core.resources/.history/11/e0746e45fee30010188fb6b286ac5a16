@@ -1,0 +1,206 @@
+package com.xdfsoft.mediate
+{
+	import com.xdfsoft.event.DataRevisionEvent;
+	import com.xdfsoft.utils.PrimitiveUtil;
+	
+	import flash.events.Event;
+	import flash.events.EventDispatcher;
+	import flash.events.IEventDispatcher;
+	import flash.utils.Proxy;
+	import flash.utils.flash_proxy;
+	
+	import mx.events.PropertyChangeEvent;
+	
+	use namespace flash_proxy;
+	
+	[Bindable("propertyChange")]
+	public dynamic class UIAdapter extends Proxy implements IEventDispatcher
+	{
+		private var _context:Object;
+		private var _properties:BindDescriptor;
+		private var _data:Object;
+		private var _changes:Object;
+		private var _dispatcher:IEventDispatcher;
+		public function UIAdapter(props:BindDescriptor,context:Object=null)
+		{
+			_context=context;
+			_properties=props;
+			_data=new Object();
+			_dispatcher=new EventDispatcher(this);
+		}
+		protected final function getContext():Object{
+			return _context;
+		}
+		protected final function getDescriptor():BindDescriptor{
+			return _properties;
+		}
+		protected final function getRevisions():Object{
+			return _changes;
+		}
+		[Bindable("dataReviseTraced")]
+		public final function isRevised():Boolean{
+			if(_changes==null) return false;
+			for(var n:* in _changes)
+				return true;
+			return false;
+		}
+		public function setData(value:Object):void{
+			if(value==null) value=new Object();
+			if(_data==value) return;
+			clearChanges();
+			_data=value;
+			dispatchEvent(new DataRevisionEvent(DataRevisionEvent.REVISED,DataRevisionEvent.KIND_INIT));
+			for each(var name:* in _properties.names){
+				dispatchUpdateEvent(name, undefined, _data[name]);				
+			}
+		}
+		public final function getData():Object{
+			return _data;
+		}
+		public function acceptChanges():void{
+			if(_changes!=null){
+				for(var field:* in _changes){
+					_data[field]=_changes[field];
+				}
+				clearChanges();
+				dispatchEvent(new DataRevisionEvent(DataRevisionEvent.REVISED,DataRevisionEvent.KIND_ACCEPT));
+			}	
+		}
+		
+		public function discardChanges():void{
+			if(_changes!=null){
+				for(var field:* in _changes){
+					var origin:*=_changes[field];
+					var current:*=_data[field];
+					dispatchUpdateEvent(field, origin, current);
+				}
+				clearChanges();
+				dispatchEvent(new DataRevisionEvent(DataRevisionEvent.REVISED,DataRevisionEvent.KIND_DISCARD));
+			}	
+		}
+		private function clearChanges():void{
+			_changes=null;
+		}
+		private function initChanges():void{
+			_changes=new Object();
+			dispatchEvent(new DataRevisionEvent(DataRevisionEvent.REVISED,DataRevisionEvent.KIND_MODIFY));
+		}
+		override flash_proxy function getProperty(name:*):*{
+			var result:*=undefined;
+			if(_data!=null && hasProperty(name)){
+				result=doGetProperty(name);
+				var bridge:IUIBridge=_properties.getBridge(name);
+				result=bridge.toUIData(_context,name,result);	
+			}	
+			return result;	
+		}
+		protected function doGetProperty(name:*):*{
+			if((_changes!=null) && (name in _changes))
+				return _changes[name];
+			else
+				return _data[name];
+		}
+		override flash_proxy function setProperty(name:*, value:*):void{
+			if(_data==null) throw new Error("no proxy data setted");
+			if(hasProperty(name)==false) return;
+			var origin:*=doGetProperty(name);
+			var current:*=value;
+			var bridge:IUIBridge=_properties.getBridge(name);
+			current=bridge.fromUIData(_context,name,value);
+			if(current==undefined)	
+				return;
+			if(objectEquals(origin,current))
+				return;
+			doSetProperty(name,current,origin);	
+		}
+		protected function doSetProperty(name:*,current:*,origin:*):void{
+			if(_changes==null){
+				initChanges();
+			}	
+			_changes[name]=current;	
+            dispatchUpdateEvent(name, origin, current);
+		}
+		
+		public function objectEquals(a:*,b:*):Boolean{
+			return PrimitiveUtil.equals(a,b); 
+		}
+		override flash_proxy function callProperty(name:*, ... rest):*{
+			//NOTE: we disallow function call 
+			//      because the function name within namespace [public] 
+			//      maybe conflicted between [this] and the proxyed [data]
+			return undefined;
+		}
+		
+		override flash_proxy function hasProperty(name:*):Boolean{
+			return _properties.contains(name);
+		}
+		
+		override flash_proxy function nextName(index:int):String{
+	        return _properties.names[index -1];
+	    }
+	    
+	    override flash_proxy function nextNameIndex(index:int):int{
+	        
+	        if (index < _properties.names.length)
+	        {
+	            return index + 1;
+	        }
+	        else
+	        {
+	            return 0;
+	        }
+	    }
+	    
+	    override flash_proxy function nextValue(index:int):*
+	    {
+	        return getProperty([nextName(index)]);
+	    }
+	    
+	    protected function dispatchUpdateEvent(property:*,origin:*,current:*):void{
+			if(hasEventListener(PropertyChangeEvent.PROPERTY_CHANGE)){
+				if (property is QName)
+	            	property = QName(property).localName;
+				var event:PropertyChangeEvent =
+	            PropertyChangeEvent.createUpdateEvent(
+	                this, property.toString(), origin, current);
+	        	dispatchEvent(event);
+   			}
+		}
+		public function toString():String{
+	    	return _data==null?"":_data.toString();
+	    }
+	    public function addEventListener(type:String, listener:Function,
+	                                 useCapture:Boolean = false,
+	                                 priority:int = 0,
+	                                 useWeakReference:Boolean = false):void
+	    {
+	        _dispatcher.addEventListener(type, listener, useCapture,
+	                                    priority, useWeakReference);
+	    }
+	
+	    
+	    public function removeEventListener(type:String, listener:Function,
+	                                        useCapture:Boolean = false):void
+	    {
+	        _dispatcher.removeEventListener(type, listener, useCapture);
+	    }
+	
+	    
+	    public function dispatchEvent(event:Event):Boolean
+	    {
+	        return _dispatcher.dispatchEvent(event);
+	    }
+	    
+	    
+	    public function hasEventListener(type:String):Boolean
+	    {
+	        return _dispatcher.hasEventListener(type);
+	    }
+	    
+	    
+	    public function willTrigger(type:String):Boolean
+	    {
+	        return _dispatcher.willTrigger(type);
+	    }
+	}
+}

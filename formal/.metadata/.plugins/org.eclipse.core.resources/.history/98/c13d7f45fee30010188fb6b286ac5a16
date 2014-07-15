@@ -1,0 +1,127 @@
+package com.xdfsoft.recorder
+{
+	import flash.events.Event;
+	import flash.events.EventDispatcher;
+	import flash.events.IEventDispatcher;
+	import flash.utils.getQualifiedClassName;
+	
+	import mx.core.EventPriority;
+	import mx.core.IMXMLObject;
+	import mx.events.FlexEvent;
+	
+	[Event(name="record",type="com.xdfsoft.recorder.RecorderEvent")]
+	[Event(name="replay",type="com.xdfsoft.recorder.RecorderEvent")]
+	public class PropertyRecorder extends EventDispatcher implements IMXMLObject
+	{
+		private var _recorder:PropertyInnerRecorder;
+		private var _target:IEventDispatcher;
+		private var _targetEvent:String;
+		private var _clearAfterReplay:Boolean;
+		private var _label:String;
+		public function PropertyRecorder()
+		{
+			_targetEvent=FlexEvent.CREATION_COMPLETE;
+			_clearAfterReplay=true;
+		}
+		
+		public function initialized(document:Object, id:String):void
+		{
+			var name:String=flash.utils.getQualifiedClassName(document);
+			_recorder=new PropertyInnerRecorder(name+"#"+id);
+			_recorder.target=_target;
+			_recorder.label=_label;
+			_recorder.addEventListener(RecorderEvent.RECORD,onRecorderActive);
+			_recorder.addEventListener(RecorderEvent.REPLAY,onRecorderActive);
+		}
+		private function onRecorderActive(event:RecorderEvent):void{
+			if(!dispatchEvent(event))
+				event.preventDefault();
+		}
+		public function record(chain:String,content:Object=null):void
+		{
+			_recorder.recordProperty(chain,content);
+		}
+		private function onReplay(event:Event):void{
+			_target.removeEventListener(_targetEvent,onReplay,false);
+			_recorder.replay();
+			if(_clearAfterReplay)
+				_recorder.clear();
+		}
+		
+		public function get target():IEventDispatcher{
+			return _target;
+		}
+		public function set target(value:IEventDispatcher):void{
+			if(_target==value) return;
+			if(_target)
+				_target.removeEventListener(_targetEvent,onReplay,false);
+			_target=value;
+			if(_recorder)
+				_recorder.target=_target;
+			if(_target)
+				_target.addEventListener(_targetEvent,onReplay,false,EventPriority.DEFAULT_HANDLER+1);
+		}
+		public function get targetEvent():String{
+			return _targetEvent;
+		}
+		public function set targetEvent(value:String):void{
+			if(value==null || value.length==0 || _targetEvent==value) return;
+			if(_target)
+				_target.removeEventListener(_targetEvent,onReplay,false);
+			_targetEvent=value;
+			if(_target)
+				_target.addEventListener(_targetEvent,onReplay,false,EventPriority.DEFAULT_HANDLER+1);
+		}
+		public function get clearAfterReplay():Boolean{
+			return this._clearAfterReplay;
+		}
+		public function set clearAfterReplay(value:Boolean):void{
+			this._clearAfterReplay=value;
+		}
+		public function get label():String{
+			return _label;
+		}
+		
+		public function set label(value:String):void{
+			_label=value;
+			if(_recorder)
+				_recorder.label=value;
+		}
+	}
+}
+	import com.xdfsoft.recorder.Recorder;
+	import com.xdfsoft.recorder.LocalMedium;
+	import com.xdfsoft.reflect.Field;
+	
+class PropertyInnerRecorder extends Recorder{
+	public var target:Object;
+	public function PropertyInnerRecorder(id:String){
+		super(new LocalMedium(id));
+	}
+	public function recordProperty(chain:String,content:Object=null):void{
+		if(content==null)
+			content=Field.getProperty(target,chain);
+		for(var i:int=0;i<medium.length;i++){//如果有相同的chain，则不再记录，只更新
+			if(medium.seek(i)){
+				var array:Array=medium.read() as Array;
+				if(array[0]==chain){
+					array[1]=content;
+					return;
+				}	
+			}
+		}
+		super.record([chain,content]);
+	}
+	override protected function playHandler(content:Object):void{
+		var chain:String=content[0];
+		var value:Object=content[1];
+		Field.setProperty(target,chain,value);
+	}
+	public function get label():String{
+		return medium.label;
+	}
+		
+	public function set label(value:String):void{
+		medium.label=value;
+	}
+}

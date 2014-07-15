@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/view
+END
+BaseModule.as
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/view/BaseModule.as
+END
+UserWorkPlace.mxml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/view/UserWorkPlace.mxml
+END
+UserLogin.mxml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/view/UserLogin.mxml
+END
+LoginDialog.mxml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/view/LoginDialog.mxml
+END
+MemManager.mxml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/view/MemManager.mxml
+END
+PerspectiveTreeDescriptor.as
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/epmr/!svn/ver/11/epmr_desktop_flex/src/org/epmr/desktop/view/PerspectiveTreeDescriptor.as
+END

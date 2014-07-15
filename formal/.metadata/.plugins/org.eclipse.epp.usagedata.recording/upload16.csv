@@ -1,0 +1,251 @@
+what,kind,bundleId,bundleVersion,description,time
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\commonSkins\\MinimizableTitleWindowCloseButtonSkin.mxml",1316667430437
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\controls\\MinizableTitleWindow.as",1316667430453
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\controls\\IPopUpWindow.as",1316667430453
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\events\\MinimizeRecoverEvent.as",1316667430453
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\managers\\CachePolicy.as",1316667430453
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\commonSkins\\MinimizeControlerSkin.mxml",1316667430468
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\managers\\PopupManager.as",1316667430468
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\remoting\\Host.as",1316667430468
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\managers\\MemoryManager.as",1316667430468
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\managers\\ControlResizor.as",1316667430468
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\controls\\ComponentShapeState.as",1316667430484
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\controls\\UserNameInput.mxml",1316667430484
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\commonSkins\\MinimizableTitleWindowSkin.mxml",1316667430484
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\managers\\SimpleCacheManager.as",1316667430500
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\events\\WindowPopupEvent.as",1316667430500
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\commonSkins\\MinimizeControlerLeftButtonSkin.mxml",1316667430500
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\controls\\ModuleContainer.as",1316667430500
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\controls\\MinimizeObjHolderManager.as",1316667430500
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\managers\\ICacheManager.as",1316667430734
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\controls\\MinimizeControler.as",1316667430734
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\controls\\MessageBox.as",1316667430734
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\remoting\\RemoteObject.as",1316667430734
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\managers\\ModuleCacheManager.as",1316667430734
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\events\\MinimizeEvent.as",1316667430734
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\managers\\ModuleManagerExt.as",1316667430734
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667434781
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316667436281
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316667439609
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316667447968
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667449578
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667449593
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667449734
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667471437
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316667477093
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667479859
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667483125
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667483140
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667483218
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667485640
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316667486296
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667488593
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667490656
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667495093
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667495109
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667495203
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667497703
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316667498218
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667502281
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667506843
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667506859
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667506937
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667509734
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316667510234
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667514390
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667517046
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667517062
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667517171
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667519515
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316667519937
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667522125
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667524781
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667524796
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667524890
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667527281
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316667527703
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667529656
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667532500
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667532515
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667532640
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667535562
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316667536187
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667538187
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667541531
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667546640
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667553140
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667553156
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667555046
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667557968
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316667558890
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667561531
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667565375
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667565390
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667565500
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667569937
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316667570718
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667576000
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667576015
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667576125
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667607906
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667643734
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667697953
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667697953
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667697984
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667770531
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316667776906
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316667778640
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316667780406
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316667780656
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667789734
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316667795343
+opened,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316667821093
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316667821171
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316667827609
+opened,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316667828046
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316667828171
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316667852562
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316667852781
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316667854812
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316667855078
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316667860000
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316667860281
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.copy",1316667876656
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316667880984
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667900046
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316669754859
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316669756515
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.copy",1316669759468
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316669762437
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316669764921
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316669766343
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316669790015
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316669793484
+opened,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316669883078
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316669883187
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316669885000
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316669885796
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.copy",1316669928859
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316669931390
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316669977468
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316669986609
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316669994171
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670009921
+opened,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670031015
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670031296
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670058890
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670065859
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670070093
+opened,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670092937
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670093046
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670105031
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670145078
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670152375
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670186359
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670187343
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670187703
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670187796
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670189859
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316670199156
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670213578
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670218343
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670222968
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670225953
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670232328
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670235015
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670235109
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670235125
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670282718
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670312718
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670318921
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670328593
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670331531
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670333968
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316670335031
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.copy",1316670345406
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316670346812
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316670348156
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316670348953
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316670349390
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316670356921
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316670357921
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670361515
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670373953
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670384046
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670384234
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670391546
+opened,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670398062
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670398250
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670406578
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670421609
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670429015
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670464125
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670464781
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670465046
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670479312
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670488531
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670504218
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670504468
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670520796
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670537687
+closed,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670537796
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670537843
+closed,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670537875
+closed,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670537937
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670566531
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670567187
+opened,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670567234
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670567312
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670584984
+opened,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670589593
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670589750
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670599078
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670613125
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670615671
+opened,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670621750
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670621828
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670627359
+opened,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670627625
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670627703
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670634906
+opened,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670638312
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670638406
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670639234
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670642171
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670643171
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670643375
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670657890
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670660812
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670661953
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670662328
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670662531
+closed,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670662562
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670672671
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670674109
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670674484
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670674875
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670681812
+activated,view,org.eclipse.ui.ide,3.7.0.I20110519-0100,"org.eclipse.ui.views.ProblemView",1316670684515
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316670687718
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670695828
+closed,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670695921
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670695984
+closed,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670696000
+closed,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670696046
+closed,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670696109
+closed,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670696125
+closed,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670696156
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670700296
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670700343
+closed,editor,com.adobe.flexbuilder.mxml.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.mxml.MXMLEditor",1316670700453
+closed,editor,org.eclipse.wst.xml.ui,1.1.200.v201105111835,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1316670700531
+closed,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670700609
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670704750
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670704796
+closed,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670704812
+closed,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670704859
+closed,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670704875
+closed,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316670704921
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670707750
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670709406
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316670710062

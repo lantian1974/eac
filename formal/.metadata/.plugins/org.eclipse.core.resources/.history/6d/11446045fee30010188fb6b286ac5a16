@@ -1,0 +1,87 @@
+package com.xdfsoft.formatters
+{
+	import mx.formatters.Formatter;
+	public class RMBFormatter extends Formatter
+	{
+		
+		override public function format(value:Object):String{
+			if(value==null || isNaN(Number(value)))
+				return "";
+			return moneyToChinese(Number(value));
+		}
+		//	人民币金额大小写转换函数
+		private function moneyToChinese(d:Number):String
+		{
+			var money:Number = d;
+			var lMoney:Number = 0;//long
+			var sMoney:String = "";
+			var stringCn:String = "";
+			var zeroFlag:Boolean = false; //零标志
+			var segmentFlag:Boolean = false; //分段标志
+			var posFlag:Boolean = false; //负值标志
+			var j:int = 0;
+			var charCn:Array = new Array(
+					"零","壹","贰","叁","肆","伍","陆","柒","捌","玖",
+					"分","角","元","拾","佰","仟","万",
+					"拾","佰","仟","亿","拾","佰","仟","万" );
+	
+			//判断金额的正负
+			if (money < 0)
+			{
+				money = Math.abs(money);
+				posFlag = true;
+			}
+			//判断是否超过转换范围
+			if (money > 9999999999999.99)
+			{
+				stringCn = "数值超出范围";
+				return stringCn;
+			}
+			lMoney = Math.round((money) * 100);
+			sMoney = lMoney.toString();
+			for (var i:int = sMoney.length - 1; i >= 0; i--)
+			{
+				var num:int = int(sMoney.charAt(i));
+				segmentFlag = ((i == sMoney.length - 1) //分位
+			                 || (i == sMoney.length - 3) //元位
+			                 || (i == sMoney.length - 7) //万位
+		                     || (i == sMoney.length - 11)); //亿位			
+				stringCn =convert((num == 0) && (zeroFlag || segmentFlag),"",charCn[num]) //数值
+			              +convert((num == 0) && (i == sMoney.length - 1), "整", //分位为零
+			               convert((num > 0) || segmentFlag, charCn[j + 10], "")) //单位
+		                  //亿、万、元位为零而千万、千、角位不为零
+		                  +convert((num == 0) && (!zeroFlag) 
+		                                      && (i < sMoney.length - 1) 
+		                                      && segmentFlag,"零","")
+			              + stringCn;
+				              
+				j++;
+				if (num == 0)
+				{
+					zeroFlag = true;
+				}
+				else
+				{
+					zeroFlag = false;
+				}
+			}
+			//亿位和万位之间都是零时会出现"亿万"	
+			stringCn = stringCn.replace("亿万", "亿");
+			//处理负值
+			if (posFlag)
+			{
+				stringCn = "負" + stringCn;
+			}
+			//处理0值
+			if (money == 0)
+			{
+				stringCn = "零元" + stringCn;
+			}
+			return stringCn;
+		}
+		private function convert(b:Boolean, s1:String, s2:String):String
+		{
+			return b?s1:s2;
+		}						
+	}
+}

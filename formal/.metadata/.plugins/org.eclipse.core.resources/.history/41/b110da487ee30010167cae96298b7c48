@@ -1,0 +1,100 @@
+package org.epmr.collection
+{
+	import flash.utils.Proxy;
+	import flash.utils.flash_proxy;
+	use namespace flash_proxy
+	internal class UnmodifiableMap extends AbstractMap implements IMap
+	{
+		private var _map:IMap;
+		
+		public function UnmodifiableMap(map:IMap){
+			this._map=map;
+		}
+		override public function find(key:*):*
+		{
+			return _map.find(key);
+		}
+		override public function iterator():Iterator{
+			return UnmodifiableIterator(_map.iterator());
+		}
+		private function check():void{
+			throw new Error("this map is unmodifiable!");
+		}
+		override public function put(key:*, value:*):*
+		{
+			check();
+			return null;
+		}
+		
+		override public function putAll(map:IMap):void
+		{
+			check();
+		}
+		
+		override public function keySet():ISet
+		{
+			return _map.keySet();
+		}
+		
+		override public function entrySet():ISet
+		{
+			return _map.entrySet();
+		}
+		
+		override public function values():ICollection
+		{
+			return _map.values();
+		}
+		
+		override public function remove(key:*):*
+		{
+			check();
+			return null;
+		}
+		
+		override public function get size():uint
+		{
+			return _map.size;
+		}
+		
+		override public function containsKey(key:*):Boolean
+		{
+			return _map.containsKey(key);
+		}
+		
+		override public function containsValue(value:*):Boolean
+		{
+			return _map.containsValue(value);
+		}
+		
+		override public function clear():void
+		{
+			check();
+		}
+		override public function enumerate(callback:Function,thisObject:*=null):void{
+			_map.enumerate(callback,thisObject);
+		}
+		override public function toString():String{
+			return _map.toString();
+		}
+		/**
+	     *  @private
+	     */
+	    override flash_proxy function nextName(index:int):String
+	    {
+	        if(_map is Proxy)
+	        	return Proxy(_map).nextName(index);
+	        return null;	
+	    }
+	    
+	    /**
+	     *  @private
+	     */
+	    override flash_proxy function nextValue(index:int):*
+	    {
+	         if(_map is Proxy)
+	        	return Proxy(_map).nextValue(index);
+	        return undefined;	
+	    }  
+	}
+}

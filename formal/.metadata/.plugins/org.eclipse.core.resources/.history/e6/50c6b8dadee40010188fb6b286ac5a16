@@ -1,0 +1,44 @@
+package org.epmr.remoting
+{
+	
+	import mx.messaging.Channel;
+	import mx.messaging.ChannelSet;
+	import mx.messaging.channels.AMFChannel;
+	import mx.rpc.remoting.RemoteObject;
+
+	public dynamic class RemoteObject extends mx.rpc.remoting.RemoteObject
+	{
+		private var  _channelUri:String=null;
+		public function RemoteObject(destination:String=null,channelUri:String=null)
+		{
+			super(destination);
+			if (channelUri!=null)
+			{
+			  this._channelUri=channelUri;
+			}
+			else
+			{
+			  this._channelUri="my-amf.endpoint";
+			}
+			setupChannelset();
+		}
+		public function get channelUri():String
+		{
+		  return this._channelUri;
+		}
+		public function set channelUri(channelUri:String):void
+		{
+			if (this._channelUri===channelUri) return;
+			this._channelUri=channelUri;
+			this.setupChannelset();
+		}
+		private function setupChannelset():void
+		{
+		    var _chanelSet:ChannelSet= new ChannelSet();
+			var amfChannel:Channel=new AMFChannel("my-amf",this._channelUri);
+		    _chanelSet.addChannel(amfChannel);
+		    this.channelSet=_chanelSet;
+		}
+	}
+		
+	}

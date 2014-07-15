@@ -1,0 +1,2216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kb-project>
+ <depends-on-projects/>
+ <used-by-projects/>
+ <paths>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/transaction/api/main/jboss-transaction-api_1.1_spec-1.0.0.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/org/jboss/resteasy/resteasy-multipart-provider/main/resteasy-multipart-provider-2.2.1.GA.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/persistence/api/main/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/org/jboss/as/controller-client/main/jboss-as-controller-client-7.0.2.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/rmi/api/main/jboss-rmi-api_1.0_spec-1.0.1.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/xml/soap/api/main/jboss-saaj-api_1.3_spec-1.0.1.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/xml/ws/api/main/jboss-jaxws-api_2.2_spec-2.0.0.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/activation/api/main/activation-1.1.1.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/jms/api/main/jboss-jms-api_1.1_spec-1.0.0.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/org/jboss/dmr/main/jboss-dmr-1.0.0.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-jaxrs-2.2.1.GA.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/security/jacc/api/main/jboss-jacc-api_1.4_spec-1.0.0.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/xml/rpc/api/main/jboss-jaxrpc-api_1.1_spec-1.0.0.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/org/jboss/logging/main/jboss-logging-3.0.1.GA.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/org/hibernate/validator/main/hibernate-validator-4.2.0.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/interceptor/api/main/jboss-interceptors-api_1.1_spec-1.0.0.Final.jar"/>
+  <path value="D:/Program Files/Java/jdk6.0_27/jre/lib/ext/localedata.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/ws/rs/api/main/jboss-jaxrs-api_1.1_spec-1.0.0.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/servlet/jstl/api/main/jboss-jstl-api_1.2_spec-1.0.1.Final.jar">
+   <libraries>
+    <library class="tld" version="1.2">
+     <id class="model-object"
+      path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/c-1_0-rt.tld" project="login"/>
+     <attributes>
+      <entry name="display-name">
+       <value-info attr="display-name" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="short-name">
+       <value-info attr="shortname" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="uri">
+       <value-info attr="uri" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+     </attributes>
+     <component class="tld">
+      <id class="model-object" path="/remove" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/remove/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/remove/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/forEach" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/varStatus" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/items" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/step" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/end" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/begin" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/param" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/param/name" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/param/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/set" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/set/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/target" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/property" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/catch" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/catch/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/otherwise" project="login"/>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/forTokens" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/varStatus" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/items" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/step" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/end" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/delims" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/begin" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/url" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/url/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/url/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/url/context" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/url/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/if" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/if/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/if/test" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/if/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/when" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/when/test" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/import" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/import/charEncoding" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/import/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/import/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/import/context" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/import/varReader" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/import/url" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/redirect" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/redirect/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/redirect/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/redirect/context" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/redirect/url" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/choose" project="login"/>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/out" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/out/default" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/out/escapeXml" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/out/value" project="login"/>
+      </attribute>
+     </component>
+    </library>
+    <library class="tld" version="1.2">
+     <id class="model-object"
+      path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/c-1_0.tld" project="login"/>
+     <attributes>
+      <entry name="display-name">
+       <value-info attr="display-name" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="short-name">
+       <value-info attr="shortname" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="uri">
+       <value-info attr="uri" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+     </attributes>
+     <component class="tld">
+      <id class="model-object" path="/remove" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/remove/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/remove/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/forEach" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/varStatus" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/items" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/step" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/end" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/begin" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/param" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/param/name" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/param/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/set" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/set/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/target" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/property" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/catch" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/catch/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/otherwise" project="login"/>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/forTokens" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/varStatus" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/items" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/step" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/end" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/delims" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/begin" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/url" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/url/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/url/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/url/context" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/url/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/if" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/if/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/if/test" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/if/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/when" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/when/test" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/import" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/import/charEncoding" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/import/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/import/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/import/context" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/import/varReader" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/import/url" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/redirect" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/redirect/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/redirect/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/redirect/context" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/redirect/url" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/choose" project="login"/>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/out" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/out/default" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/out/escapeXml" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/out/value" project="login"/>
+      </attribute>
+     </component>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/c.tld" project="login"/>
+     <attributes>
+      <entry name="display-name">
+       <value-info attr="display-name" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="short-name">
+       <value-info attr="shortname" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="uri">
+       <value-info attr="uri" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="version">
+       <value-info attr="version" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+     </attributes>
+     <component class="tld">
+      <id class="model-object" path="/remove" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/remove/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/remove/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/forEach" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/varStatus" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/items" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/step" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/end" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/begin" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/param" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/param/name" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/param/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/set" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/set/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/target" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/property" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/catch" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/catch/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/otherwise" project="login"/>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/forTokens" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/varStatus" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/items" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/step" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/end" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/delims" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forTokens/begin" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/url" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/url/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/url/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/url/context" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/url/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/if" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/if/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/if/test" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/if/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/when" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/when/test" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/import" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/import/charEncoding" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/import/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/import/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/import/context" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/import/varReader" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/import/url" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/redirect" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/redirect/context" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/redirect/url" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/choose" project="login"/>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/out" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/out/default" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/out/escapeXml" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/out/value" project="login"/>
+      </attribute>
+     </component>
+    </library>
+    <library class="tld" version="1.2">
+     <id class="model-object"
+      path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fmt-1_0-rt.tld" project="login"/>
+     <attributes>
+      <entry name="display-name">
+       <value-info attr="display-name" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="short-name">
+       <value-info attr="shortname" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="uri">
+       <value-info attr="uri" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+     </attributes>
+     <component class="tld">
+      <id class="model-object" path="/message" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/message/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/message/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/message/bundle" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/message/key" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/setTimeZone" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/setTimeZone/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setTimeZone/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setTimeZone/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/formatDate" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/pattern" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/dateStyle" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/timeStyle" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/timeZone" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/type" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/setBundle" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/setBundle/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setBundle/basename" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setBundle/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/setLocale" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/setLocale/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setLocale/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setLocale/variant" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/parseNumber" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/pattern" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/parseLocale" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/type" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/integerOnly" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/param" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/param/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/formatNumber" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/groupingUsed" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/currencyCode" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/pattern" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/currencySymbol" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/minIntegerDigits" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/maxFractionDigits" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/maxIntegerDigits" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/type" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/minFractionDigits" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/bundle" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/bundle/basename" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/bundle/prefix" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/timeZone" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/timeZone/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/parseDate" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/pattern" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/dateStyle" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/parseLocale" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/timeStyle" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/timeZone" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/type" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/requestEncoding" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/requestEncoding/value" project="login"/>
+      </attribute>
+     </component>
+    </library>
+    <library class="tld" version="1.2">
+     <id class="model-object"
+      path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fmt-1_0.tld" project="login"/>
+     <attributes>
+      <entry name="display-name">
+       <value-info attr="display-name" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="short-name">
+       <value-info attr="shortname" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="uri">
+       <value-info attr="uri" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+     </attributes>
+     <component class="tld">
+      <id class="model-object" path="/message" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/message/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/message/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/message/bundle" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/message/key" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/setTimeZone" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/setTimeZone/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setTimeZone/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setTimeZone/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/formatDate" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/pattern" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/dateStyle" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/timeStyle" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/timeZone" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/type" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/setBundle" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/setBundle/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setBundle/basename" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setBundle/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/setLocale" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/setLocale/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setLocale/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setLocale/variant" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/parseNumber" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/pattern" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/parseLocale" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/type" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/integerOnly" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/param" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/param/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/formatNumber" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/groupingUsed" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/currencyCode" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/pattern" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/currencySymbol" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/minIntegerDigits" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/maxFractionDigits" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/maxIntegerDigits" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/type" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/minFractionDigits" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/bundle" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/bundle/basename" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/bundle/prefix" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/timeZone" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/timeZone/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/parseDate" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/pattern" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/dateStyle" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/parseLocale" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/timeStyle" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/timeZone" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/type" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/requestEncoding" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/requestEncoding/value" project="login"/>
+      </attribute>
+     </component>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fmt.tld" project="login"/>
+     <attributes>
+      <entry name="display-name">
+       <value-info attr="display-name" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="short-name">
+       <value-info attr="shortname" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="uri">
+       <value-info attr="uri" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="version">
+       <value-info attr="version" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+     </attributes>
+     <component class="tld">
+      <id class="model-object" path="/message" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/message/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/message/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/message/bundle" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/message/key" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/setTimeZone" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/setTimeZone/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setTimeZone/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setTimeZone/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/formatDate" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/pattern" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/dateStyle" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/timeStyle" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/timeZone" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatDate/type" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/setBundle" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/setBundle/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setBundle/basename" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setBundle/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/setLocale" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/setLocale/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setLocale/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setLocale/variant" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/parseNumber" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/pattern" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/parseLocale" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/type" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseNumber/integerOnly" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/param" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/param/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/formatNumber" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/groupingUsed" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/currencyCode" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/pattern" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/currencySymbol" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/minIntegerDigits" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/maxFractionDigits" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/maxIntegerDigits" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/type" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/formatNumber/minFractionDigits" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/bundle" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/bundle/basename" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/bundle/prefix" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/timeZone" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/timeZone/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/parseDate" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/pattern" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/dateStyle" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/parseLocale" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/timeStyle" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/timeZone" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parseDate/type" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/requestEncoding" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/requestEncoding/value" project="login"/>
+      </attribute>
+     </component>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld" project="login"/>
+     <attributes>
+      <entry name="display-name">
+       <value-info attr="display-name" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="short-name">
+       <value-info attr="shortname" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="uri">
+       <value-info attr="uri" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="version">
+       <value-info attr="version" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+     </attributes>
+     <function>
+      <id class="model-object"
+       path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld/Functions/contains" project="login"/>
+     </function>
+     <function>
+      <id class="model-object"
+       path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld/Functions/containsIgnoreCase" project="login"/>
+     </function>
+     <function>
+      <id class="model-object"
+       path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld/Functions/endsWith" project="login"/>
+     </function>
+     <function>
+      <id class="model-object"
+       path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld/Functions/escapeXml" project="login"/>
+     </function>
+     <function>
+      <id class="model-object"
+       path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld/Functions/indexOf" project="login"/>
+     </function>
+     <function>
+      <id class="model-object"
+       path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld/Functions/join" project="login"/>
+     </function>
+     <function>
+      <id class="model-object"
+       path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld/Functions/length" project="login"/>
+     </function>
+     <function>
+      <id class="model-object"
+       path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld/Functions/replace" project="login"/>
+     </function>
+     <function>
+      <id class="model-object"
+       path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld/Functions/split" project="login"/>
+     </function>
+     <function>
+      <id class="model-object"
+       path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld/Functions/startsWith" project="login"/>
+     </function>
+     <function>
+      <id class="model-object"
+       path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld/Functions/substring" project="login"/>
+     </function>
+     <function>
+      <id class="model-object"
+       path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld/Functions/substringAfter" project="login"/>
+     </function>
+     <function>
+      <id class="model-object"
+       path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld/Functions/substringBefore" project="login"/>
+     </function>
+     <function>
+      <id class="model-object"
+       path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld/Functions/toLowerCase" project="login"/>
+     </function>
+     <function>
+      <id class="model-object"
+       path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld/Functions/toUpperCase" project="login"/>
+     </function>
+     <function>
+      <id class="model-object"
+       path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/fn.tld/Functions/trim" project="login"/>
+     </function>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/permittedtaglibs.tld" project="login"/>
+     <attributes>
+      <entry name="display-name">
+       <value-info attr="display-name" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="short-name">
+       <value-info attr="shortname" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="uri">
+       <value-info attr="uri" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="version">
+       <value-info attr="version" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+     </attributes>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/scriptfree.tld" project="login"/>
+     <attributes>
+      <entry name="display-name">
+       <value-info attr="display-name" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="short-name">
+       <value-info attr="shortname" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="uri">
+       <value-info attr="uri" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="version">
+       <value-info attr="version" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+     </attributes>
+    </library>
+    <library class="tld" version="1.2">
+     <id class="model-object"
+      path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/sql-1_0-rt.tld" project="login"/>
+     <attributes>
+      <entry name="display-name">
+       <value-info attr="display-name" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="short-name">
+       <value-info attr="shortname" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="uri">
+       <value-info attr="uri" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+     </attributes>
+     <component class="tld">
+      <id class="model-object" path="/update" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/update/dataSource" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/update/sql" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/update/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/update/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/dateParam" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/dateParam/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/dateParam/type" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/param" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/param/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/transaction" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/transaction/dataSource" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transaction/isolation" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/query" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/query/dataSource" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/query/sql" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/query/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/query/startRow" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/query/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/query/maxRows" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/setDataSource" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/dataSource" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/driver" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/password" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/user" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/url" project="login"/>
+      </attribute>
+     </component>
+    </library>
+    <library class="tld" version="1.2">
+     <id class="model-object"
+      path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/sql-1_0.tld" project="login"/>
+     <attributes>
+      <entry name="display-name">
+       <value-info attr="display-name" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="short-name">
+       <value-info attr="shortname" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="uri">
+       <value-info attr="uri" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+     </attributes>
+     <component class="tld">
+      <id class="model-object" path="/update" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/update/dataSource" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/update/sql" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/update/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/update/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/dateParam" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/dateParam/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/dateParam/type" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/param" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/param/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/transaction" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/transaction/dataSource" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transaction/isolation" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/query" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/query/dataSource" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/query/sql" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/query/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/query/startRow" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/query/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/query/maxRows" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/setDataSource" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/dataSource" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/driver" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/password" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/user" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/url" project="login"/>
+      </attribute>
+     </component>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/sql.tld" project="login"/>
+     <attributes>
+      <entry name="display-name">
+       <value-info attr="display-name" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="short-name">
+       <value-info attr="shortname" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="uri">
+       <value-info attr="uri" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="version">
+       <value-info attr="version" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+     </attributes>
+     <component class="tld">
+      <id class="model-object" path="/update" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/update/dataSource" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/update/sql" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/update/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/update/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/dateParam" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/dateParam/value" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/dateParam/type" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/param" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/param/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/transaction" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/transaction/dataSource" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transaction/isolation" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/query" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/query/dataSource" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/query/sql" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/query/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/query/startRow" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/query/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/query/maxRows" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/setDataSource" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/dataSource" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/driver" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/password" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/user" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/setDataSource/url" project="login"/>
+      </attribute>
+     </component>
+    </library>
+    <library class="tld" version="1.2">
+     <id class="model-object"
+      path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/x-1_0-rt.tld" project="login"/>
+     <attributes>
+      <entry name="display-name">
+       <value-info attr="display-name" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="short-name">
+       <value-info attr="shortname" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="uri">
+       <value-info attr="uri" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+     </attributes>
+     <component class="tld">
+      <id class="model-object" path="/transform" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/result" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/xslt" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/xmlSystemId" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/xsltSystemId" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/xml" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/param" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/param/name" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/param/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/forEach" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/select" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/set" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/set/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/select" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/if" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/if/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/if/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/if/select" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/when" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/when/select" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/otherwise" project="login"/>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/parse" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/scopeDom" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/xml" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/systemId" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/varDom" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/filter" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/choose" project="login"/>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/out" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/out/escapeXml" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/out/select" project="login"/>
+      </attribute>
+     </component>
+    </library>
+    <library class="tld" version="1.2">
+     <id class="model-object"
+      path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/x-1_0.tld" project="login"/>
+     <attributes>
+      <entry name="display-name">
+       <value-info attr="display-name" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="short-name">
+       <value-info attr="shortname" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="uri">
+       <value-info attr="uri" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+     </attributes>
+     <component class="tld">
+      <id class="model-object" path="/transform" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/result" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/xslt" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/xmlSystemId" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/xsltSystemId" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/xml" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/param" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/param/name" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/param/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/forEach" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/select" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/set" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/set/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/select" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/if" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/if/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/if/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/if/select" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/when" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/when/select" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/otherwise" project="login"/>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/parse" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/scopeDom" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/xml" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/systemId" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/varDom" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/filter" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/choose" project="login"/>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/out" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/out/escapeXml" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/out/select" project="login"/>
+      </attribute>
+     </component>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jboss-jstl-api_1.2_spec-1.0.1.Final.jar/meta-inf/x.tld" project="login"/>
+     <attributes>
+      <entry name="display-name">
+       <value-info attr="display-name" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="short-name">
+       <value-info attr="shortname" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="uri">
+       <value-info attr="uri" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+      <entry name="version">
+       <value-info attr="version" class="xml">
+        <object class="model-object" path="." project="login"/>
+       </value-info>
+      </entry>
+     </attributes>
+     <component class="tld">
+      <id class="model-object" path="/transform" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/result" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/xslt" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/docSystemId" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/xmlSystemId" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/doc" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/xsltSystemId" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/transform/xml" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/param" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/param/name" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/param/value" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/forEach" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/varStatus" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/select" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/step" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/end" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/forEach/begin" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/set" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/set/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/select" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/set/var" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/if" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/if/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/if/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/if/select" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/when" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/when/select" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/otherwise" project="login"/>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/parse" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/scope" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/var" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/doc" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/scopeDom" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/xml" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/systemId" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/varDom" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/parse/filter" project="login"/>
+      </attribute>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/choose" project="login"/>
+     </component>
+     <component class="tld">
+      <id class="model-object" path="/out" project="login"/>
+      <attribute class="tld">
+       <id class="model-object" path="/out/escapeXml" project="login"/>
+      </attribute>
+      <attribute class="tld">
+       <id class="model-object" path="/out/select" project="login"/>
+      </attribute>
+     </component>
+    </library>
+   </libraries>
+  </path>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/el/api/main/jboss-el-api_2.2_spec-1.0.0.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/org/picketbox/main/picketbox-4.0.1.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/inject/api/main/javax.inject-1.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/enterprise/deploy/api/main/jboss-jad-api_1.2_spec-1.0.0.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/faces/api/main/jboss-jsf-api_2.1_spec-2.0.0.Beta1.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/org/jboss/resteasy/resteasy-jaxb-provider/main/resteasy-jaxb-provider-2.2.1.GA.jar"/>
+  <path value="D:/Program Files/Java/jdk6.0_27/jre/lib/ext/sunpkcs11.jar"/>
+  <path value="D:/Program Files/Java/jdk6.0_27/jre/lib/ext/sunmscapi.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/xml/bind/api/main/jboss-jaxb-api_2.2_spec-1.0.3.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/security/auth/message/api/main/jboss-jaspi-api_1.0_spec-1.0.0.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/xml/registry/api/main/jboss-jaxr-api_1.0_spec-1.0.0.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-jaxrs-2.2.1.GA-jandex.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/enterprise/api/main/cdi-api-1.0-SP4.jar"/>
+  <path value="D:/Program Files/Java/jdk6.0_27/jre/lib/resources.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/org/jboss/resteasy/resteasy-multipart-provider/main/resteasy-multipart-provider-2.2.1.GA-jandex.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/ejb/api/main/jboss-ejb-api_3.1_spec-1.0.1.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/wsdl4j/api/main/wsdl4j-1.6.2.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/org/picketbox/main/picketbox-infinispan-4.0.1.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/jws/api/main/jsr181-api-1.0-MR1.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/management/j2ee/api/main/jboss-j2eemgmt-api_1.1_spec-1.0.0.Final.jar"/>
+  <path value="D:/Program Files/Java/jdk6.0_27/jre/lib/ext/sunjce_provider.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/resource/api/main/jboss-connector-api_1.6_spec-1.0.0.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/org/jboss/resteasy/resteasy-jaxb-provider/main/resteasy-jaxb-provider-2.2.1.GA-jandex.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/servlet/api/main/jboss-servlet-api_3.0_spec-1.0.0.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/validation/api/main/validation-api-1.0.0.GA.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/mail/api/main/mail-1.4.4.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/annotation/api/main/jboss-annotations-api_1.1_spec-1.0.0.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/javax/servlet/jsp/api/main/jboss-jsp-api_2.2_spec-1.0.0.Final.jar"/>
+  <path value="D:/application/jboss-as-web-7.0.2.Final/modules/org/picketbox/main/picketbox-commons-1.0.0.CR1.jar"/>
+  <path value="D:/Program Files/Java/jdk6.0_27/jre/lib/ext/dnsns.jar"/>
+ </paths>
+ <validation>
+  <core validator-id="jboss.cdi.core">
+   <linked-resource declaration="true" name="users" path="/login/src/org/jboss/as/quickstarts/login/EJBUserManager.java"/>
+   <linked-resource declaration="true" name="users" path="/login/src/org/jboss/as/quickstarts/login/ManagedBeanUserManager.java"/>
+   <linked-resource
+    name="\login\src\org\jboss\as\quickstarts\login\Login.java" path="/login/src/org/jboss/as/quickstarts/login/UserManager.java"/>
+   <linked-resource
+    name="\login\src\org\jboss\as\quickstarts\login\Login.java" path="/login/src/org/jboss/as/quickstarts/login/LoggedIn.java"/>
+   <linked-resource
+    name="\login\src\org\jboss\as\quickstarts\login\Login.java" path="/login/src/org/jboss/as/quickstarts/login/EJBUserManager.java"/>
+   <linked-resource
+    name="\login\src\org\jboss\as\quickstarts\login\Login.java" path="/login/src/org/jboss/as/quickstarts/login/ManagedBeanUserManager.java"/>
+   <linked-resource
+    name="\login\src\org\jboss\as\quickstarts\login\Login.java" path="/login/src/org/jboss/as/quickstarts/login/Credentials.java"/>
+   <linked-resource
+    name="\login\src\org\jboss\as\quickstarts\login\ManagedBeanUserManager.java" path="/login/src/org/jboss/as/quickstarts/login/Resources.java"/>
+   <linked-resource declaration="true" name="credentials" path="/login/src/org/jboss/as/quickstarts/login/Credentials.java"/>
+   <linked-resource declaration="true" name="login" path="/login/src/org/jboss/as/quickstarts/login/Login.java"/>
+   <linked-resource declaration="true" name="userManager" path="/login/src/org/jboss/as/quickstarts/login/EJBUserManager.java"/>
+   <linked-resource declaration="true" name="userManager" path="/login/src/org/jboss/as/quickstarts/login/ManagedBeanUserManager.java"/>
+   <linked-resource
+    name="\login\src\org\jboss\as\quickstarts\login\EJBUserManager.java" path="/login/src/org/jboss/as/quickstarts/login/Resources.java"/>
+   <linked-resource declaration="true" name="newUser" path="/login/src/org/jboss/as/quickstarts/login/EJBUserManager.java"/>
+   <linked-resource declaration="true" name="newUser" path="/login/src/org/jboss/as/quickstarts/login/ManagedBeanUserManager.java"/>
+  </core>
+  <el/>
+ </validation>
+</kb-project>

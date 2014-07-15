@@ -1,0 +1,276 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316594436843
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316594436968
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316594516578
+activated,view,org.eclipse.ui.ide,3.7.0.I20110519-0100,"org.eclipse.ui.views.ProblemView",1316594517625
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316594519468
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316594560828
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316594576437
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316594607203
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316594650015
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316594653578
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316594653953
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316594655359
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316594656421
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316594657500
+activated,editor,com.adobe.flexbuilder.mxml.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.mxml.MXMLEditor",1316594661343
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316594665687
+opened,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316594670031
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316594670203
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316594692187
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316594695875
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316594697437
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316594697828
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316594697984
+closed,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316594698015
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316594708484
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316594709281
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316594709625
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316594709687
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316594715796
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316594743625
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.cut",1316594749203
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316594750296
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316594790718
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316594826734
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316594892437
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316594944984
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316594976734
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316594982671
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603067437
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603067515
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603067546
+opened,editor,com.adobe.flexbuilder.mxml.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.mxml.MXMLEditor",1316603068281
+activated,editor,com.adobe.flexbuilder.mxml.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.mxml.MXMLEditor",1316603068703
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316603071718
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603075546
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603077203
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603077718
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603081078
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603082828
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603083625
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603083718
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.copy",1316603086093
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603087187
+executed,command,org.eclipse.ltk.ui.refactoring,3.6.0.v20110505-0800,"org.eclipse.ltk.ui.refactoring.commands.renameResource",1316603087250
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603091812
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603096656
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603097046
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603097484
+closed,editor,com.adobe.flexbuilder.mxml.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.mxml.MXMLEditor",1316603097546
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603103140
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316603103828
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603107734
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603134140
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603149375
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603156359
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603156390
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603156562
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603211984
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316603213031
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.delete",1316603214843
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.delete",1316603214890
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316603222968
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603226390
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603226406
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603226578
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603231171
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603232312
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603232328
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603233171
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603233187
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603233812
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603234343
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603234562
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603235109
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603244328
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603249578
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603250828
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603250843
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603250968
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603341968
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603343890
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603343921
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603344015
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603778015
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316603780828
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603788703
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603794359
+executed,command,org.eclipse.ltk.ui.refactoring,3.6.0.v20110505-0800,"org.eclipse.ltk.ui.refactoring.commands.renameResource",1316603794375
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603800593
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316603868500
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603872625
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603889687
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603889718
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316603889828
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604392656
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604401500
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604403906
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604433453
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604433484
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604433609
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604620906
+activated,editor,com.adobe.flexbuilder.mxml.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.mxml.MXMLEditor",1316604626890
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604633093
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604633109
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604633250
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604648156
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604648156
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604649078
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316604650781
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604674406
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604674453
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604674531
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604770328
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604892093
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604898500
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604899265
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604899312
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316604899437
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316605027906
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316605029843
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316605033968
+activated,editor,com.adobe.flexbuilder.mxml.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.mxml.MXMLEditor",1316605034593
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316605042859
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316605044843
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316605733281
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316605735375
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316613299531
+activated,editor,com.adobe.flexbuilder.mxml.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.mxml.MXMLEditor",1316613300265
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316613301593
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316662128140
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316662130250
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316662130250
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316662130359
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316662565296
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316662568718
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316662746359
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316662772078
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316662798781
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316662824578
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316662833203
+activated,editor,com.adobe.flexbuilder.mxml.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.mxml.MXMLEditor",1316662850140
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316662851453
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316662858140
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316662861453
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316662861468
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316662861562
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316662891906
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316662893171
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316663004406
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316663008875
+activated,editor,com.adobe.flexbuilder.mxml.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.mxml.MXMLEditor",1316663049953
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316663069312
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316663079156
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665062687
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665066437
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.copy",1316665068937
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.copy",1316665072187
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665074468
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665095296
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316665096296
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665107093
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665117671
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665120140
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665120281
+opened,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316665129531
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316665129859
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665130609
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316665133718
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665141953
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665141968
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665142093
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665151187
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665152312
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665193328
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665193765
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665193781
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665193890
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665201796
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316665203046
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316665221078
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316665222093
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316665228234
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1316666478968
+opened,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316666483390
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316666483437
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316666484125
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316666486140
+activated,editor,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor",1316666488500
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316666501296
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316666914875
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316666969093
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316666984562
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667379937
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667391000
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.delete",1316667393296
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667394000
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1316667411328
+activated,view,com.adobe.flexbuilder.as.editor,4.5.1.313231,"com.adobe.flexbuilder.packageexplorer",1316667422531
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1316667424312
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\view\\Progress.as",1316667428984
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\remoting\\DependentResponder.as",1316667428984
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\view\\SingleDataListTemplate.mxml",1316667428984
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\recorder\\MemoryMedium.as",1316667428984
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\share\\IProgressMonitor.as",1316667428984
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\mediate\\GeneralUIBridge.as",1316667429000
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\recorder\\LocalMedium.as",1316667429000
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\recorder\\FunctionRecorder.as",1316667429000
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\remoting\\DummyResponder.as",1316667429000
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\widget\\calendar\\MonthChooser.as",1316667429000
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\remoting\\ICallbackDescriptor.as",1316667429015
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\remoting\\RemoteResponder.as",1316667429015
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\mediate\\UIAdapter.as",1316667429015
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\remoting\\LocalResponder.as",1316667429015
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\mediate\\BindDescriptor.as",1316667429015
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\revisable\\RevisionCollector.as",1316667429015
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\event\\RespondEvent.as",1316667429031
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\remoting\\AbstractRemotingProxy.as",1316667429031
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\share\\IMonitorToken.as",1316667429031
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\recorder\\Recorder.as",1316667429031
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\view\\SingleDataItemTemplate.mxml",1316667429046
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\revisable\\RevisableModel.as",1316667429046
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\revisable\\IRevision.as",1316667429046
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\collection\\BatchFetchCollection.as",1316667429046
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\utils\\DateUtil.as",1316667429046
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\widget\\DropdownField.as",1316667429062
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\share\\FinalizeMonitor.as",1316667429062
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\remoting\\MediateResponder.as",1316667429062
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\remoting\\InvokeResponderAdapter.as",1316667429062
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\recorder\\IRecorderMedium.as",1316667429062
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\mediate\\IUIBridge.as",1316667429062
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\event\\DataRevisionEvent.as",1316667429078
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\event\\ListDataEvent.as",1316667429078
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\share\\SimpleMonitorToken.as",1316667429078
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\event\\InvokeEvent.as",1316667429078
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\widget\\calendar\\MonthField.as",1316667429078
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\mediate\\SimpleUIBridge.as",1316667429093
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\remoting\\CallbackDescriptor.as",1316667429093
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\utils\\PrimitiveUtil.as",1316667429093
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\revisable\\revise_trace.as",1316667429093
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\revisable\\IRevisableList.as",1316667429093
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\remoting\\IResponderInterceptor.as",1316667429109
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\share\\ProgressMonitor.as",1316667429109
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\recorder\\PropertyRecorder.as",1316667429109
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\remoting\\IInvokeResponder.as",1316667429109
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\remoting\\AbstractInvokeResponder.as",1316667429109
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\recorder\\RecorderEvent.as",1316667429125
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\widget\\calendar\\MonthChangeEvent.as",1316667429125
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\formatters\\RMBFormatter.as",1316667429125
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\remoting\\DefaultResponderInterceptor.as",1316667429125
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\revisable\\RevisableList.as",1316667429125
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\recorder\\AbstractRecorderMedium.as",1316667429140
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\recorder\\IRecorder.as",1316667429171
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\remoting\\IInvokeInfo.as",1316667429171
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\mediate\\UIBridgeFactory.as",1316667429171
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\utils\\TooltipUtil.as",1316667429171
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\revisable\\Revision.as",1316667429171
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_facility\\src\\org\\epmr\\mediate\\BindableUIAdapter.as",1316667429171
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\events\\RecoverEvent.as",1316667430421
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\controls\\MinimizeObjHolder.as",1316667430421
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\commonSkins\\MinimizeControlerRightButtonSkin.mxml",1316667430421
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\events\\UserLoginEvent.as",1316667430437
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\controls\\InputBox.mxml",1316667430437
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\controls\\IPopUpable.as",1316667430437
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\controls\\PasswordInput.mxml",1316667430437
+error,log,,,"Could not index: D:\\Project\\formal\\epmr_common\\src\\org\\epmr\\commonSkins\\MinimizableTitleWindowMinimizeButtonSkin.mxml",1316667430437

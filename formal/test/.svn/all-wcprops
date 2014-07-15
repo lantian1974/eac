@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/epmr/!svn/ver/34/test
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/epmr/!svn/ver/35/test/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/epmr/!svn/ver/35/test/.project
+END
+.flexProperties
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/epmr/!svn/ver/35/test/.flexProperties
+END
+.actionScriptProperties
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/epmr/!svn/ver/35/test/.actionScriptProperties
+END

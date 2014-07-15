@@ -1,0 +1,49 @@
+package com.xdfsoft.revisable
+{
+	use namespace revise_trace;
+	public class RevisableModel
+	{
+		private var _revision:IRevision;
+		public function RevisableModel()
+		{
+			reset();
+		}
+		
+		revise_trace function get modified():Boolean{
+			return _revision.modified
+		}
+		
+		revise_trace function set modified(value:Boolean):void{
+			_revision.modified=value;
+		}
+		
+		revise_trace function get removed():Boolean{
+			return _revision.removed;
+		}
+		
+		revise_trace function set removed(value:Boolean):void{
+			_revision.removed=value;
+		}
+		
+		revise_trace function get appended():Boolean{
+			return _revision.appended;
+		}
+		
+		revise_trace function set appended(value:Boolean):void{
+			_revision.appended=value;	
+		}
+		
+		revise_trace function get revised():Boolean{
+			return _revision.revised;
+		}
+		revise_trace function get revision():IRevision{
+			return _revision;
+		}
+		revise_trace function set revision(value:IRevision):void{
+			_revision=value;
+		}
+		revise_trace function reset():void{
+			_revision=new Revision();
+		}
+	}
+}

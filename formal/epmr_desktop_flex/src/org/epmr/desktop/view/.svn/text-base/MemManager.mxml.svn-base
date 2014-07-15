@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:TitleWindow 
+	xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark" 
+	xmlns:mx="library://ns.adobe.com/flex/mx"
+	 width="476" height="340" 
+	 title="系统资源查看器" fontSize="12" 
+	 backgroundColor="#FAF8FD" 
+	 creationComplete="doIni();" 
+	 close="this.doClose();" >
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
+	<fx:Script>
+		<![CDATA[
+			import org.epmr.collection.Iterator;
+			import org.epmr.collection.ISet;
+			import org.epmr.desktop.managers.ICacheManager;
+			import org.epmr.desktop.controls.ModuleContainer;
+			import org.epmr.desktop.managers.ModuleManagerExt;
+			import org.epmr.collection.IList;
+			import org.epmr.framework.managers.OpenedWindowManager;
+			import org.epmr.framework.model.FrameWorkModel;
+			import mx.collections.ArrayCollection;
+			import mx.managers.PopUpManager;
+			import org.epmr.desktop.managers.MemoryManager;
+			import flash.system.System;
+			import flash.system.Capabilities;
+			private var windowManager:OpenedWindowManager=OpenedWindowManager.getInstance();
+			[Bindable]
+			private var openWindowList:ArrayCollection=new ArrayCollection();
+			[Bindable]
+			private var loadedModuleList:ArrayCollection=new ArrayCollection();
+			private function doGarbageCollect():void
+			{
+				MemoryManager.garbageCollect();
+				this.refreshMemeryCount();
+			}
+			private function doClose():void
+			{
+			  PopUpManager.removePopUp(this);
+			}
+			private function doIni():void
+			{
+			   this.text_version.text=Capabilities.version;
+			   this.refresh();
+			}
+			private function refreshMemeryCount():void
+			{
+			    this.text_memoryCount.text=nf_memory.format(System.totalMemory.toString())+" 字节";
+			}
+			
+			private function refreshOpenWindowList():void
+			{
+			    this.openWindowList.removeAll();
+			    var urlList:IList= windowManager.getAllOpenWindowUrl();
+			    for(var i:int=0;i<urlList.size;i++)
+			    {
+			      var url:String=urlList.getItem(i);
+			      var windowInfo:String=windowManager.find(url).toString();
+			      this.openWindowList.addItem({"url":url,"window":windowInfo});
+			    }
+			    urlList=null;
+			 //   this.label_windowInfo.text=" "+this.openWindowList.length+" 个主窗口";
+			
+			}
+			private function refreshLoadedModuleList():void
+			{
+			   this.loadedModuleList.removeAll();
+			   var moduleCache:ICacheManager=ModuleContainer.loader.moduleCache;
+			   var keySet:ISet=moduleCache.keySet();
+			   var keyIt:Iterator=keySet.iterator();
+			   while (keyIt.hasNext())
+			   {
+			      var url:String=keyIt.next();
+			      var moduleInfo:String=moduleCache.find(url).toString();
+			      this.loadedModuleList.addItem({"url":url,"module":moduleInfo});
+			   }
+			}
+			
+			private function refresh():void
+			{
+			  refreshMemeryCount();
+			  refreshOpenWindowList();
+			  refreshLoadedModuleList();
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<mx:NumberFormatter id="nf_memory" useThousandsSeparator="true"  precision="0" />
+	</fx:Declarations>
+	
+	<mx:TabNavigator width="100%" height="264" y="0">
+		<s:NavigatorContent label="基本信息" width="100%">
+			<s:Label x="19" y="50" text="当前内存使用量：" width="134" fontWeight="bold" fontSize="15" color="#21212D"/>
+			<s:Label  id="text_memoryCount" x="178.75" y="47" width="265.25" height="34" fontWeight="bold" textAlign="left" fontSize="15" color="#2434AB"/>
+			<s:Label  x="-0.25" y="117" text="当前flash Player版本：" width="180" fontWeight="bold" fontSize="15" color="#21212D"/>
+			<s:Label  id="text_version" x="178.75" y="116" width="265.25" height="31" fontSize="15" fontWeight="bold" textAlign="left" color="#5C79F9"/>
+		</s:NavigatorContent>
+		
+		<s:NavigatorContent  label="打开窗口信息" width="100%">
+			<mx:DataGrid  width="100%" horizontalScrollPolicy="off" height="195" dataProvider="{this.openWindowList}" x="2" y="2">
+				<mx:columns>
+					<mx:DataGridColumn headerText="窗口URL"  width="300" dataField="url" />
+					<mx:DataGridColumn headerText="窗口对象"  width="220" dataField="window" />
+				</mx:columns>
+			</mx:DataGrid>
+			<s:Label id="label_windowInfo" x="5" y="199" width="436" height="28" fontSize="12" fontWeight="bold" textAlign="left"
+				 text="当前共打开 {this.openWindowList.length} 个主窗口"/>
+			
+		</s:NavigatorContent >
+		<s:NavigatorContent  label="模块缓存信息" width="100%" >
+			<mx:DataGrid  width="100%" height="199" dataProvider="{this.loadedModuleList}">
+				<mx:columns>
+					<mx:DataGridColumn headerText="模块URL"  width="300" dataField="url" />
+					<mx:DataGridColumn headerText="模块对象"  width="220" dataField="module" />
+				</mx:columns>
+			</mx:DataGrid>
+			<s:Label id="label_moduleInfo" x="0" y="205" width="100%" text="当前共缓存 {this.loadedModuleList.length} 个模块"  height="22" fontWeight="bold"/>
+		</s:NavigatorContent >
+	</mx:TabNavigator>
+	<s:Button x="6" y="270" label="刷新" width="119"  click="this.refresh();"/>
+	<s:Button x="133" y="270" label="强制垃圾回收" width="119" click="this.doGarbageCollect();"/>
+	
+	
+</s:TitleWindow>

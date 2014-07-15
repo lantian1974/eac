@@ -1,0 +1,27 @@
+<classpath>
+  <container id="test!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/Project/formal/test/WebContent/WEB-INF/lib/flex-messaging-proxy.jar">
+      <source-attachment-path>F:/资料/开发技术/Flex/FLEX451/blazeds-src-4.0.0.14931/modules/proxy/src</source-attachment-path>
+    </entry>
+    <entry id="D:/Project/formal/test/WebContent/WEB-INF/lib/flex-messaging-common.jar">
+      <source-attachment-path>F:/资料/开发技术/Flex/FLEX451/blazeds-src-4.0.0.14931/modules/common/src</source-attachment-path>
+    </entry>
+    <entry id="D:/Project/formal/test/WebContent/WEB-INF/lib/flex-messaging-core.jar">
+      <source-attachment-path>F:/资料/开发技术/Flex/FLEX451/blazeds-src-4.0.0.14931/modules/core/src</source-attachment-path>
+    </entry>
+    <entry id="D:/Project/formal/test/WebContent/WEB-INF/lib/flex-messaging-remoting.jar">
+      <source-attachment-path>F:/资料/开发技术/Flex/FLEX451/blazeds-src-4.0.0.14931/modules/remoting/src</source-attachment-path>
+    </entry>
+    <entry id="D:/Project/formal/test/WebContent/WEB-INF/lib/flex-messaging-opt.jar">
+      <source-attachment-path>F:/资料/开发技术/Flex/FLEX451/blazeds-src-4.0.0.14931/modules/opt/src</source-attachment-path>
+    </entry>
+  </container>
+  <container id="FlexTemplatePrj!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/Project/formal/FlexTemplatePrj/WebContent/WEB-INF/lib/flex-messaging-core.jar">
+      <source-attachment-path>/epmr_authenticate_java/ejbModule</source-attachment-path>
+    </entry>
+    <entry id="D:/Project/formal/FlexTemplatePrj/WebContent/WEB-INF/lib/epmr_authenticate_java.jar">
+      <source-attachment-path>/epmr_authenticate_java/ejbModule</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

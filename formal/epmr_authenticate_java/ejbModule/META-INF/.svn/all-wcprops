@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/epmr/!svn/ver/5/epmr_authenticate_java/ejbModule/META-INF
+END
+persistence.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/epmr/!svn/ver/5/epmr_authenticate_java/ejbModule/META-INF/persistence.xml
+END
+persistence.xml.glassfish.eclipselink
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/epmr/!svn/ver/5/epmr_authenticate_java/ejbModule/META-INF/persistence.xml.glassfish.eclipselink
+END
+MANIFEST.MF
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/epmr/!svn/ver/5/epmr_authenticate_java/ejbModule/META-INF/MANIFEST.MF
+END
+beans.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/epmr/!svn/ver/5/epmr_authenticate_java/ejbModule/META-INF/beans.xml
+END

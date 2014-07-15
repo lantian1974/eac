@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;epmr_authenticate_flex/src/org/epmr/authenticate/proxy/FrameWorkServiceRoImpl.as&apos; to &apos;AuthenticateServiceProxy.as&apos;" description="Rename resource &apos;FrameWorkServiceRoImpl.as&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/org/epmr/authenticate/proxy/FrameWorkServiceRoImpl.as" name="AuthenticateServiceProxy.as" stamp="1316800328887" updateReferences="true"/>
+</session>

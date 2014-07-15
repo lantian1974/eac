@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<projectMetadata>
+  <swf bgcolor="ffffff" fullPath="/test/bin-debug/test.swf" height="100%" pageTitle="" width="100%"/>
+  <generatedHTMLResources/>
+  <swf bgcolor="ffffff" fullPath="/test/WebContent/home/test.swf" height="740" pageTitle="" width="1343"/>
+<swf bgcolor="ffffff" fullPath="/test/WebContent/home/Main.swf" height="100%" pageTitle="" width="100%"/>
+<swf bgcolor="ffffff" fullPath="/test/WebContent/home/CopyofMain.swf" height="100%" pageTitle="" width="100%"/>
+  <swf bgcolor="ffffff" fullPath="/test/WebContent/home/Test_ChannelSetConfig.swf" height="100%" pageTitle="" width="100%"/>
+<swf bgcolor="ffffff" fullPath="/test/WebContent/home/NewApp.swf" height="100%" pageTitle="" width="100%"/>
+  <swf bgcolor="ffffff" fullPath="/test/WebContent/home/MainApp.swf" height="100%" pageTitle="" width="100%"/>
+<swf bgcolor="7b7777" fullPath="/test/WebContent/home/TestChannelConfigManager.swf" height="100%" pageTitle="" width="100%"/>
+</projectMetadata>

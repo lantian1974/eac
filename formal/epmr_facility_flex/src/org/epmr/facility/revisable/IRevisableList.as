@@ -1,0 +1,30 @@
+package org.epmr.facility.revisable
+{
+	import flash.events.IEventDispatcher;
+	
+	import mx.collections.IList;
+	
+	[Event(name="collectionChange", type="mx.events.CollectionEvent")]
+	public interface IRevisableList extends IList,IEventDispatcher
+	{
+		[Bindable("listChanged")]
+		function get collection():Object;
+		
+		function set collection(value:Object):void;
+		
+		function isItemModified(item:Object):Boolean;
+		
+		function isItemRemoved(item:Object):Boolean;
+		
+		function isItemAppended(item:Object):Boolean;
+		
+		function isItemRevised(item:Object):Boolean;
+		
+		[Bindable("itemRevised")]
+		function get revised():Boolean;
+		
+//		function every(callback:Function,userObj:*, thisObject:* = null):Object;
+		
+		function reset():void;
+	}
+}

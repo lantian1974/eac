@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="false" useMultiPlatformConfig="false" version="1">
+  <includeClasses>
+    <classEntry path="org.epmr.utils.collection.AbstractList"/>
+    <classEntry path="org.epmr.utils.collection.AbstractMap"/>
+    <classEntry path="org.epmr.utils.collection.ArrayIterator"/>
+    <classEntry path="org.epmr.utils.collection.ArrayList"/>
+    <classEntry path="org.epmr.utils.collection.Arrays"/>
+    <classEntry path="org.epmr.utils.collection.BaseSequence"/>
+    <classEntry path="org.epmr.utils.collection.Collections"/>
+    <classEntry path="org.epmr.utils.collection.CompositeIterator"/>
+    <classEntry path="org.epmr.utils.collection.HashMap"/>
+    <classEntry path="org.epmr.utils.collection.HashSet"/>
+    <classEntry path="org.epmr.utils.collection.ICollection"/>
+    <classEntry path="org.epmr.utils.collection.IList"/>
+    <classEntry path="org.epmr.utils.collection.IMap"/>
+    <classEntry path="org.epmr.utils.collection.IMapEntry"/>
+    <classEntry path="org.epmr.utils.collection.ISequence"/>
+    <classEntry path="org.epmr.utils.collection.ISet"/>
+    <classEntry path="org.epmr.utils.collection.IndexBasedIterator"/>
+    <classEntry path="org.epmr.utils.collection.Iterator"/>
+    <classEntry path="org.epmr.utils.collection.MapEntry"/>
+    <classEntry path="org.epmr.utils.collection.Queue"/>
+    <classEntry path="org.epmr.utils.collection.Stack"/>
+    <classEntry path="org.epmr.utils.collection.UnmodifiableCollection"/>
+    <classEntry path="org.epmr.utils.collection.UnmodifiableIterator"/>
+    <classEntry path="org.epmr.utils.collection.UnmodifiableList"/>
+    <classEntry path="org.epmr.utils.collection.UnmodifiableMap"/>
+    <classEntry path="org.epmr.utils.collection.UnmodifiableSet"/>
+    <classEntry path="org.epmr.utils.geom.LineExt"/>
+    <classEntry path="org.epmr.utils.geom.PointExt"/>
+    <classEntry path="org.epmr.utils.geom.RectangleExt"/>
+    <classEntry path="org.epmr.utils.reflect.ClassInfo"/>
+    <classEntry path="org.epmr.utils.reflect.Field"/>
+    <classEntry path="org.epmr.utils.reflect.Method"/>
+    <classEntry path="org.epmr.utils.reflect.Reflection"/>
+    <classEntry path="org.epmr.utils.xmltools.XMLReader"/>
+    <classEntry path="org.epmr.utils.xmltools.XmlTemplate"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>

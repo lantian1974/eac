@@ -1,0 +1,175 @@
+package org.epmr.collection
+{
+	import flash.utils.Dictionary;
+	
+	public class HashMap extends AbstractMap implements IMap
+	{
+		private var _dic:Dictionary;
+		private var _size:uint;
+		public function HashMap(){
+			reset();
+		}
+		private function reset():void{
+			_dic=new Dictionary();
+			_size=0;
+		}
+		public function read(source:Object):void{
+			if(source){
+				if(source is IMap){
+					putAll(source as IMap)
+				}
+				else {
+					for(var key:* in source){
+						put(key,source[key]);
+					}
+				}	
+			}	
+		}
+		public function write(target:Object):void{
+			if(target){
+				for(var key:* in _dic){
+					target[key]=_dic[key]
+				}
+			}		
+		}
+		public function writeKeys(target:Array):Array{
+			for(var key:* in _dic){
+				target.push(key);
+			}
+			return target;
+		}
+		public function writeValues(target:Array):Array{
+			for each(var value:* in _dic){
+				target.push(value);
+			}
+			return target;
+		}
+		override public function find(key:*):*
+		{
+			return _dic[key];	
+		}
+		
+		override public function put(key:*, value:*):*
+		{
+			var result:*=undefined;
+			if(containsKey(key)){
+				result=find(key);
+			}
+			else{
+				_size++;
+			}	
+			_dic[key]=value;
+			return result;
+		}
+		
+		override public function putAll(map:IMap):void
+		{
+			if(map){
+				map.enumerate(function(key:*,value:*,counter:uint):Boolean{
+					put(key,value);
+					return true;
+				});
+			}
+		}
+		
+		
+		override public function keySet():ISet
+		{
+			var result:HashSet=new HashSet();
+			result.readMap(this,HashSet.KEYS);
+			return result;
+		}
+		
+		override public function entrySet():ISet
+		{
+			var result:HashSet=new HashSet();
+			result.readMap(this,HashSet.PAIRS);
+			return result;
+		}
+		override public function iterator():Iterator{
+			var array:Array=new Array();
+			writeKeys(array);
+			return new EntryIterator(array,this);
+		}
+		override public function values():ICollection
+		{
+			var array:Array=new Array();
+			writeValues(array);
+			return new ArrayList(array);
+		}
+		
+		override public function remove(key:*):*
+		{
+			if(containsKey(key)){
+				var result:*=find(key);
+				delete _dic[key];
+				_size--;
+				return result;
+			}
+			return undefined;	
+		}
+
+		
+		override public function get size():uint
+		{
+			return _size;
+		}
+		
+		override public function containsKey(key:*):Boolean
+		{
+			return key in _dic
+		}
+		
+		override public function containsValue(value:*):Boolean
+		{
+			for each(var v:* in _dic){
+				if(v===value)
+					return true;
+			}
+			return false;
+		}
+		
+		override public function clear():void
+		{
+			reset();
+		}
+		override public function enumerate(callback:Function,thisObject:*=null):void{
+			var i:uint=0;
+			for(var key:* in _dic){
+				if(callback.call(thisObject,key,_dic[key],i++)==false)
+					break;
+			}
+		}
+	}
+}
+
+import org.epmr.collection.Iterator;
+import org.epmr.collection.IMap;
+import org.epmr.collection.HashMap;
+import org.epmr.collection.ArrayIterator;
+import org.epmr.collection.IndexBasedIterator;
+import org.epmr.collection.MapEntry;
+	
+
+class EntryIterator extends IndexBasedIterator implements Iterator{
+	
+	private var _map:HashMap;
+	private var _keys:Array;
+	public function EntryIterator(keys:Array,map:HashMap){
+		_map=map;
+		_keys=keys;
+	}
+	override protected function get length():uint{
+		return _map.size;
+	}
+	override protected function getItemAt(index:int):*{
+		var key:*=_keys[index];
+		var value:*=_map.find(key);
+		return new MapEntry(key,value);
+	}
+	override protected function removeItemAt(index:int):*{
+		var key:*=_keys[index];
+		_keys.splice(index,1);
+		return _map.remove(key);
+	}
+}

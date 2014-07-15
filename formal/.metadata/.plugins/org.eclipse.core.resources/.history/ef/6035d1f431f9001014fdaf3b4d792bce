@@ -1,0 +1,16 @@
+package org.epmr.desktop.respository;
+
+import java.util.List;
+
+import org.epmr.desktop.po.EpmrUserShortcut;
+
+public interface IEpmrUserShortcutDao 
+{
+   List<EpmrUserShortcut> getUserShortcuts(String loginCode);
+   /**
+    * 一个用户不能超过100个快捷方式，一旦超过系统认为快捷方式就不快捷了。
+    * @param shortcutList
+    */
+   void saveUserShortcuts(List<EpmrUserShortcut> shortcutList);
+   
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;epmr_facility_flex/src/org/epmr/facility/remoting/Host.as&apos; to &apos;ChannelConfig.as&apos;" description="Rename resource &apos;Host.as&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/org/epmr/facility/remoting/Host.as" name="ChannelConfig.as" stamp="1317178295390" updateReferences="true"/>
+</session>

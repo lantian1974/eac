@@ -1,0 +1,5 @@
+<project artifacts="common-utils" targetroot="${xdfsoft.template.project}\flex_libs" author="qpd">
+	<common-utils target="${project.targetroot}\xdf-utils.swc" 
+				milestone="deployment" type="file"
+		  source="${basedir}\bin\xdf_utils.swc"/>
+</project>

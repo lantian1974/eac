@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/epmr/!svn/ver/17/epmr_flex_support_java/src/org/epmr/flex/channels
+END
+ServiceConfigOnClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/epmr/!svn/ver/17/epmr_flex_support_java/src/org/epmr/flex/channels/ServiceConfigOnClient.java
+END
+ChannelOnClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/epmr/!svn/ver/17/epmr_flex_support_java/src/org/epmr/flex/channels/ChannelOnClient.java
+END
+EndpointOnServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/epmr/!svn/ver/17/epmr_flex_support_java/src/org/epmr/flex/channels/EndpointOnServer.java
+END
+FlexChannelsConfigServlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/epmr/!svn/ver/17/epmr_flex_support_java/src/org/epmr/flex/channels/FlexChannelsConfigServlet.java
+END
+ServiceConfigOnServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/epmr/!svn/ver/17/epmr_flex_support_java/src/org/epmr/flex/channels/ServiceConfigOnServer.java
+END
+ChannelOnServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/epmr/!svn/ver/17/epmr_flex_support_java/src/org/epmr/flex/channels/ChannelOnServer.java
+END
+EndpointOnClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/epmr/!svn/ver/17/epmr_flex_support_java/src/org/epmr/flex/channels/EndpointOnClient.java
+END

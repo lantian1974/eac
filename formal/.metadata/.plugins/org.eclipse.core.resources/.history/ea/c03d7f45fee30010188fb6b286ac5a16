@@ -1,0 +1,31 @@
+package com.xdfsoft.recorder
+{
+	public class MemoryMedium extends AbstractRecorderMedium
+	{
+		private static var _root:Object=new Object();
+		
+		public function MemoryMedium(name:String)
+		{
+			super(name);
+		}
+
+		override protected function get disk():Object{
+			return _root;
+		}
+		
+		public static function deleteAll():void{
+			_root=new Object();
+		}
+		public static function get partitions():Object{
+			var result:Object=new Object();
+			for(var name:String in _root){
+				result[name]=_root[name].label;
+			}
+			return result;
+		}
+		
+		public static function deletePartition(name:String):void{
+			delete _root[name];
+		}
+	}
+}

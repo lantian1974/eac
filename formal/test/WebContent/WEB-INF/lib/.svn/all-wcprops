@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/lib
+END
+commons-httpclient-3.0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/lib/commons-httpclient-3.0.1.jar
+END
+commons-codec-1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/lib/commons-codec-1.3.jar
+END
+flex-messaging-proxy.jar
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/lib/flex-messaging-proxy.jar
+END
+flex-rds-server.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/lib/flex-rds-server.jar
+END
+flex-messaging-opt.jar
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/lib/flex-messaging-opt.jar
+END
+cfgatewayadapter.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/lib/cfgatewayadapter.jar
+END
+flex-messaging-remoting.jar
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/lib/flex-messaging-remoting.jar
+END
+commons-logging.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/lib/commons-logging.jar
+END
+flex-messaging-common.jar
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/lib/flex-messaging-common.jar
+END
+flex-messaging-core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/epmr/!svn/ver/35/test/WebContent/WEB-INF/lib/flex-messaging-core.jar
+END

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="1">
+  <includeClasses/>
+  <includeResources>
+    <resourceEntry destPath="org/epmr/widget/calendar/month.png" sourcePath="org/epmr/widget/calendar/month.png"/>
+  </includeResources>
+  <namespaceManifests/>
+</flexLibProperties>

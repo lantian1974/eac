@@ -1,0 +1,24 @@
+package org.epmr.managers
+{
+	public class MemoryManager
+	{
+		import flash.net.LocalConnection;
+		public function MemoryManager()
+		{
+		}
+		public static function garbageCollect():void
+		{
+		   try
+              {
+                  var lc1: LocalConnection = new LocalConnection();
+                  var lc2:LocalConnection = new LocalConnection();
+                   
+                  lc1.connect( "gcConnection" );
+                  lc2.connect( "gcConnection" );
+              }
+              catch (e:Error) 
+              {
+              }
+		}
+	}
+}

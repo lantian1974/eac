@@ -1,0 +1,185 @@
+package org.epmr.xmltools
+{
+
+	import org.epmr.collection.IMap;
+	/**
+	 * 作者：兰天
+	 * 最后修改日期：2008-1-11
+	 * 描述：该类描述了一个XML模板，主要功能是用该XML模板再结合给定的参数对象生成XML实例。
+	 */
+	public class XmlTemplate
+	{
+		private var beginPlaceholder:String;
+		private var endPlaceholder:String;
+		private var bphInRegExc:String;
+		private var ephInRegExc:String;
+	    private var template:String=null;
+	    //定义了正则表达式中的特殊字符，这些字符如果作为匹配内容出现在正则表达式中，则前面需要加上转义符\。
+	    private var specialReplaceholders:Array=["^","$","\\",".","*","+","?","(",")","[","]","{","}","|"];
+	   //定义了无法作为占位符的特殊字符
+	    private var invalidChar:Array=['&'];
+	    private var parameNames:Array=null;
+	    /**
+	    * 构造函数。
+	    * template:模板XML。
+	    * beginPlaceholder:被替换变量的开始展位符 。缺省值为'$'.
+	    * endPlaceholder:被替换变量的结束站位符,缺省值为'$'。
+	    */ 
+		public function XmlTemplate(template:XML,beginPlaceholder:String="$",
+		       endPlaceholder:String="$")
+		{
+			super();
+			this.beginPlaceholder=beginPlaceholder;
+			this.endPlaceholder=endPlaceholder;
+			convertAllPlaceholder();
+			var s:String=template.normalize().toXMLString();
+			this.template=template.toXMLString();
+	    }
+	    /**
+	    * 该方法用来转换和校验展位符，如果展位符是正则表达式 中的特殊字符，那么前面就必须加上转移字符\。
+	    */
+	    private function  convertAllPlaceholder():void
+	    {
+	    	if ((this.beginPlaceholder.length<1)||(this.endPlaceholder.length<1))
+			{
+			    throw new Error("必须给定占位符！");
+			}
+			this.bphInRegExc=convertPlaceholder(this.beginPlaceholder);
+			this.ephInRegExc=convertPlaceholder(this.endPlaceholder);
+	    }
+	    /**
+	    * 该方法中将给定的占位符中所有特殊字符前加上转义符。
+	    * placeholder:给定的占位符。
+	    * */
+	    private function convertPlaceholder(placeholder:String):String
+	    {
+	        var result:String="";
+	        for(var i:int=0;i<placeholder.length;i++)
+	        {
+	           var char:String=placeholder.charAt(i);
+	           if (this.invalidChar.indexOf(char)>=0)
+	           {
+	             throw new Error("占位符中包含的"+char+"是非法字符!");
+	           }
+	           if (this.specialReplaceholders.indexOf(char)>=0)
+	           {
+	              result=result+"\\"+char;
+	           }
+	           else
+	           {
+	              result=result+char;
+	           }
+	        }	
+	        return result;
+	    }
+	    /**
+	    *设置模板。
+	    template: XML模板。
+	    * */
+	    public function setTemplate(template:XML):void
+	    {
+	    	this.template=template.toXMLString();
+	    	this.parameNames=null;
+	    }
+	    /**
+	      设置变量的开始开占占位符
+	    * */
+	    public function setBeginPlaceholder(beginPlaceholder:String):void
+	    {
+	    	this.beginPlaceholder=beginPlaceholder;
+	    	this.convertAllPlaceholder();
+	    	this.parameNames=null;
+	    }
+	    /**
+	     设置变量的结束占位符
+	    */
+	    public function setEndPlaceholder(endPlaceholder:String):void
+	    {
+	    	this.endPlaceholder=this.endPlaceholder;
+	    	this.convertAllPlaceholder();
+	    	this.parameNames=null;
+	    }
+	    /**
+	      从XML模板中获得全部需要进行替换的参数名称。
+	      返回：参互名称的一个数组，这个
+	    * */
+		private function  getParameterNames():Array
+		{	
+			if (this.parameNames==null)
+			{
+		        var paramePattern:RegExp=new RegExp(this.bphInRegExc+"\\w+"+this.ephInRegExc,"g");
+		        var parameNamesArray:Array=this.template.match(paramePattern);
+		        if ((parameNamesArray==null)||(parameNamesArray.length==0)) return null;
+		        this.parameNames=new Array();
+		        for(var i:int=0;i<parameNamesArray.length;i++)
+		        {
+		           var paramName:String=parameNamesArray[i].toString();
+		           var realParamName:String=paramName.substr(this.beginPlaceholder.length,paramName.length-this.beginPlaceholder.length-this.endPlaceholder.length);
+		           if (this.parameNames.indexOf(realParamName)<0)
+		           {
+		               this.parameNames.push(realParamName);
+		           }
+		        }
+			}
+			return this.parameNames;
+		}
+		/**
+		 在于给定的模板字符串中，用给定的变量值替换变量。
+		 xmlStr：给定的模板字符串。
+		 paramName：参数名称
+		 paramValue：参数值
+		 返回：被替换后的字符串。注意，替换活动并不改变原来的字符串。
+		 * */
+		private function replaceParam(xmlStr:String,paramName:String,paramValue:Object):String
+		{
+			  var paramePattern:RegExp=new RegExp(this.bphInRegExc+paramName+this.ephInRegExc,"g");
+			  return xmlStr.replace(paramePattern,paramValue);
+		}
+		/**
+		    从给定的对象中获取给定名称的属性值。
+		    paramObj：给定对象。
+		    paramName：属性名。 
+		    返回： paramObj对象中名称为paramName属性值。
+		 * */
+		private function getParamValue(paramObj:Object,paramName:String):Object
+		{
+			if (paramObj==null) return null;
+			if (paramName==null) return null;
+			var propertyName:String=paramName;
+			if (paramObj is IMap)
+			{
+				return IMap(paramObj).find(propertyName);
+			}
+			else
+			{
+			   // if(!paramObj.hasOwnProperty(propertyName)) return null;
+			    return paramObj[propertyName];
+			}
+		}
+		/**
+		 * 通过参数实例化模板，返回参数替换后的XML实例。
+		 * paramObj：参数对象，如果该对象是IMap类型,则用Map中存储的数据进行模板参数替换，如果该对象是普通对象，
+		 * 则用对象的属性值进行模板的参数替换。
+		 */
+		public function getInstance(paramObj:Object):XML
+		{
+				if (paramObj==null)
+				{
+					 throw new Error("指定的参数对象不能为空");
+				}
+				var paramNameArray:Array=this.getParameterNames();
+				if ((paramNameArray==null)||(paramNameArray.length==0))
+				{
+				   return new XML(this.template);
+				}
+				var xmlStr=this.template;
+				for(var i:int;i<paramNameArray.length;i++)
+				{
+				     var paramName:String=paramNameArray[i];
+				     var paramValue:Object=this.getParamValue(paramObj,paramName);
+				     xmlStr=this.replaceParam(xmlStr,paramName,paramValue);
+				}
+				return new XML(xmlStr);
+		}
+	}
+}

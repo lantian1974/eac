@@ -1,0 +1,203 @@
+package org.epmr.facility.remoting
+{
+	import flash.events.EventDispatcher;
+	import flash.events.IEventDispatcher;
+	import flash.utils.clearTimeout;
+	import flash.utils.setTimeout;
+	
+	import mx.managers.CursorManager;
+	import mx.managers.ICursorManager;
+	import mx.rpc.AbstractOperation;
+	import mx.rpc.AsyncToken;
+	import mx.rpc.remoting.RemoteObject;
+	
+	import org.epmr.facility.event.InvokeEvent;
+	import org.epmr.facility.event.RespondEvent;
+	
+	[Event(name="invoke",type="org.epmr.facility.event.InvokeEvent")]
+	public class AbstractRemotingProxy extends EventDispatcher
+	{
+		public static const SERVER_SESSION_INVALID:String="Server.Session.Invalid";
+		private static var DEFAULT_INTERCEPTOR:IResponderInterceptor=new DefaultResponderInterceptor();
+		private var _remote:RemoteObject;
+		private var _dest:String;
+		private var _activeCalls:Object;
+		private var _delayCalls:Object;
+		
+		public function AbstractRemotingProxy(destination:String,feedback:Boolean=true)
+		{
+			this._dest=destination;
+			if(feedback)
+				this.addEventListener(InvokeEvent.INVOKE,onInvoking);
+		}
+		protected function get transmitter():RemoteObject{
+			if(_remote==null){
+				_remote=new RemoteObject(_dest);
+			}
+			return _remote;	
+		}
+		/**
+		 * 返回一个此对象使用的拦截器，拦截器将会在创建IInvokeResponder时使用
+		 * @return IResponderInterceptor
+		 */
+		protected function get interceptor():IResponderInterceptor{
+			return DEFAULT_INTERCEPTOR;
+		}
+		/**
+		 * 远程调用事件，此实现仅仅根据调用过程更改鼠标形状
+		 * @param event
+		 */
+		protected function onInvoking(event:InvokeEvent):void{
+			var cm:ICursorManager=CursorManager.getInstance();
+			if(cm==null) return;
+			switch(event.state){
+				case InvokeEvent.STATE_START:
+					cm.setBusyCursor();
+					break;
+				case InvokeEvent.STATE_ERROR:
+				case InvokeEvent.STATE_FAULT:
+				case InvokeEvent.STATE_RESULT:
+				case InvokeEvent.STATE_CANCEL:
+					cm.removeBusyCursor();
+					break;
+			}
+		}
+		
+		/**
+		 * 使用给定的名称和参数调用远程方法
+		 * @param func 方法名
+		 * @param params 参数
+		 * @param handler 远程调用返回后的处理函数，用于派发事件和清理中间结果
+		 * @return IInvokeResponder
+		 */
+		private function doInvoke(func:String,params:Array, handler:Function):IInvokeResponder{
+			var result:IInvokeResponder=null;
+			dispatchInvokeEvent(func,InvokeEvent.STATE_START);
+			try{
+				var method:AbstractOperation=transmitter.getOperation(func);
+				var token:AsyncToken=method.send.apply(method,params);
+				result=createResponder(token,method);
+				var innerHandler:Function=function(event:RespondEvent):void{
+					if(event.phase==RespondEvent.PHASE_AFTER)
+						IEventDispatcher(event.target).removeEventListener(event.type,arguments.callee);
+					handler(event,func);
+				}
+				result.addEventListener(RespondEvent.TYPE_FAULT,innerHandler);
+				result.addEventListener(RespondEvent.TYPE_RESULT,innerHandler);
+			}
+			catch(error:*){
+				dispatchInvokeEvent(func,InvokeEvent.STATE_ERROR);
+				throw error;
+			}
+			return result;
+		}
+		private function dispatchInvokeEvent(funcName:String,state:int):void{
+			if(hasEventListener(InvokeEvent.INVOKE)){
+				dispatchEvent(new InvokeEvent(InvokeEvent.INVOKE,funcName,state));
+			}
+		}
+		protected final function invoke(func:String,...params):IInvokeResponder{
+			return doInvoke(func,params,handleInvoke);
+		}
+		private function handleInvoke(event:RespondEvent,funcName:String):void{
+			var _interceptor:IResponderInterceptor=interceptor;
+			var cancel:Boolean=false;
+			if(event.type==RespondEvent.TYPE_RESULT){
+				if(event.phase==RespondEvent.PHASE_BEFORE){
+					if(_interceptor){
+						cancel=_interceptor.beforeResult(event.target as IInvokeResponder,
+															event.data,event.callbacks);
+						if(cancel) event.preventDefault();
+					}
+				}
+				else if(event.phase==RespondEvent.PHASE_AFTER){
+					if(_interceptor){
+						_interceptor.afterResult(event.target as IInvokeResponder,
+													event.data,event.callbacks);
+					}
+					dispatchInvokeEvent(funcName,InvokeEvent.STATE_RESULT);
+				}
+			}
+			else if(event.type==RespondEvent.TYPE_FAULT){
+				if(event.phase==RespondEvent.PHASE_BEFORE){
+					if(_interceptor){
+						cancel=_interceptor.beforeFault(event.target as IInvokeResponder,
+															event.data,event.callbacks);
+						if(cancel) event.preventDefault();
+					}
+				}
+				else if(event.phase==RespondEvent.PHASE_AFTER){
+					if(_interceptor){
+						_interceptor.afterFault(event.target as IInvokeResponder,
+													event.data,event.callbacks);
+					}
+					dispatchInvokeEvent(funcName,InvokeEvent.STATE_FAULT);
+				}
+			}
+			
+		}
+		
+		/**
+		 * 使用给定的名称和参数调用远程方法。
+		 * 如果在上次调用未返回前再次调用同一方法，则上次调用的结果将会被抛弃
+		 * @param func 方法名
+		 * @param params 参数
+		 * @return 
+		 */
+		protected final function invokeLast(func:String,...params):IInvokeResponder{
+			var result:IInvokeResponder=null;
+			if(_activeCalls==null)
+				_activeCalls=new Object();
+			else{	
+				result=_activeCalls[func] as IInvokeResponder;
+				if(result!=null && result.cancel()){
+					delete _activeCalls[func];
+					dispatchInvokeEvent(func,InvokeEvent.STATE_CANCEL);
+				}
+			}
+			result= doInvoke(func,params,handleInvokeLast);
+			_activeCalls[func]=result;
+			return result;
+		}
+		private function handleInvokeLast(event:RespondEvent,method:String):void{
+			delete _activeCalls[method];
+			handleInvoke(event,method);
+		}
+		
+		/**
+		 * 延迟delay毫秒后，使用给定的名称和参数调用远程方法。
+		 * 如果在上次调用尚未启动且再次调用同一方法，则上次调用将会被取消，并且重新启动延迟。
+		 * @param delay 需要延迟的毫秒
+		 * @param func 方法名
+		 * @param params 参数
+		 * @return 
+		 */
+		protected final function invokeDelay(delay:int,func:String,...params):IInvokeResponder{
+			var result:IInvokeResponder=new DependentResponder();
+			if(_delayCalls==null)
+				_delayCalls=new Object();
+			var timer:uint=_delayCalls[func];
+			if(result){
+				clearTimeout(timer);
+				delete _delayCalls[func];
+			}
+			timer=setTimeout(onInvokeDelayStart,delay,result,func,params);
+			_delayCalls[func]=timer;
+			return result;
+		}
+		private function onInvokeDelayStart(responder:DependentResponder,func:String,params:Array):void{
+			delete _delayCalls[func];
+			responder.source=doInvoke(func,params,handleInvoke);
+		}
+		
+		/**
+		 * 创建一个IInvokeResponder，子类可重载
+		 * @param token
+		 * @param oper
+		 * @return IInvokeResponder
+		 */
+		protected function createResponder(token:AsyncToken,oper:AbstractOperation=null):IInvokeResponder{
+			return new RemoteResponder(token,oper);
+		}
+	}
+}
