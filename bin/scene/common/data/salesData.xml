@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<data>
+<row>
+<fruit>Apples</fruit>
+<sales>14223</sales>
+<values>11223</values>
+</row>
+<row>
+<fruit>Oranges</fruit>
+<sales>12341</sales>
+<values>15341</values>
+</row>
+<row>
+<fruit>Pears</fruit>
+<sales>6900</sales>
+<values>6879</values>
+</row>
+</data>

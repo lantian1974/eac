@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<events>
+<event date="2010-8-7" plant="true"><city>社会活动：xx大型会议召开</city><state>North Carolina</state></event>
+<event date="2011-6-27" plant="true"><city>恶劣天气：大  雨</city><state>Minnesota</state></event>
+<event date="2011-6-5" plant="true"><city>调度事件：火警封站</city><state>California</state></event>
+<event date="2011-7-5" plant="true"><city>恶劣天气：大  雾</city><state>Arizona</state></event>
+<event date="2011-9-8" plant="true"><city>恶劣天气：暴  雨</city><state>Arizona</state></event>
+</events>

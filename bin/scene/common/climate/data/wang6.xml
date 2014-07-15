@@ -1,0 +1,25 @@
+﻿<?xml version="1.0"?>
+<common>
+	<row>
+		<time>00:30-00:35</time>
+		<AB>2194</AB>
+		<ABnew>3308</ABnew>
+		<ABadd>1114</ABadd>
+		<ABadd>51%</ABadd>
+	</row>
+	<row>
+		<time>00:35-00:40</time>
+		<AB>2806</AB>
+		<ABnew>2874</ABnew>
+		<ABadd>68</ABadd>
+		<ABadd>2%</ABadd>
+	</row>
+	<row>
+		<time>00:40-00:45</time>
+		<AB>4053</AB>
+		<ABnew>4011</ABnew>
+		<ABadd>-42</ABadd>
+		<ABadd>-1%</ABadd>
+	</row>
+
+</common>

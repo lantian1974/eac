@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<common>
+<row>
+<section>崇文门->前门</section>
+<date>2011/6/13</date>
+<time>7:54-8：24</time>
+<Addvalue>2360</Addvalue>
+<maxAddValue>2596</maxAddValue>
+<minAddValue>2124</minAddValue>
+</row>
+<row>
+<section>安定门->鼓楼大街</section>
+<date>2011/6/13</date>
+<time>7:42-8:12</time>
+<Addvalue>3458</Addvalue>
+<maxAddValue>3803</maxAddValue>
+<minAddValue>3112</minAddValue>
+</row>
+</common>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<common>
+	<row>
+		<time>00:00-00:30</time>
+		<AB>17806</AB>
+		<ABnew>18153</ABnew>
+		<ABadd>347</ABadd>
+		<ABrate>2%</ABrate>
+	</row>
+	<row>
+		<time>00:30-00:59</time>
+		<AB>18807</AB>
+		<ABnew>21254</ABnew>
+		<ABadd>2447</ABadd>
+		<ABrate>13%</ABrate>
+	</row>
+
+</common>

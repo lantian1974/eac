@@ -1,0 +1,70 @@
+<menus>
+	<menu id="tongjifenxi" title="统计分析" >
+		<menu id="zhutifenxi" title="主题分析管理" >
+			<item id="zhutiguanli" name="主题管理" tooltip="主题管理" url="widgets/TopicManager.swf" icon="assets/menus/file_manager.png"/>
+		</menu>
+		<menu id="baobiaotongji" title="报表统计" >
+			<item id="ribaotongji" name="日报统计" tooltip="日报统计" url="widgets/GetDataStep.swf"   icon="assets/menus/day_report.png" />
+			<item id="zhoubaotongji" name="周报统计" tooltip="周报统计" url="widgets/zhoubaotongji.png"  icon="assets/menus/month_report.png" />
+			<item id="jibaotongji" name="季报统计" tooltip="季报统计" url="widgets/jibaotongji.png"  />
+			<item id="nianbaotongji" name="年报统计" tooltip="年报统计" url="widgets/nianbaotongji.png"  />
+		</menu>
+		<menu id="wendangguanli" title="文档管理" >
+			<item id="wendangmulu" name="文档目录定义管理" tooltip="文档目录定义管理" url="widgets/wendangmulu.swf" />
+			<item id="wendangsousuo" name="文档搜索管理" tooltip="文档搜索管理" url="widgets/wendangsousuo.swf" />
+			<item id="wendangweihu" name="文档维护管理" tooltip="文档维护管理" url="widgets/wendangweihu.swf" />
+		</menu>
+		<menu id="zhibiaotixi" title="指标体系管理" >
+			<item id="zhibiaofenlei" name="指标分类管理" tooltip="指标分类管理" url="widgets/zhibiaofenlei.swf" />
+			<item id="zhibiaodingyi" name="指标定义管理" tooltip="指标定义管理" url="widgets/zhibiaodingyi.swf" />
+		</menu>
+	</menu>
+	<menu id="keliuyuce" title="客流预测" >
+		<item id="jiyoukeliulu" name="既有线路客流预测" tooltip="既有线路客流预测" url="widgets/jiyoukeliulu.swf" />
+		<item id="xinkaitongxianlu" name="新开通线路客流预测" tooltip="新开通线路客流预测" url="widgets/xinkaitongxianlu.swf" />
+	</menu>
+	<menu id="yunyingpinggu" title="运营评估" >
+		<item id="yunyingqingkuang" name="运营情况展示管理" tooltip="运营情况展示管理" url="widgets/yunyingqingkuang.swf" />
+		<item id="yunshunengli" name="运输能力评估管理" tooltip="运输能力评估管理" url="widgets/yunshunengli.swf" />
+		<item id="yunlipeizhijihua" name="运力配置计划管理" tooltip="运力配置计划管理" url="widgets/yunlipeizhijihua.swf" />
+		<item id="liecheyunxingtu" name="列车运行图管理" tooltip="列车运行图管理" url="widgets/liecheyunxingtu.swf" />
+		<item id="yunyingzhuangkuang" name="运营状况评估" tooltip="运营状况评估" url="widgets/yunyingzhuangkuang.swf" />
+	</menu>
+	<menu id="yingjifuzhu" title="应急辅助" >
+		<item id="keliujiancha" name="客流监察" tooltip="客流监察" url="widgets/keliujiancha.swf" />
+		<item id="liechejiancha" name="列车监察" tooltip="列车监察" url="widgets/liechejiancha.swf" />
+		<item id="shebeijiancha" name="设备监察" tooltip="设备监察" url="widgets/shebeijiancha.swf" />
+		<item id="shuzihuajianmo" name="预案模块数字化建模" tooltip="预案模块数字化建模" url="widgets/shuzihuajianmo.swf" />
+		<item id="shengmingzhouqi" name="预案全生命周期管理" tooltip="预案全生命周期管理" url="widgets/shengmingzhouqi.swf" />
+	</menu>
+	<menu id="xitongyunwei" title="系统运维" >
+		<menu id="yingjianjichusheshi" title="硬件基础设施监控" >
+			<item id="fuwuqi" name="服务器监控" tooltip="服务器监控" url="widgets/fuwuqi.swf" />
+			<item id="wangluo" name="网络监控" tooltip="网络监控" url="widgets/wangluo.swf" />
+			<item id="cunchu" name="存储监控" tooltip="存储监控" url="widgets/cunchu.swf" />
+		</menu>
+		<menu id="ruanjianjichusheshi" title="软件基础设施监控" >
+			<item id="shujucangku" name="数据仓库监控" tooltip="数据仓库监控" url="widgets/shujucangku.swf" />
+			<item id="shujuku" name="数据库监控" tooltip="数据库监控" url="widgets/shujuku.swf" />
+			<item id="etl" name="ETL监控" tooltip="ETL监控" url="widgets/etl.swf" />
+		</menu>
+		<menu id="quanxianguanli" title="权限管理" >
+			<item id="zuzhijigou" name="组织机构管理" tooltip="组织机构管理" url="widgets/zuzhijigou.swf" />
+			<item id="shenfenrenzheng" name="身份认证管理" tooltip="身份认证管理" url="widgets/shenfenrenzheng.swf" />
+			<item id="juese" name="角色管理" tooltip="角色管理" url="widgets/juese.swf" />
+			<item id="caozuoshenji" name="操作审计管理" tooltip="操作审计管理" url="widgets/caozuoshenji.swf" />
+		</menu>
+		<menu id="gongzuoliu" title="工作流管理" >
+			<item id="liuchengdingyi" name="流程定义管理" tooltip="流程定义管理" url="widgets/liuchengdingyi.swf" />
+			<item id="liuchengjiankong" name="流程监控管理" tooltip="流程监控管理" url="widgets/liuchengjiankong.swf" />
+			<item id="liuchengshenji" name="流程审计管理" tooltip="流程审计管理" url="widgets/liuchengshenji.swf" />
+		</menu>
+	</menu>
+	<menu id="widgetlist" title="小窗口" >
+		<item id="widget1" name="交通图" tooltip="交通图" url="widgets/MyWidget.swf" style="widget" content="module" icon="assets/yongdianjiancha.png" />
+		<item id="widget2" name="客流图" tooltip="客流图" url="widgets/MyWidget2.swf" style="widget" content="module" icon="assets/yongdianjiancha.png" />
+		<item id="widget3" name="大事记" tooltip="大事记" url="widgets/MyWidget3.swf"  style="widget" content="module" icon="assets/yongdianjiancha.png" />
+		<item id="widget4" name="示例" tooltip="示例" url="widgets/MyWidget4.swf"  style="widget" content="module" icon="assets/yongdianjiancha.png" />
+	</menu>
+	<shortcut ref="zhutiguanli"/>
+</menus>

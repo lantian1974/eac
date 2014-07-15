@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<common>
+<row>
+<line>13号线</line>
+<point>五道口</point>
+<comsum>5612</comsum>
+<sum>7612</sum>
+<different>2000</different>
+<ratio>35.64</ratio>
+</row>
+<row>
+<line>15号线</line>
+<point>望京</point>
+<comsum>4300</comsum>
+<sum>5200</sum>
+<different>900</different>
+<ratio>20.93</ratio>
+</row>
+</common>

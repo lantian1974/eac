@@ -1,0 +1,122 @@
+﻿<topics>
+	<topic id="shijianzhuti" title="事件主题分析">
+		<description></description> 
+		<topic id="renwenhuodong" title="人文活动主题分析" >
+		<description></description>
+			<topic id="hahanzu" title="演唱会分析" >
+				<description></description>
+				<topic id="gongtiyanchanghui" title="2011年12月5日工体演唱会" url="widgets/flow_yanchanghui.png">
+				<description>
+					以韩国超人气明星李敏镐12月5日19:30-22:00在工体（东四十条站）举办演唱会为背景，通过韩国超人气明星的演出活动相关的OD数据，分析其出行规律，进而了解到韩迷居住地点，再近一步跟踪分析类似事件的信息，掌握其规模，出行规律，通过出行规律及目的地周边信息，推导其行为特点。
+				</description>
+					<item id="step1" name="演唱会前一小时o站点流量统计" userObj="16,47,75,75" url="module/Query_model_lt_1.swf"/>
+					<item id="step2" name="演唱会前一小时o站点流量展示" userObj="160,46,75,75"  url="scene/common/activity/StepOne.swf"/>
+					<item id="step3" name="平日类似时间o站点平均流量统计" userObj="19,157,75,75"  url="module/Query_model_lt_2.swf"/>
+					<item id="step4" name="平日类似时间o站点平均流量展示" userObj="163,158,75,75"  url="scene/common/activity/StepTwo.swf"/>
+					<item id="step5" name="对比流量差和变化率" userObj="305,101,75,75"  url="scene/common/activity/StepThree.swf"/>
+					<item id="step6" name="展示对比结果" userObj="457,105,75,75"  url="scene/common/activity/StepFour.swf"/>
+					<item id="step7" name="展示筛选结果" userObj="457,250,75,75"  url="scene/common/activity/StepFive.swf"/>
+				</topic>
+			</topic>
+		</topic>
+		<topic id="luwangshigu" title="路网事件影响分析" >
+			<topic id="duanmianshigu" title="路网断面终端事件分析" >
+				<topic id="tiananmen" title="天安门东-天安门西断面中断分析" url="widgets/flow_tiananmen.png">
+					<description>
+						2011年7月11日，天安门东-> 天安门西断面特殊原因，预计造成1号线早高峰期（8:00-8:30），东向西方向天安门东->天安门西断面不可达；西向东方向天安门西->天安门东断面未受影响，正常运营。
+					</description>
+					<item id="step1" name="获取消息事件" userObj="17,63,75,75"/>
+					<item id="step2" name="查询断面客流" userObj="153,60,75,75"  url="module/query_module_wzx_10.swf"/>
+					<item id="step3" name="获取客流分布" userObj="284,59,67,75" url="scene/common/interrupt/OneStep.swf"/>
+					<item id="step4" name="发送到仿真" userObj="423,64,76,71" />
+					<item id="step5" name="获取断面增量" userObj="155,223,75,68" url="scene/common/interrupt/TwoStep.swf"/>
+					<item id="step6" name="发送到运营评估" userObj="287,222,76,77" />
+					<item id="step7" name="得到评估反馈" userObj="428,223,66,75" url="scene/common/interrupt/StepSeven.swf"/>
+				</topic>
+			</topic>
+		</topic>
+		<topic id="elietianqi" title="恶劣天气影响分析" >
+			<topic id="wutian" title="雾天影响分析" >
+				<topic id="wutian2012011801" title="2012年1月18日雾天客流出行规律分析" url="widgets/flow_dawu_1.png">
+					<description>
+					2012年1月18日北京大雾，中午12时，对上午大雾影响下的路网客流情况变化做事后统计分析,找到客流出行的规律，为以后类似情况提供运能运力配置计划的建议。
+首先分析全路网大雾对断面客流量所带来的影响，是增大还是减少？分别是哪些断面？分别增加和减少了多少？
+					</description>
+					<item id="step1" name="查询大雾当天断面流量"   userObj="24,47,76,72" url="module/query_module_wzx_3.swf"/>
+					<item id="step2" name="获取全路网断面流量"   userObj="166,51,61,66"  url="scene/common/climate/StepOne.swf"/>
+					<item id="step3" name="查询类比条件下的断面流量"   userObj="23,159,78,70" url="module/query_module_wzx_4.swf"/>
+					<item id="step4" name="获取类比条件下的断面流量"   userObj="165,161,64,66" url="scene/common/climate/StepTwo.swf"/>
+					<item id="step5" name="比对断面流量"   userObj="292,99,80,78" url="scene/common/climate/StepThree.swf"/>
+					<item id="step6" name="获得比较结果"   userObj="436,106,66,69" url="scene/common/climate/StepThree2.swf"/>					
+					<item id="step7" name="获取断面流量的增减量和增减率"   userObj="391,258,67,68" url="scene/common/climate/StepFour.swf"/>
+					<item id="step8" name="发送到运营评估"   userObj="244,253,86,81" />
+					<item id="step9" name="保存KPI到数据库"   userObj="469,254,70,70" />
+				</topic>
+				<topic id="wutian2012011802" title="2012年1月18日雾天集散量规律分析" url="widgets/flow_dawu_2.png">
+					<description>
+					分析全路网各站的集散量的变化情况，找到各站集散量变化规律，为以后类似情况提供各站集散方案的建议。
+					</description>
+					<item id="step1" name="查询大雾当天集散量"   userObj="13,26,77,71" url="module/query_module_wzx_5.swf"/>
+					<item id="step2" name="获取全路网断集散量"   userObj="173,32,64,66" url="scene/common/climate/StepFive.swf"/>
+					<item id="step3" name="查询类比条件下的集散量"   userObj="15,145,75,68" url="module/query_module_wzx_6.swf"/>
+					<item id="step4" name="获取类比条件下的集散量"   userObj="172,146,66,66" url="scene/common/climate/StepSix.swf"/>
+					<item id="step5" name="比对集散量"   userObj="365,69,77,75" url="scene/common/climate/StepSeven.swf"/>
+					<item id="step6" name="获取集散量的增加量和增加率的top10"   userObj="308,189,64,67" url="scene/common/climate/StepEight.swf"/>
+					<item id="step7" name="发送到运营评估"   userObj="303,307,75,72"/>
+					<item id="step8" name="获取集散量的减少量和减少率的top10"   userObj="436,191,65,66" url="scene/common/climate/StepNine.swf"/>
+					<item id="step9" name="保存KPI到数据库"   userObj="435,302,66,62" />
+				</topic>
+				<topic id="wutian2012011803" title="2012年1月18日雾散后客流出行规律分析" url="widgets/flow_dawu_3.png">
+					<description>
+					下午13时，据最新天气预报获悉，午后大雾散去。早高峰客流有变化，晚高峰应该怎么应对？
+提前对下午雾散后做事前分析，为车站运营组织、运能运力计划提供建议。
+					</description>
+					<item id="step1" name="查询大雾当天的出站量"     userObj="3,6,76,72" url="module/query_module_wzx_7.swf"/>
+					<item id="step2" name="获取大雾当天的出站量"     userObj="133,6,66,74" url="scene/common/climate/ThreeStepOne.swf"/>
+					<item id="step3" name="查询类比条件下的出站量"     userObj="2,104,73,72" url="module/query_module_wzx_8.swf"/>
+					<item id="step4" name="获取类比条件下的出站量"     userObj="133,101,66,75" url="scene/common/climate/ThreeStepTwo.swf"/>
+					<item id="step5" name="比对出站量"     userObj="273,50,73,71" url="scene/common/climate/ThreeStepThree.swf"/>
+					<item id="step6" name="获得大雾当天出站量的增减量"     userObj="398,50,66,72" url="scene/common/climate/ThreeStepFour.swf"/>
+					<item id="step7" name="OD信息对换"     userObj="462,126,74,72" />
+					<item id="step8" name="新的进站量增减量"     userObj="399,200,64,75" url="scene/common/climate/ThreeStepFive.swf"/>
+					<item id="step9" name="查询类比条件下的进站量"     userObj="2,203,72,70" url="module/query_module_wzx_9.swf"/>
+					<item id="step10" name="获取类比条件下的进站量"     userObj="134,202,65,73" url="scene/common/climate/ThreeStepSix.swf"/>
+					<item id="step11" name="比对进站量"   userObj="272,203,74,68" url="scene/common/climate/ThreeStepSeven.swf"/>
+					<item id="step12" name="叠加生成新的进站量"   userObj="277,315,65,70" url="scene/common/climate/ThreeStepEight.swf"/>
+					<item id="step13" name="发送到运营评估"   userObj="104,318,71,68" />
+					<item id="step14" name="保存KPI到数据库"   userObj="359,318,70,70" />
+				</topic>
+			</topic>
+		</topic>
+	</topic>
+	<topic id="qingsuanshouru" title="清算主题分析" >
+	
+	</topic>
+	<topic id="chengkechuxing" title="乘客主题分析" >
+	
+	</topic>
+	<topic id="pianwu" title="票务主题分析" >
+	
+	</topic>
+	<topic id="piaozhipiaojia" title="票制票价主题分析" >
+	
+	</topic>
+	<topic id="zhengfubumen" title="政府服务" >
+		<topic id="luzhengju" title="路政局"/>
+		<topic id="luzhengju" title="交通委"/>
+	</topic>
+	<topic id="zhonghanlianhehui" title="中韩文化交流联合会" >
+		<topic id="gongtiyanchanghui2" title="2011年12月5日工体演唱会" url="widgets/flow_yanchanghui.png">
+				<description>
+					以韩国超人气明星李敏镐12月5日19:30-22:00在工体（东四十条站）举办演唱会为背景，通过韩国超人气明星的演出活动相关的OD数据，分析其出行规律，进而了解到哈韩族的居住地点，再近一步跟踪分析类似事件的信息，掌握其规模，出行规律，通过出行规律及目的地周边信息，推导其行为特点。
+				</description>
+					<item id="step1" name="演唱会前一小时o站点流量统计" userObj="16,47,75,75" url="module/Query_model_lt_1.swf"/>
+					<item id="step2" name="演唱会前一小时o站点流量展示" userObj="160,46,75,75"  url="scene/common/activity/StepOne.swf"/>
+					<item id="step3" name="平日类似时间o站点平均流量统计" userObj="19,157,75,75"  url="module/Query_model_lt_2.swf"/>
+					<item id="step4" name="平日类似时间o站点平均流量展示" userObj="163,158,75,75"  url="scene/common/activity/StepTwo.swf"/>
+					<item id="step5" name="对比流量差和变化率" userObj="305,101,75,75"  url="scene/common/activity/StepThree.swf"/>
+					<item id="step6" name="展示对比结果" userObj="457,105,75,75"  url="scene/common/activity/StepFour.swf"/>
+					<item id="step7" name="展示筛选结果" userObj="457,250,75,75"  url="scene/common/activity/StepFive.swf"/>
+				</topic>
+	</topic>
+</topics>

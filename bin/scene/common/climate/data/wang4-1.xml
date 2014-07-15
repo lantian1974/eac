@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"?>
+<common>
+	<row>
+		<point>南礼士路->复兴门</point>
+		<time>07:00-07:30</time>
+		<AB>17806</AB>
+		<ABnew>18153</ABnew>
+		<ABadd>347</ABadd>
+		<ABrate>2%</ABrate>
+	</row>
+	<row>
+		<point>南礼士路->复兴门</point>
+		<time>07:30-07:59</time>
+		<AB>18807</AB>
+		<ABnew>21254</ABnew>
+		<ABadd>2447</ABadd>
+		<ABrate>13%</ABrate>
+	</row>
+
+
+</common>

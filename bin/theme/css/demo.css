@@ -1,0 +1,143 @@
+/* CSS file */
+@namespace mx "library://ns.adobe.com/flex/mx";
+@namespace s "library://ns.adobe.com/flex/spark";
+mx|Tree
+{
+   font-size:12px;
+   color:#000000;
+}
+.xdfPopuPanle
+{
+	borderAlpha:#ffffff;
+	borderThicknessLeft:0;
+	borderThicknessTop:0;
+	borderThicknessBottom:0;
+	borderThicknessRight:0;
+	highlightAlphas:0.48, 0.08;
+	headerColors:#2b9df3, #0a83e8;
+	footerColors:#ffffff, #ffffff;
+	backgroundColor:#ffffff; 
+	titleStyleName: "myTitleWindowsTitle";
+	shadowDirection:right;
+	shadowDistance:5;
+	cornerRadius:8;
+
+}
+mx|TitleWindow
+{
+	borderAlpha:#ffffff;
+	borderThicknessLeft:0;
+	borderThicknessTop:0;
+	borderThicknessBottom:0;
+	borderThicknessRight:0;
+	highlightAlphas:0.48, 0.08;
+	headerColors:#2b9df3, #0a83e8;
+	footerColors:#ffffff, #ffffff;
+	backgroundColor:#ffffff; 
+	titleStyleName: "myTitleWindowsTitle";
+	shadowDirection:right;
+	shadowDistance:5;
+	cornerRadius:8;
+
+}
+.myTitleWindowsTitle {
+	color: #FFFFFF;
+	font-weight:bold;
+}
+mx|DataGrid {
+    headerColors:#dcf0fe,#ffffff;
+    themeColor:#86ccfc;
+    color:#000000;
+}
+
+mx|Button{
+    
+    fontWeight:normal;
+    color:#0b333c;
+
+}
+
+mx|ComboBox {
+    
+    width:100;
+    height:22;
+}
+
+mx|TextInput{
+    borderColor:#a8d9fe; 
+    backgroundColor:#fffff6;
+    borderStyle:solid;
+}
+
+mx|TabNavigator {
+   horizontalGap: 1;
+   paddingLeft: 1;
+   textIndent: 0;
+   borderThickness: 1;
+   tabStyleName: "myTabs";
+   firstTabStyleName: "myTabs";
+   lastTabStyleName: "myTabs";
+   selectedTabTextStyleName: "mySelectedTabs";
+   themeColor:#009DFF;
+}
+
+.myTabs {
+   cornerRadius: 3;
+   highlightAlphas: 1, 0;
+   letterSpacing: 0;
+   fillColors: #ffffff,#dcf0fe;
+   backgroundAlpha: 1;
+   backgroundColor: #ffffff;
+   fontSize: 12;
+
+}
+
+.mySelectedTabs {
+   color:#0068b0;
+   font-weight:bold;
+   
+  
+}
+.xdfbox{
+  backgroundColor:#f3f3f3;
+   
+}
+
+.xdfleibielablefont{
+  font-size:12px;
+  color:#40acfe;
+}
+
+mx|Alert{
+   cornerRadius:3;
+   color:#0b333c;
+   backgroundColor:#f6f6f6;
+   borderAlpha: 1;
+   borderColor:#7d7d7d;
+   borderThickness: 1;
+   titleStyleName: "myAlert";
+   borderThicknessLeft: 1;
+   borderThicknessTop: 1;
+   borderThicknessBottom: 1;
+   borderThicknessRight: 1;
+   font-size:12px;
+   paddingLeft:2;
+   textAlign:left;
+   modalTransparency:0;
+   modalTransparencyBlur:0;
+   backgroundAlpha:1;
+   highlightAlphas:0,0.24;
+   headerColors:#0000ff,#00ffff;
+}
+.myAlert{
+  color:#ffffff;
+  font-weight:bold;
+  font-size:12px;
+}
+.errorTip{
+	font-size:12px;	
+}
+
+mx|ToolTip{
+    font-size:12px;           
+ }
